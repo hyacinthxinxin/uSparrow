@@ -1,15 +1,11 @@
 PODS:
   - Alamofire (4.0.1)
-  - GCDWebServer (3.3.3):
-    - GCDWebServer/Core (= 3.3.3)
-  - GCDWebServer/Core (3.3.3)
   - JDStatusBarNotification (1.5.4)
   - PureLayout (3.0.2)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `master`)
-  - GCDWebServer (~> 3.0)
   - JDStatusBarNotification
   - PureLayout
   - SwiftyJSON (from `https://github.com/BaiduHiDeviOS/SwiftyJSON.git`, branch `swift3`)
@@ -32,11 +28,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  GCDWebServer: 1c39a1f0763e4eb492bee021e4270fce097d3555
   JDStatusBarNotification: d47dded0594a50a39c84a2cc5aa356fcf6750d0e
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SwiftyJSON: 6118fb49d7519c4d31a0c1f3d5af936e9047b556
 
-PODFILE CHECKSUM: 8d9bb98312c48732084a6e6cf18dd89531d6e07c
+PODFILE CHECKSUM: a0e3cfe5e704b2cd29b5d9f6bf2b7c608585c9bb
 
 COCOAPODS: 1.0.1

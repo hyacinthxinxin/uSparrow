@@ -25,6 +25,8 @@ pod 'SwiftyJSON',
 
 pod 'PureLayout'
 pod 'JDStatusBarNotification'
-pod "GCDWebServer", "~> 3.0"
+#pod "GCDWebServer", "~> 3.0"
+#pod "GCDWebServer/WebUploader", "~> 3.0"
+#pod "GCDWebServer/WebDAV", "~> 3.0"
 
 end
