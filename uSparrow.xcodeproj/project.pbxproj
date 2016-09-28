@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		200F7A19DED95DC433F64174 /* Pods_uSparrow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C76F9797BC81B0462D728 /* Pods_uSparrow.framework */; };
+		BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */; };
+		BA71FE771D9BE6A400CD0E5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FE761D9BE6A400CD0E5A /* ViewController.swift */; };
+		BA71FE7A1D9BE6A400CD0E5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE781D9BE6A400CD0E5A /* Main.storyboard */; };
+		BA71FE7C1D9BE6A400CD0E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */; };
+		BA71FE7F1D9BE6A400CD0E5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE7D1D9BE6A400CD0E5A /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3BE7006FF242F8F4CE0DECC9 /* Pods-uSparrow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSparrow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uSparrow/Pods-uSparrow.debug.xcconfig"; sourceTree = "<group>"; };
+		5A0E804F3E95B6031274F7F6 /* Pods-uSparrow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSparrow.release.xcconfig"; path = "Pods/Target Support Files/Pods-uSparrow/Pods-uSparrow.release.xcconfig"; sourceTree = "<group>"; };
+		844C76F9797BC81B0462D728 /* Pods_uSparrow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uSparrow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA71FE711D9BE6A400CD0E5A /* uSparrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSparrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA71FE761D9BE6A400CD0E5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA71FE791D9BE6A400CD0E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA71FE7E1D9BE6A400CD0E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA71FE801D9BE6A400CD0E5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA71FE6E1D9BE6A400CD0E5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				200F7A19DED95DC433F64174 /* Pods_uSparrow.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52510CBA4C84F0FA63FE582C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BE7006FF242F8F4CE0DECC9 /* Pods-uSparrow.debug.xcconfig */,
+				5A0E804F3E95B6031274F7F6 /* Pods-uSparrow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		62E3DEC7F303BA7FC6719C66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				844C76F9797BC81B0462D728 /* Pods_uSparrow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA71FE681D9BE6A400CD0E5A = {
+			isa = PBXGroup;
+			children = (
+				BA71FE731D9BE6A400CD0E5A /* uSparrow */,
+				BA71FE721D9BE6A400CD0E5A /* Products */,
+				52510CBA4C84F0FA63FE582C /* Pods */,
+				62E3DEC7F303BA7FC6719C66 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BA71FE721D9BE6A400CD0E5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA71FE711D9BE6A400CD0E5A /* uSparrow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA71FE731D9BE6A400CD0E5A /* uSparrow */ = {
+			isa = PBXGroup;
+			children = (
+				BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */,
+				BA71FE761D9BE6A400CD0E5A /* ViewController.swift */,
+				BA71FE781D9BE6A400CD0E5A /* Main.storyboard */,
+				BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */,
+				BA71FE7D1D9BE6A400CD0E5A /* LaunchScreen.storyboard */,
+				BA71FE801D9BE6A400CD0E5A /* Info.plist */,
+			);
+			path = uSparrow;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA71FE701D9BE6A400CD0E5A /* uSparrow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA71FE831D9BE6A400CD0E5A /* Build configuration list for PBXNativeTarget "uSparrow" */;
+			buildPhases = (
+				83EE79B19C0208F45BD1728B /* [CP] Check Pods Manifest.lock */,
+				BA71FE6D1D9BE6A400CD0E5A /* Sources */,
+				BA71FE6E1D9BE6A400CD0E5A /* Frameworks */,
+				BA71FE6F1D9BE6A400CD0E5A /* Resources */,
+				60D144327A44C6B42E1B6508 /* [CP] Embed Pods Frameworks */,
+				662844259EF4F9418D25DB75 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = uSparrow;
+			productName = uSparrow;
+			productReference = BA71FE711D9BE6A400CD0E5A /* uSparrow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA71FE691D9BE6A400CD0E5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = TingSpectrum;
+				TargetAttributes = {
+					BA71FE701D9BE6A400CD0E5A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9YE7FFAQ8S;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = BA71FE6C1D9BE6A400CD0E5A /* Build configuration list for PBXProject "uSparrow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA71FE681D9BE6A400CD0E5A;
+			productRefGroup = BA71FE721D9BE6A400CD0E5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA71FE701D9BE6A400CD0E5A /* uSparrow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA71FE6F1D9BE6A400CD0E5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA71FE7F1D9BE6A400CD0E5A /* LaunchScreen.storyboard in Resources */,
+				BA71FE7C1D9BE6A400CD0E5A /* Assets.xcassets in Resources */,
+				BA71FE7A1D9BE6A400CD0E5A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60D144327A44C6B42E1B6508 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uSparrow/Pods-uSparrow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		662844259EF4F9418D25DB75 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uSparrow/Pods-uSparrow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83EE79B19C0208F45BD1728B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA71FE6D1D9BE6A400CD0E5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA71FE771D9BE6A400CD0E5A /* ViewController.swift in Sources */,
+				BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BA71FE781D9BE6A400CD0E5A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA71FE791D9BE6A400CD0E5A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA71FE7D1D9BE6A400CD0E5A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA71FE7E1D9BE6A400CD0E5A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA71FE811D9BE6A400CD0E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA71FE821D9BE6A400CD0E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA71FE841D9BE6A400CD0E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BE7006FF242F8F4CE0DECC9 /* Pods-uSparrow.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9YE7FFAQ8S;
+				INFOPLIST_FILE = uSparrow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fanxin.tingspectrum.uSparrow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2ee5752c-97d4-4318-8853-c1ee4c20c4ce";
+				PROVISIONING_PROFILE_SPECIFIER = uSparrowDev;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BA71FE851D9BE6A400CD0E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A0E804F3E95B6031274F7F6 /* Pods-uSparrow.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9YE7FFAQ8S;
+				INFOPLIST_FILE = uSparrow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fanxin.tingspectrum.uSparrow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2ee5752c-97d4-4318-8853-c1ee4c20c4ce";
+				PROVISIONING_PROFILE_SPECIFIER = uSparrowDev;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA71FE6C1D9BE6A400CD0E5A /* Build configuration list for PBXProject "uSparrow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA71FE811D9BE6A400CD0E5A /* Debug */,
+				BA71FE821D9BE6A400CD0E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA71FE831D9BE6A400CD0E5A /* Build configuration list for PBXNativeTarget "uSparrow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA71FE841D9BE6A400CD0E5A /* Debug */,
+				BA71FE851D9BE6A400CD0E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA71FE691D9BE6A400CD0E5A /* Project object */;
+}
