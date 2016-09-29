@@ -22,16 +22,22 @@ struct Constants {
     
     struct SegueIdentifier {
         static let ShowUpload = "ShowUpload"
-        
+        static let ShowSparrowFold = "ShowSparrowFold"
+        static let ShowSparrow = "ShowSparrow"
     }
     
     struct ReuserIdentifier {
         static let uSparrowCell = "SparrowCell"
+        static let uSparrowFoldCell = "SparrowFoldCell"
+        static let uSparrowsHeaderView = "SparrowsHeaderView"
+        
     }
     
     struct Path {
         static let Documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         static let Library = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first!
         static let Tmp = NSTemporaryDirectory()
+        
+        
     }
 }

@@ -25,16 +25,19 @@
 		BA71FEBC1D9BF4F000CD0E5A /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BA71FEB61D9BF4F000CD0E5A /* GCDWebServerErrorResponse.m */; };
 		BA71FEBD1D9BF4F000CD0E5A /* GCDWebServerFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BA71FEB81D9BF4F000CD0E5A /* GCDWebServerFileResponse.m */; };
 		BA71FEBE1D9BF4F000CD0E5A /* GCDWebServerStreamedResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BA71FEBA1D9BF4F000CD0E5A /* GCDWebServerStreamedResponse.m */; };
-		BA71FEC11D9BF50100CD0E5A /* GCDWebDAVServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA71FEC01D9BF50100CD0E5A /* GCDWebDAVServer.m */; };
-		BA71FEC51D9BF50900CD0E5A /* GCDWebUploader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA71FEC21D9BF50900CD0E5A /* GCDWebUploader.bundle */; };
-		BA71FEC61D9BF50900CD0E5A /* GCDWebUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA71FEC41D9BF50900CD0E5A /* GCDWebUploader.m */; };
 		BA71FECA1D9BF71B00CD0E5A /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA71FEC91D9BF71B00CD0E5A /* libxml2.tbd */; };
 		BA71FECC1D9BF96E00CD0E5A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA71FECB1D9BF96E00CD0E5A /* libz.tbd */; };
 		BA71FED21D9C086200CD0E5A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FED11D9C086200CD0E5A /* Constants.swift */; };
 		BA71FED81D9C08D600CD0E5A /* SparrowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FED71D9C08D600CD0E5A /* SparrowsViewController.swift */; };
 		BA71FEDA1D9C0CF900CD0E5A /* SparrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FED91D9C0CF900CD0E5A /* SparrowCell.swift */; };
 		BA71FEDF1D9C0FC100CD0E5A /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FEDE1D9C0FC100CD0E5A /* UploadViewController.swift */; };
-		BA71FEE11D9C1D5900CD0E5A /* foldImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BA71FEE01D9C1D5900CD0E5A /* foldImage.jpeg */; };
+		BA71FEE81D9C40CD00CD0E5A /* GCDWebDAVServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA71FEE71D9C40CD00CD0E5A /* GCDWebDAVServer.m */; };
+		BA89E2EB1D9C49D600ECCF6A /* GCDWebUploader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA89E2E81D9C49D600ECCF6A /* GCDWebUploader.bundle */; };
+		BA89E2EC1D9C49D600ECCF6A /* GCDWebUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2EA1D9C49D600ECCF6A /* GCDWebUploader.m */; };
+		BA89E2EE1D9CED1600ECCF6A /* SparrowFoldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2ED1D9CED1600ECCF6A /* SparrowFoldCell.swift */; };
+		BA89E2F11D9CEDE800ECCF6A /* SparrowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2F01D9CEDE800ECCF6A /* SparrowModel.swift */; };
+		BA89E2F41D9CF12D00ECCF6A /* SparrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2F31D9CF12D00ECCF6A /* SparrowViewController.swift */; };
+		BA89E2F61D9D068600ECCF6A /* SparrowsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2F51D9D068600ECCF6A /* SparrowsHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,11 +79,6 @@
 		BA71FEB81D9BF4F000CD0E5A /* GCDWebServerFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFileResponse.m; path = GCDWebServer/Responses/GCDWebServerFileResponse.m; sourceTree = "<group>"; };
 		BA71FEB91D9BF4F000CD0E5A /* GCDWebServerStreamedResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDWebServerStreamedResponse.h; path = GCDWebServer/Responses/GCDWebServerStreamedResponse.h; sourceTree = "<group>"; };
 		BA71FEBA1D9BF4F000CD0E5A /* GCDWebServerStreamedResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerStreamedResponse.m; path = GCDWebServer/Responses/GCDWebServerStreamedResponse.m; sourceTree = "<group>"; };
-		BA71FEBF1D9BF50100CD0E5A /* GCDWebDAVServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDWebDAVServer.h; path = GCDWebDAVServer/GCDWebDAVServer.h; sourceTree = "<group>"; };
-		BA71FEC01D9BF50100CD0E5A /* GCDWebDAVServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDWebDAVServer.m; path = GCDWebDAVServer/GCDWebDAVServer.m; sourceTree = "<group>"; };
-		BA71FEC21D9BF50900CD0E5A /* GCDWebUploader.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GCDWebUploader.bundle; path = GCDWebUploader/GCDWebUploader.bundle; sourceTree = "<group>"; };
-		BA71FEC31D9BF50900CD0E5A /* GCDWebUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDWebUploader.h; path = GCDWebUploader/GCDWebUploader.h; sourceTree = "<group>"; };
-		BA71FEC41D9BF50900CD0E5A /* GCDWebUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDWebUploader.m; path = GCDWebUploader/GCDWebUploader.m; sourceTree = "<group>"; };
 		BA71FEC71D9BF70B00CD0E5A /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		BA71FEC91D9BF71B00CD0E5A /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		BA71FECB1D9BF96E00CD0E5A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -88,7 +86,15 @@
 		BA71FED71D9C08D600CD0E5A /* SparrowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowsViewController.swift; path = Sparrows/SparrowsViewController.swift; sourceTree = "<group>"; };
 		BA71FED91D9C0CF900CD0E5A /* SparrowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowCell.swift; path = Sparrows/SparrowCell.swift; sourceTree = "<group>"; };
 		BA71FEDE1D9C0FC100CD0E5A /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadViewController.swift; path = Upload/UploadViewController.swift; sourceTree = "<group>"; };
-		BA71FEE01D9C1D5900CD0E5A /* foldImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = foldImage.jpeg; sourceTree = "<group>"; };
+		BA71FEE61D9C40CD00CD0E5A /* GCDWebDAVServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDWebDAVServer.h; path = GCDWebServer/GCDWebDAVServer/GCDWebDAVServer.h; sourceTree = "<group>"; };
+		BA71FEE71D9C40CD00CD0E5A /* GCDWebDAVServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDWebDAVServer.m; path = GCDWebServer/GCDWebDAVServer/GCDWebDAVServer.m; sourceTree = "<group>"; };
+		BA89E2E81D9C49D600ECCF6A /* GCDWebUploader.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GCDWebUploader.bundle; path = GCDWebServer/GCDWebUploader/GCDWebUploader.bundle; sourceTree = "<group>"; };
+		BA89E2E91D9C49D600ECCF6A /* GCDWebUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDWebUploader.h; path = GCDWebServer/GCDWebUploader/GCDWebUploader.h; sourceTree = "<group>"; };
+		BA89E2EA1D9C49D600ECCF6A /* GCDWebUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDWebUploader.m; path = GCDWebServer/GCDWebUploader/GCDWebUploader.m; sourceTree = "<group>"; };
+		BA89E2ED1D9CED1600ECCF6A /* SparrowFoldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowFoldCell.swift; path = Sparrows/SparrowFoldCell.swift; sourceTree = "<group>"; };
+		BA89E2F01D9CEDE800ECCF6A /* SparrowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowModel.swift; path = SparrowModels/SparrowModel.swift; sourceTree = "<group>"; };
+		BA89E2F31D9CF12D00ECCF6A /* SparrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowViewController.swift; path = Sparrow/SparrowViewController.swift; sourceTree = "<group>"; };
+		BA89E2F51D9D068600ECCF6A /* SparrowsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowsHeaderView.swift; path = Sparrows/SparrowsHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,12 +152,13 @@
 		BA71FE731D9BE6A400CD0E5A /* uSparrow */ = {
 			isa = PBXGroup;
 			children = (
-				BA71FECD1D9C070F00CD0E5A /* GCDWeb */,
+				BA89E2F21D9CF11900ECCF6A /* Sparrow */,
+				BA71FE901D9BF49400CD0E5A /* GCDWebServer */,
 				BA71FECE1D9C07BD00CD0E5A /* Units */,
 				BA71FEDB1D9C0E8B00CD0E5A /* WebServer */,
 				BA71FED61D9C08C600CD0E5A /* Sparrows */,
+				BA89E2EF1D9CEDCA00ECCF6A /* SparrowModels */,
 				BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */,
-				BA71FEE01D9C1D5900CD0E5A /* foldImage.jpeg */,
 				BA71FE781D9BE6A400CD0E5A /* Main.storyboard */,
 				BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */,
 				BA71FE7D1D9BE6A400CD0E5A /* LaunchScreen.storyboard */,
@@ -164,6 +171,8 @@
 		BA71FE901D9BF49400CD0E5A /* GCDWebServer */ = {
 			isa = PBXGroup;
 			children = (
+				BA71FE921D9BF4A800CD0E5A /* GCDWebUploader */,
+				BA71FE911D9BF49E00CD0E5A /* GCDWebDAVServer */,
 				BA71FE951D9BF4C100CD0E5A /* Requests */,
 				BA71FE941D9BF4BF00CD0E5A /* Responses */,
 				BA71FE931D9BF4BA00CD0E5A /* Core */,
@@ -174,8 +183,8 @@
 		BA71FE911D9BF49E00CD0E5A /* GCDWebDAVServer */ = {
 			isa = PBXGroup;
 			children = (
-				BA71FEBF1D9BF50100CD0E5A /* GCDWebDAVServer.h */,
-				BA71FEC01D9BF50100CD0E5A /* GCDWebDAVServer.m */,
+				BA71FEE61D9C40CD00CD0E5A /* GCDWebDAVServer.h */,
+				BA71FEE71D9C40CD00CD0E5A /* GCDWebDAVServer.m */,
 			);
 			name = GCDWebDAVServer;
 			sourceTree = "<group>";
@@ -183,9 +192,9 @@
 		BA71FE921D9BF4A800CD0E5A /* GCDWebUploader */ = {
 			isa = PBXGroup;
 			children = (
-				BA71FEC21D9BF50900CD0E5A /* GCDWebUploader.bundle */,
-				BA71FEC31D9BF50900CD0E5A /* GCDWebUploader.h */,
-				BA71FEC41D9BF50900CD0E5A /* GCDWebUploader.m */,
+				BA89E2E81D9C49D600ECCF6A /* GCDWebUploader.bundle */,
+				BA89E2E91D9C49D600ECCF6A /* GCDWebUploader.h */,
+				BA89E2EA1D9C49D600ECCF6A /* GCDWebUploader.m */,
 			);
 			name = GCDWebUploader;
 			sourceTree = "<group>";
@@ -239,16 +248,6 @@
 			name = Requests;
 			sourceTree = "<group>";
 		};
-		BA71FECD1D9C070F00CD0E5A /* GCDWeb */ = {
-			isa = PBXGroup;
-			children = (
-				BA71FE921D9BF4A800CD0E5A /* GCDWebUploader */,
-				BA71FE911D9BF49E00CD0E5A /* GCDWebDAVServer */,
-				BA71FE901D9BF49400CD0E5A /* GCDWebServer */,
-			);
-			name = GCDWeb;
-			sourceTree = "<group>";
-		};
 		BA71FECE1D9C07BD00CD0E5A /* Units */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +261,8 @@
 			children = (
 				BA71FED71D9C08D600CD0E5A /* SparrowsViewController.swift */,
 				BA71FED91D9C0CF900CD0E5A /* SparrowCell.swift */,
+				BA89E2ED1D9CED1600ECCF6A /* SparrowFoldCell.swift */,
+				BA89E2F51D9D068600ECCF6A /* SparrowsHeaderView.swift */,
 			);
 			name = Sparrows;
 			sourceTree = "<group>";
@@ -272,6 +273,22 @@
 				BA71FEDE1D9C0FC100CD0E5A /* UploadViewController.swift */,
 			);
 			name = WebServer;
+			sourceTree = "<group>";
+		};
+		BA89E2EF1D9CEDCA00ECCF6A /* SparrowModels */ = {
+			isa = PBXGroup;
+			children = (
+				BA89E2F01D9CEDE800ECCF6A /* SparrowModel.swift */,
+			);
+			name = SparrowModels;
+			sourceTree = "<group>";
+		};
+		BA89E2F21D9CF11900ECCF6A /* Sparrow */ = {
+			isa = PBXGroup;
+			children = (
+				BA89E2F31D9CF12D00ECCF6A /* SparrowViewController.swift */,
+			);
+			name = Sparrow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,10 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA71FE7F1D9BE6A400CD0E5A /* LaunchScreen.storyboard in Resources */,
-				BA71FEC51D9BF50900CD0E5A /* GCDWebUploader.bundle in Resources */,
 				BA71FE7C1D9BE6A400CD0E5A /* Assets.xcassets in Resources */,
 				BA71FE7A1D9BE6A400CD0E5A /* Main.storyboard in Resources */,
-				BA71FEE11D9C1D5900CD0E5A /* foldImage.jpeg in Resources */,
+				BA89E2EB1D9C49D600ECCF6A /* GCDWebUploader.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,9 +417,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA89E2F61D9D068600ECCF6A /* SparrowsHeaderView.swift in Sources */,
 				BA71FEA41D9BF4E000CD0E5A /* GCDWebServerFunctions.m in Sources */,
 				BA71FEDF1D9C0FC100CD0E5A /* UploadViewController.swift in Sources */,
 				BA71FEAF1D9BF4E900CD0E5A /* GCDWebServerDataRequest.m in Sources */,
+				BA89E2EE1D9CED1600ECCF6A /* SparrowFoldCell.swift in Sources */,
+				BA89E2F11D9CEDE800ECCF6A /* SparrowModel.swift in Sources */,
 				BA71FEBE1D9BF4F000CD0E5A /* GCDWebServerStreamedResponse.m in Sources */,
 				BA71FEBD1D9BF4F000CD0E5A /* GCDWebServerFileResponse.m in Sources */,
 				BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */,
@@ -412,15 +431,16 @@
 				BA71FEA31D9BF4E000CD0E5A /* GCDWebServerConnection.m in Sources */,
 				BA71FEB01D9BF4E900CD0E5A /* GCDWebServerFileRequest.m in Sources */,
 				BA71FEDA1D9C0CF900CD0E5A /* SparrowCell.swift in Sources */,
+				BA71FEE81D9C40CD00CD0E5A /* GCDWebDAVServer.m in Sources */,
 				BA71FEA61D9BF4E000CD0E5A /* GCDWebServerResponse.m in Sources */,
-				BA71FEC61D9BF50900CD0E5A /* GCDWebUploader.m in Sources */,
-				BA71FEC11D9BF50100CD0E5A /* GCDWebDAVServer.m in Sources */,
 				BA71FEA51D9BF4E000CD0E5A /* GCDWebServerRequest.m in Sources */,
 				BA71FEBC1D9BF4F000CD0E5A /* GCDWebServerErrorResponse.m in Sources */,
 				BA71FEBB1D9BF4F000CD0E5A /* GCDWebServerDataResponse.m in Sources */,
+				BA89E2F41D9CF12D00ECCF6A /* SparrowViewController.swift in Sources */,
 				BA71FEA21D9BF4E000CD0E5A /* GCDWebServer.m in Sources */,
 				BA71FEB11D9BF4E900CD0E5A /* GCDWebServerMultiPartFormRequest.m in Sources */,
 				BA71FED21D9C086200CD0E5A /* Constants.swift in Sources */,
+				BA89E2EC1D9C49D600ECCF6A /* GCDWebUploader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

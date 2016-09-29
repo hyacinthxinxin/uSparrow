@@ -30,7 +30,7 @@ class UploadViewController: UIViewController {
         if let webServer = self.webServer {
             webServer.delegate = self
             webServer.allowHiddenItems = true
-            if webServer.start(withPort: 8888, bonjourName: nil) {
+            if webServer.start(withPort: 8888, bonjourName: "U Sparrow GCD Web Server") {
                 infoLabel.text = "GCDWebServer running locally on url:port \n" + webServer.serverURL.absoluteString + String(webServer.port)
             } else {
                 infoLabel.text = NSLocalizedString("GCDWebServer not running!", comment: "")

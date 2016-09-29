@@ -61,30 +61,74 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowCell" id="IbL-bv-yLs" customClass="SparrowCell" customModule="uSparrow" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowFoldCell" id="IbL-bv-yLs" customClass="SparrowFoldCell" customModule="uSparrow" customModuleProvider="target">
                                 <rect key="frame" x="88" y="50" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eH1-eD-h6D"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finder" translatesAutoresizingMaskIntoConstraints="NO" id="eH1-eD-h6D"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onh-Lj-FPR">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="eH1-eD-h6D" firstAttribute="top" secondItem="IbL-bv-yLs" secondAttribute="top" id="2hN-QV-he3"/>
                                     <constraint firstAttribute="bottom" secondItem="eH1-eD-h6D" secondAttribute="bottom" id="Xqc-bT-g0H"/>
                                     <constraint firstAttribute="leading" secondItem="eH1-eD-h6D" secondAttribute="leading" id="aYr-9p-zD8"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="onh-Lj-FPR" secondAttribute="bottom" id="eGM-lU-icl"/>
+                                    <constraint firstItem="onh-Lj-FPR" firstAttribute="centerX" secondItem="IbL-bv-yLs" secondAttribute="centerX" id="oRb-dd-nVZ"/>
                                     <constraint firstAttribute="trailing" secondItem="eH1-eD-h6D" secondAttribute="trailing" id="zEE-pq-cPj"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="sparrowPhoto" destination="eH1-eD-h6D" id="NLt-aA-C3P"/>
+                                    <outlet property="foldImageView" destination="eH1-eD-h6D" id="Ad1-p0-jps"/>
+                                    <outlet property="foldNameLabel" destination="onh-Lj-FPR" id="25C-TC-Yo0"/>
+                                    <segue destination="8WT-Kc-v7T" kind="show" identifier="ShowSparrowFold" id="3am-fW-Ekq"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowCell" id="6Qc-M1-Tgb" customClass="SparrowCell" customModule="uSparrow" customModuleProvider="target">
+                                <rect key="frame" x="88" y="260" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RUe-I7-Vb6"/>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="RUe-I7-Vb6" firstAttribute="top" secondItem="6Qc-M1-Tgb" secondAttribute="top" id="If4-lF-ULZ"/>
+                                    <constraint firstAttribute="leading" secondItem="RUe-I7-Vb6" secondAttribute="leading" id="WQw-3u-b5C"/>
+                                    <constraint firstAttribute="bottom" secondItem="RUe-I7-Vb6" secondAttribute="bottom" id="dBd-Zn-LPW"/>
+                                    <constraint firstAttribute="trailing" secondItem="RUe-I7-Vb6" secondAttribute="trailing" id="il5-tP-9xy"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="sparrowPhoto" destination="RUe-I7-Vb6" id="OS8-Mv-s1r"/>
+                                    <segue destination="tfF-kn-VRH" kind="show" identifier="ShowSparrow" id="sHo-9V-kxc"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eaF-6D-UMz">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowsHeaderView" id="09v-rD-74v" customClass="SparrowsHeaderView" customModule="uSparrow" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4I-k7-O2u">
+                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="K4I-k7-O2u" firstAttribute="centerX" secondItem="09v-rD-74v" secondAttribute="centerX" id="8jk-Ng-5HN"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="K4I-k7-O2u" secondAttribute="bottom" id="uuF-Xk-u2d"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="sparrowsHeaderLabel" destination="K4I-k7-O2u" id="RSW-Rr-Pmi"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="8WT-Kc-v7T" id="3qA-43-pZu"/>
@@ -105,14 +149,45 @@
                         </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1gn-JH-zif">
                             <connections>
-                                <segue destination="Bav-KJ-4UV" kind="presentation" identifier="ShowUpload" id="lGD-cv-G0S"/>
+                                <action selector="add:" destination="8WT-Kc-v7T" id="5ax-m0-uL1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Bav-KJ-4UV" kind="presentation" identifier="ShowUpload" id="Wcn-QG-Uh6"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5K-bc-2hU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1983.2" y="-51.724137931034484"/>
+            <point key="canvasLocation" x="2001" y="-52"/>
+        </scene>
+        <!--Sparrow View Controller-->
+        <scene sceneID="puO-92-c6d">
+            <objects>
+                <viewController id="tfF-kn-VRH" customClass="SparrowViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fP6-5f-Pgf"/>
+                        <viewControllerLayoutGuide type="bottom" id="bYS-Aq-Tvr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="whd-q4-vvK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="iTl-Ir-I6Z"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iTl-Ir-I6Z" firstAttribute="centerY" secondItem="whd-q4-vvK" secondAttribute="centerY" id="Hus-4q-1Y0"/>
+                            <constraint firstItem="iTl-Ir-I6Z" firstAttribute="centerX" secondItem="whd-q4-vvK" secondAttribute="centerX" id="tCs-Mh-70K"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sparrowImageView" destination="iTl-Ir-I6Z" id="O1H-sM-4ht"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qth-Ux-r7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2721" y="-53"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gRw-Nh-ePF">
@@ -151,4 +226,10 @@
             <point key="canvasLocation" x="1981.5999999999999" y="821.73913043478262"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="finder" width="64" height="64"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xvb-q6-Udf"/>
+    </inferredMetricsTieBreakers>
 </document>
