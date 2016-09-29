@@ -12,14 +12,28 @@ class SparrowCell: UICollectionViewCell {
     
     @IBOutlet weak var sparrowPhoto: UIImageView!
     
+    var sparrowImageModel: SparrowImageModel? {
+        didSet {
+            if let image = sparrowImageModel?.sparrowImage{
+                self.sparrowPhoto.image = image
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.borderWidth = 1.0
-        layer.borderColor = themeColor.cgColor
+        self.isSelected = false
+    }
+    
+    override var isSelected : Bool {
+        didSet {
+            self.layer.borderColor = isSelected ? Constants.Color.sparrowTintColor.cgColor : UIColor.clear.cgColor
+            self.layer.borderWidth = isSelected ? 2 : 0
+        }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+        sparrowPhoto.image = nil
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SparrowFold: NSObject {
+class SparrowFoldModel: NSObject {
     var name: String = ""
     var documentsUrl: URL?
     
@@ -18,3 +18,44 @@ class SparrowFold: NSObject {
         self.name = name
     }
 }
+
+class SparrowImageModel: NSObject {
+    var documentsUrl: URL? {
+        didSet {
+            if let url = documentsUrl {
+                if let imageData = NSData(contentsOf: url), let image = UIImage(data: imageData as Data) {
+                    sparrowImage = image
+                }
+            }
+        }
+    }
+    
+    var sparrowImage: UIImage?
+}
+
+class SparrowGifImageModel: NSObject {
+    var documentsUrl: URL? {
+        didSet {
+            if let url = documentsUrl {
+                if let image = UIImage.gifThumbnail(url) {
+                    sparrowGifImage = image
+                }
+//                sparrowGifImage = UIImage.gif(url: url)
+            }
+        }
+    }
+    
+    var sparrowGifImage: UIImage?
+}
+
+class SparrowVideoModel: NSObject {
+    var name: String = ""
+    var documentsUrl: URL?
+    var duration: String = ""
+
+    convenience init(name: String) {
+        self.init()
+        self.name = name
+    }
+}
+

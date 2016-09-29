@@ -29,4 +29,6 @@ pod 'JDStatusBarNotification'
 #pod "GCDWebServer/WebUploader", "~> 3.0"
 #pod "GCDWebServer/WebDAV", "~> 3.0"
 
+pod 'CameraManager', '~> 3.0'
+
 end

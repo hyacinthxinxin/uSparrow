@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		200F7A19DED95DC433F64174 /* Pods_uSparrow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C76F9797BC81B0462D728 /* Pods_uSparrow.framework */; };
+		BA473D571D9D63BE0076276D /* SparrowPhotoCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D561D9D63BE0076276D /* SparrowPhotoCropView.swift */; };
+		BA473D591D9D74EA0076276D /* SparrowVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D581D9D74EA0076276D /* SparrowVideoCell.swift */; };
+		BA473D5B1D9D7C480076276D /* CMTime+DurationString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D5A1D9D7C480076276D /* CMTime+DurationString.swift */; };
+		BA473D5D1D9D91AC0076276D /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D5C1D9D91AC0076276D /* UIImage+GIF.swift */; };
+		BA473D5F1D9D96CA0076276D /* SparrowGifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D5E1D9D96CA0076276D /* SparrowGifCell.swift */; };
+		BA473D641D9D9D920076276D /* SparrowGifDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D631D9D9D920076276D /* SparrowGifDetailViewController.swift */; };
 		BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */; };
 		BA71FE7A1D9BE6A400CD0E5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE781D9BE6A400CD0E5A /* Main.storyboard */; };
 		BA71FE7C1D9BE6A400CD0E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */; };
@@ -36,14 +42,22 @@
 		BA89E2EC1D9C49D600ECCF6A /* GCDWebUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2EA1D9C49D600ECCF6A /* GCDWebUploader.m */; };
 		BA89E2EE1D9CED1600ECCF6A /* SparrowFoldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2ED1D9CED1600ECCF6A /* SparrowFoldCell.swift */; };
 		BA89E2F11D9CEDE800ECCF6A /* SparrowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2F01D9CEDE800ECCF6A /* SparrowModel.swift */; };
-		BA89E2F41D9CF12D00ECCF6A /* SparrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2F31D9CF12D00ECCF6A /* SparrowViewController.swift */; };
 		BA89E2F61D9D068600ECCF6A /* SparrowsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2F51D9D068600ECCF6A /* SparrowsHeaderView.swift */; };
+		BA89E2FF1D9D58D400ECCF6A /* SparrowsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E2FE1D9D58D400ECCF6A /* SparrowsDetailViewController.swift */; };
+		BA89E3011D9D594A00ECCF6A /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E3001D9D594A00ECCF6A /* ThumbnailCell.swift */; };
+		BA89E3041D9D5CE800ECCF6A /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89E3031D9D5CE800ECCF6A /* UIColor+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3BE7006FF242F8F4CE0DECC9 /* Pods-uSparrow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSparrow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uSparrow/Pods-uSparrow.debug.xcconfig"; sourceTree = "<group>"; };
 		5A0E804F3E95B6031274F7F6 /* Pods-uSparrow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSparrow.release.xcconfig"; path = "Pods/Target Support Files/Pods-uSparrow/Pods-uSparrow.release.xcconfig"; sourceTree = "<group>"; };
 		844C76F9797BC81B0462D728 /* Pods_uSparrow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uSparrow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA473D561D9D63BE0076276D /* SparrowPhotoCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowPhotoCropView.swift; path = SparrowPhotos/SparrowPhotoCropView.swift; sourceTree = "<group>"; };
+		BA473D581D9D74EA0076276D /* SparrowVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowVideoCell.swift; path = Sparrows/SparrowVideoCell.swift; sourceTree = "<group>"; };
+		BA473D5A1D9D7C480076276D /* CMTime+DurationString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMTime+DurationString.swift"; path = "Extensions/CMTime+DurationString.swift"; sourceTree = "<group>"; };
+		BA473D5C1D9D91AC0076276D /* UIImage+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+GIF.swift"; path = "Extensions/UIImage+GIF.swift"; sourceTree = "<group>"; };
+		BA473D5E1D9D96CA0076276D /* SparrowGifCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifCell.swift; path = Sparrows/SparrowGifCell.swift; sourceTree = "<group>"; };
+		BA473D631D9D9D920076276D /* SparrowGifDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifDetailViewController.swift; path = SparrowGifDetail/SparrowGifDetailViewController.swift; sourceTree = "<group>"; };
 		BA71FE711D9BE6A400CD0E5A /* uSparrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSparrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA71FE791D9BE6A400CD0E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,8 +107,10 @@
 		BA89E2EA1D9C49D600ECCF6A /* GCDWebUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDWebUploader.m; path = GCDWebServer/GCDWebUploader/GCDWebUploader.m; sourceTree = "<group>"; };
 		BA89E2ED1D9CED1600ECCF6A /* SparrowFoldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowFoldCell.swift; path = Sparrows/SparrowFoldCell.swift; sourceTree = "<group>"; };
 		BA89E2F01D9CEDE800ECCF6A /* SparrowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowModel.swift; path = SparrowModels/SparrowModel.swift; sourceTree = "<group>"; };
-		BA89E2F31D9CF12D00ECCF6A /* SparrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowViewController.swift; path = Sparrow/SparrowViewController.swift; sourceTree = "<group>"; };
 		BA89E2F51D9D068600ECCF6A /* SparrowsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowsHeaderView.swift; path = Sparrows/SparrowsHeaderView.swift; sourceTree = "<group>"; };
+		BA89E2FE1D9D58D400ECCF6A /* SparrowsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowsDetailViewController.swift; path = SparrowsDetail/SparrowsDetailViewController.swift; sourceTree = "<group>"; };
+		BA89E3001D9D594A00ECCF6A /* ThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThumbnailCell.swift; path = SparrowsDetail/ThumbnailCell.swift; sourceTree = "<group>"; };
+		BA89E3031D9D5CE800ECCF6A /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "Extensions/UIColor+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +147,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA473D601D9D9A780076276D /* SparrowGifDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BA473D631D9D9D920076276D /* SparrowGifDetailViewController.swift */,
+			);
+			name = SparrowGifDetail;
+			sourceTree = "<group>";
+		};
 		BA71FE681D9BE6A400CD0E5A = {
 			isa = PBXGroup;
 			children = (
@@ -152,12 +176,14 @@
 		BA71FE731D9BE6A400CD0E5A /* uSparrow */ = {
 			isa = PBXGroup;
 			children = (
-				BA89E2F21D9CF11900ECCF6A /* Sparrow */,
+				BA89E3021D9D5CD100ECCF6A /* Extensions */,
 				BA71FE901D9BF49400CD0E5A /* GCDWebServer */,
 				BA71FECE1D9C07BD00CD0E5A /* Units */,
 				BA71FEDB1D9C0E8B00CD0E5A /* WebServer */,
-				BA71FED61D9C08C600CD0E5A /* Sparrows */,
 				BA89E2EF1D9CEDCA00ECCF6A /* SparrowModels */,
+				BA71FED61D9C08C600CD0E5A /* Sparrows */,
+				BA89E2F91D9D560600ECCF6A /* SparrowImageDetail */,
+				BA473D601D9D9A780076276D /* SparrowGifDetail */,
 				BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */,
 				BA71FE781D9BE6A400CD0E5A /* Main.storyboard */,
 				BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */,
@@ -261,7 +287,9 @@
 			children = (
 				BA71FED71D9C08D600CD0E5A /* SparrowsViewController.swift */,
 				BA71FED91D9C0CF900CD0E5A /* SparrowCell.swift */,
+				BA473D5E1D9D96CA0076276D /* SparrowGifCell.swift */,
 				BA89E2ED1D9CED1600ECCF6A /* SparrowFoldCell.swift */,
+				BA473D581D9D74EA0076276D /* SparrowVideoCell.swift */,
 				BA89E2F51D9D068600ECCF6A /* SparrowsHeaderView.swift */,
 			);
 			name = Sparrows;
@@ -283,12 +311,24 @@
 			name = SparrowModels;
 			sourceTree = "<group>";
 		};
-		BA89E2F21D9CF11900ECCF6A /* Sparrow */ = {
+		BA89E2F91D9D560600ECCF6A /* SparrowImageDetail */ = {
 			isa = PBXGroup;
 			children = (
-				BA89E2F31D9CF12D00ECCF6A /* SparrowViewController.swift */,
+				BA89E2FE1D9D58D400ECCF6A /* SparrowsDetailViewController.swift */,
+				BA89E3001D9D594A00ECCF6A /* ThumbnailCell.swift */,
+				BA473D561D9D63BE0076276D /* SparrowPhotoCropView.swift */,
 			);
-			name = Sparrow;
+			name = SparrowImageDetail;
+			sourceTree = "<group>";
+		};
+		BA89E3021D9D5CD100ECCF6A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA89E3031D9D5CE800ECCF6A /* UIColor+Hex.swift */,
+				BA473D5A1D9D7C480076276D /* CMTime+DurationString.swift */,
+				BA473D5C1D9D91AC0076276D /* UIImage+GIF.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,25 +460,33 @@
 				BA89E2F61D9D068600ECCF6A /* SparrowsHeaderView.swift in Sources */,
 				BA71FEA41D9BF4E000CD0E5A /* GCDWebServerFunctions.m in Sources */,
 				BA71FEDF1D9C0FC100CD0E5A /* UploadViewController.swift in Sources */,
+				BA89E3041D9D5CE800ECCF6A /* UIColor+Hex.swift in Sources */,
 				BA71FEAF1D9BF4E900CD0E5A /* GCDWebServerDataRequest.m in Sources */,
+				BA473D641D9D9D920076276D /* SparrowGifDetailViewController.swift in Sources */,
 				BA89E2EE1D9CED1600ECCF6A /* SparrowFoldCell.swift in Sources */,
 				BA89E2F11D9CEDE800ECCF6A /* SparrowModel.swift in Sources */,
 				BA71FEBE1D9BF4F000CD0E5A /* GCDWebServerStreamedResponse.m in Sources */,
 				BA71FEBD1D9BF4F000CD0E5A /* GCDWebServerFileResponse.m in Sources */,
 				BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */,
+				BA89E3011D9D594A00ECCF6A /* ThumbnailCell.swift in Sources */,
 				BA71FEB21D9BF4E900CD0E5A /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				BA71FED81D9C08D600CD0E5A /* SparrowsViewController.swift in Sources */,
 				BA71FEA31D9BF4E000CD0E5A /* GCDWebServerConnection.m in Sources */,
 				BA71FEB01D9BF4E900CD0E5A /* GCDWebServerFileRequest.m in Sources */,
+				BA89E2FF1D9D58D400ECCF6A /* SparrowsDetailViewController.swift in Sources */,
 				BA71FEDA1D9C0CF900CD0E5A /* SparrowCell.swift in Sources */,
 				BA71FEE81D9C40CD00CD0E5A /* GCDWebDAVServer.m in Sources */,
 				BA71FEA61D9BF4E000CD0E5A /* GCDWebServerResponse.m in Sources */,
+				BA473D5F1D9D96CA0076276D /* SparrowGifCell.swift in Sources */,
 				BA71FEA51D9BF4E000CD0E5A /* GCDWebServerRequest.m in Sources */,
+				BA473D591D9D74EA0076276D /* SparrowVideoCell.swift in Sources */,
 				BA71FEBC1D9BF4F000CD0E5A /* GCDWebServerErrorResponse.m in Sources */,
+				BA473D5D1D9D91AC0076276D /* UIImage+GIF.swift in Sources */,
 				BA71FEBB1D9BF4F000CD0E5A /* GCDWebServerDataResponse.m in Sources */,
-				BA89E2F41D9CF12D00ECCF6A /* SparrowViewController.swift in Sources */,
 				BA71FEA21D9BF4E000CD0E5A /* GCDWebServer.m in Sources */,
+				BA473D571D9D63BE0076276D /* SparrowPhotoCropView.swift in Sources */,
 				BA71FEB11D9BF4E900CD0E5A /* GCDWebServerMultiPartFormRequest.m in Sources */,
+				BA473D5B1D9D7C480076276D /* CMTime+DurationString.swift in Sources */,
 				BA71FED21D9C086200CD0E5A /* Constants.swift in Sources */,
 				BA89E2EC1D9C49D600ECCF6A /* GCDWebUploader.m in Sources */,
 			);

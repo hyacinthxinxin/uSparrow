@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
     struct DefaultsKey {
@@ -24,20 +25,28 @@ struct Constants {
         static let ShowUpload = "ShowUpload"
         static let ShowSparrowFold = "ShowSparrowFold"
         static let ShowSparrow = "ShowSparrow"
+        static let ShowPhotos = "ShowPhotos" //
+        static let ShowGif = "ShowGif"
     }
     
     struct ReuserIdentifier {
-        static let uSparrowCell = "SparrowCell"
         static let uSparrowFoldCell = "SparrowFoldCell"
-        static let uSparrowsHeaderView = "SparrowsHeaderView"
+        static let uSparrowCell = "SparrowCell"
+        static let uSparrowGifCell = "SparrowGifCell"
+        static let uSparrowVideoCell = "SparrowVideoCell"
         
+        static let uSparrowsHeaderView = "SparrowsHeaderView"
+        static let uSparrowsThumbnailCell = "ThumbnailCell"
     }
     
     struct Path {
         static let Documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         static let Library = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first!
         static let Tmp = NSTemporaryDirectory()
-        
-        
+    }
+    
+    struct Color {
+        static let sparrowTintColor = UIColor(red: 0.01, green: 0.41, blue: 0.22, alpha: 1.0)
+        static let sparrowBackgroundColor = UIColor.hex("#212121", alpha: 1.0)
     }
 }

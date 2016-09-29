@@ -1,23 +1,21 @@
 //
-//  SparrowFoldCell.swift
+//  SparrowGifCell.swift
 //  uSparrow
 //
-//  Created by 新 范 on 2016/9/29.
+//  Created by 新 范 on 2016/9/30.
 //  Copyright © 2016年 TingSpectrum. All rights reserved.
 //
 
 import UIKit
 
-class SparrowFoldCell: UICollectionViewCell {
+class SparrowGifCell: UICollectionViewCell {
     
-    @IBOutlet weak var foldImageView: UIImageView!
-    @IBOutlet weak var foldNameLabel: UILabel!
+    @IBOutlet weak var sparrowGifThumbnailImageView: UIImageView!
     
-    var sparrowFoldModel: SparrowFoldModel? {
+    var sparrowGifImageModel: SparrowGifImageModel? {
         didSet {
-            if let f = sparrowFoldModel {
-                foldNameLabel.text = f.name
-                foldImageView.image = UIImage(named: "finder")
+            if let image = sparrowGifImageModel?.sparrowGifImage {
+                self.sparrowGifThumbnailImageView.image = image
             }
         }
     }
@@ -36,6 +34,6 @@ class SparrowFoldCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        sparrowGifThumbnailImageView.image = nil
     }
-
 }

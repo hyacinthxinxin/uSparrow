@@ -1,5 +1,5 @@
 //
-//  SparrowFoldCell.swift
+//  ThumbnailCell.swift
 //  uSparrow
 //
 //  Created by 新 范 on 2016/9/29.
@@ -8,20 +8,16 @@
 
 import UIKit
 
-class SparrowFoldCell: UICollectionViewCell {
+class ThumbnailCell: UICollectionViewCell {
     
-    @IBOutlet weak var foldImageView: UIImageView!
-    @IBOutlet weak var foldNameLabel: UILabel!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     
-    var sparrowFoldModel: SparrowFoldModel? {
+    var thumbnail: UIImage? {
         didSet {
-            if let f = sparrowFoldModel {
-                foldNameLabel.text = f.name
-                foldImageView.image = UIImage(named: "finder")
-            }
+            self.thumbnailImageView.image = thumbnail
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.isSelected = false
@@ -33,9 +29,4 @@ class SparrowFoldCell: UICollectionViewCell {
             self.layer.borderWidth = isSelected ? 2 : 0
         }
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-
 }
