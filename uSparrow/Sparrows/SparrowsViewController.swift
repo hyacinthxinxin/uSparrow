@@ -46,14 +46,20 @@ class SparrowsViewController: UICollectionViewController, UINavigationController
         do {
             let directoryContents = try fileManager.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
             for url in directoryContents {
+                let sparrow = Sparrow(documentsUrl: url)
+                
                 var isDir : ObjCBool = false
                 if fileManager.fileExists(atPath: url.path, isDirectory:&isDir) {
                     if isDir.boolValue {
+                        sparrow.type = SparrowType.uFold
+                        
                         let f = SparrowFoldModel()
                         f.documentsUrl = url
                         f.name = url.lastPathComponent
                         sparrowFoldModels.append(f)
                     } else {
+                        sparrow.type = Sparrow.getSparrowType(with: url.pathExtension)
+
                         switch url.pathExtension {
                         case "jpg", "jpeg", "png", "PNG":
                             let i = SparrowImageModel()
@@ -67,6 +73,8 @@ class SparrowsViewController: UICollectionViewController, UINavigationController
                             let v = SparrowVideoModel()
                             v.documentsUrl = url
                             sparrowVideoModels.append(v)
+                        case "txt", "TXT":
+                            print(url)
                         default:
                             break
                         }
@@ -98,8 +106,6 @@ class SparrowsViewController: UICollectionViewController, UINavigationController
         let alert = UIAlertController(title: "Contact", message: "Add a new friend", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "from 相机", style: .default, handler: { (action: UIAlertAction!) in
             print("from 相机")
-            
-            
         }))
         alert.addAction(UIAlertAction(title: "from 相册", style: .default, handler: { (action: UIAlertAction!) in
             print("from 相册")
@@ -154,10 +160,10 @@ class SparrowsViewController: UICollectionViewController, UINavigationController
             }
         } else if segue.identifier == Constants.SegueIdentifier.ShowPhotos {
             if let detail = segue.destination as? SparrowsDetailViewController, let indexPath = sender as? IndexPath {
-                detail.startingIndex = indexPath.row
-                detail.sparrowThumbnails = self.sparrowImageModels.map{
+                detail.sparrowThumbnails = self.sparrowImageModels.map {
                     $0.sparrowImage!
                 }
+                detail.startingIndex = indexPath.row
             }
         }
     }
@@ -217,21 +223,21 @@ extension SparrowsViewController {
         return UICollectionViewCell()
     }
     
+    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.ReuserIdentifier.uSparrowsHeaderView, for: indexPath) as! SparrowsHeaderView
             switch indexPath.section {
             case 0:
-                headerView.sparrowsHeaderLabel.text = "图片(" + String(sparrowImageModels.count) + ")"
+                headerView.sparrowsHeaderLabel.text = "文件夹(" + String(sparrowFoldModels.count) + ")"
             case 1:
-                if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuserIdentifier.uSparrowCell, for: indexPath) as? SparrowCell {
-                    cell.sparrowImageModel = sparrowImageModels[indexPath.row]
-                    return cell
-                }
+                headerView.sparrowsHeaderLabel.text = "图片(" + String(sparrowImageModels.count) + ")"
+                headerView.backgroundColor = UIColor.blue
+                
             case 2:
                 headerView.sparrowsHeaderLabel.text = "GIF(" + String(sparrowGifImageModels.count) + ")"
-
+                headerView.backgroundColor = UIColor.red
             case 3:
                 headerView.sparrowsHeaderLabel.text = "视频(" + String(sparrowVideoModels.count) + ")"
             default:
@@ -264,6 +270,7 @@ extension SparrowsViewController {
             break
         }
     }
+    
     
     // MARK: UICollectionViewDelegate
     
@@ -320,6 +327,11 @@ extension SparrowsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        return CGSize.zero
     }
 }
 

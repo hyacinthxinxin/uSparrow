@@ -14,6 +14,8 @@
 		BA473D5D1D9D91AC0076276D /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D5C1D9D91AC0076276D /* UIImage+GIF.swift */; };
 		BA473D5F1D9D96CA0076276D /* SparrowGifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D5E1D9D96CA0076276D /* SparrowGifCell.swift */; };
 		BA473D641D9D9D920076276D /* SparrowGifDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D631D9D9D920076276D /* SparrowGifDetailViewController.swift */; };
+		BA473D661D9E4CF30076276D /* SparrowGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */; };
+		BA473D681D9E4DA20076276D /* SparrowGifPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D671D9E4DA20076276D /* SparrowGifPageViewController.swift */; };
 		BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */; };
 		BA71FE7A1D9BE6A400CD0E5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE781D9BE6A400CD0E5A /* Main.storyboard */; };
 		BA71FE7C1D9BE6A400CD0E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		BA473D5C1D9D91AC0076276D /* UIImage+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+GIF.swift"; path = "Extensions/UIImage+GIF.swift"; sourceTree = "<group>"; };
 		BA473D5E1D9D96CA0076276D /* SparrowGifCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifCell.swift; path = Sparrows/SparrowGifCell.swift; sourceTree = "<group>"; };
 		BA473D631D9D9D920076276D /* SparrowGifDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifDetailViewController.swift; path = SparrowGifDetail/SparrowGifDetailViewController.swift; sourceTree = "<group>"; };
+		BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifViewController.swift; path = SparrowGifDetail/SparrowGifViewController.swift; sourceTree = "<group>"; };
+		BA473D671D9E4DA20076276D /* SparrowGifPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifPageViewController.swift; path = SparrowGifDetail/SparrowGifPageViewController.swift; sourceTree = "<group>"; };
 		BA71FE711D9BE6A400CD0E5A /* uSparrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSparrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA71FE791D9BE6A400CD0E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				BA473D631D9D9D920076276D /* SparrowGifDetailViewController.swift */,
+				BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */,
+				BA473D671D9E4DA20076276D /* SparrowGifPageViewController.swift */,
 			);
 			name = SparrowGifDetail;
 			sourceTree = "<group>";
@@ -473,10 +479,12 @@
 				BA71FED81D9C08D600CD0E5A /* SparrowsViewController.swift in Sources */,
 				BA71FEA31D9BF4E000CD0E5A /* GCDWebServerConnection.m in Sources */,
 				BA71FEB01D9BF4E900CD0E5A /* GCDWebServerFileRequest.m in Sources */,
+				BA473D661D9E4CF30076276D /* SparrowGifViewController.swift in Sources */,
 				BA89E2FF1D9D58D400ECCF6A /* SparrowsDetailViewController.swift in Sources */,
 				BA71FEDA1D9C0CF900CD0E5A /* SparrowCell.swift in Sources */,
 				BA71FEE81D9C40CD00CD0E5A /* GCDWebDAVServer.m in Sources */,
 				BA71FEA61D9BF4E000CD0E5A /* GCDWebServerResponse.m in Sources */,
+				BA473D681D9E4DA20076276D /* SparrowGifPageViewController.swift in Sources */,
 				BA473D5F1D9D96CA0076276D /* SparrowGifCell.swift in Sources */,
 				BA71FEA51D9BF4E000CD0E5A /* GCDWebServerRequest.m in Sources */,
 				BA473D591D9D74EA0076276D /* SparrowVideoCell.swift in Sources */,

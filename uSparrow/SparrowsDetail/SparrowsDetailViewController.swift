@@ -9,7 +9,12 @@
 import UIKit
 
 class SparrowsDetailViewController: UIViewController {
-    var startingIndex = 0
+    var startingIndex = 0 {
+        didSet {
+            title = "("+String(startingIndex)+"/"+String(sparrowThumbnails.count)+")"
+        }
+    }
+    
     @IBOutlet weak var thumbnailCollectionView: UICollectionView!
     var sparrowThumbnails: [UIImage]!
     @IBOutlet weak var sparrowPhotoCropView: SparrowPhotoCropView!

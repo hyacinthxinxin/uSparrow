@@ -9,8 +9,16 @@
 import UIKit
 
 class SparrowCell: UICollectionViewCell {
+    var sparrow: Sparrow? {
+        didSet {
+            print(sparrow)
+        }
+    }
     
     @IBOutlet weak var sparrowPhoto: UIImageView!
+    @IBOutlet weak var infoContainerView: UIView!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var infoImageView: UIImageView!
     
     var sparrowImageModel: SparrowImageModel? {
         didSet {
