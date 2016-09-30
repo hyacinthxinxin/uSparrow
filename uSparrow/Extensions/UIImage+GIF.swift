@@ -27,6 +27,15 @@ extension UIImageView {
             }
         }
     }
+    
+    public func loadGif(url: URL) {
+        DispatchQueue.global().async {
+            let image = UIImage.gif(url: url)
+            DispatchQueue.main.async {
+                self.image = image
+            }
+        }
+    }
 }
 
 extension UIImage {

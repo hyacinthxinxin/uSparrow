@@ -7,23 +7,89 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SparrowCell: UICollectionViewCell {
-    var sparrow: Sparrow? {
-        didSet {
-            print(sparrow)
-        }
-    }
-    
     @IBOutlet weak var sparrowPhoto: UIImageView!
     @IBOutlet weak var infoContainerView: UIView!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var infoImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    var sparrowImageModel: SparrowImageModel? {
+    var sparrow: Sparrow? {
         didSet {
-            if let image = sparrowImageModel?.sparrowImage{
-                self.sparrowPhoto.image = image
+            if let sparrow = self.sparrow {
+                configCell(sparrow: sparrow)
+            }
+        }
+    }
+    
+    private func configCell(sparrow: Sparrow) {
+        if let url = sparrow.documentsUrl {
+            let type: SparrowType = sparrow.type
+            switch type {
+            case .uSystem:
+                self.sparrowPhoto.image = UIImage(named: "finder")
+                
+                infoContainerView.isHidden = false
+                titleLabel.text = "系统文件"
+                infoImageView.image = nil
+                infoLabel.text = nil
+            case .uFold:
+                self.sparrowPhoto.image = UIImage(named: "finder")
+                
+                infoContainerView.isHidden = false
+                titleLabel.text = url.lastPathComponent
+                infoImageView.image = nil
+                infoLabel.text = nil
+            case .uPhoto:
+                sparrowPhoto.image = sparrow.thumbnailPhoto
+
+                infoContainerView.isHidden = true
+                titleLabel.text = nil
+                infoImageView.image = nil
+                infoLabel.text = nil
+            case .uGif:
+                self.sparrowPhoto.image = UIImage.gifThumbnail(url)
+                
+                infoContainerView.isHidden = false
+                titleLabel.text = "GIF"
+                infoImageView.image = nil
+                infoLabel.text = nil
+            case .uVideo:
+                DispatchQueue.global().async {
+                    let asset = AVURLAsset(url: url)
+                    let imgGenerator = AVAssetImageGenerator(asset: asset)
+                    imgGenerator.appliesPreferredTrackTransform = true
+                    do {
+                        let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(0, 1), actualTime: nil)
+                        DispatchQueue.main.async {
+                            self.sparrowPhoto.image = UIImage(cgImage: cgImage)
+                            
+                            self.infoContainerView.isHidden = false
+                            self.titleLabel.text = nil
+                            self.infoImageView.image = UIImage(named: "videocam")
+                            self.infoLabel.text = asset.duration.durationString
+                        }
+                    } catch let error as NSError {
+                        print("Error generating thumbnail: \(error)")
+                    }
+                }
+            case .uText:
+                self.sparrowPhoto.image = UIImage(named: "finder")
+                
+                infoContainerView.isHidden = false
+                titleLabel.text = "TXT"
+                infoImageView.image = nil
+                infoLabel.text = nil
+                
+            case .uOthers:
+                self.sparrowPhoto.image = UIImage(named: "finder")
+                
+                infoContainerView.isHidden = false
+                titleLabel.text = "其他"
+                infoImageView.image = nil
+                infoLabel.text = nil
             }
         }
     }
@@ -42,6 +108,12 @@ class SparrowCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
         sparrowPhoto.image = nil
+        
+        infoContainerView.isHidden = true
+        titleLabel.text = nil
+        infoImageView.image = nil
+        infoLabel.text = nil
     }
 }

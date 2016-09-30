@@ -9,6 +9,23 @@
 import Foundation
 import UIKit
 
+enum SparrowType {
+    case uSystem
+    case uPhoto
+    case uFold
+    case uVideo
+    case uGif
+    case uText
+    case uOthers
+}
+
+enum CompassPoint {
+    case north
+    case south
+    case east
+    case west
+}
+
 struct Constants {
     struct DefaultsKey {
         static let doveSessionKey = "session"
@@ -48,5 +65,9 @@ struct Constants {
     struct Color {
         static let sparrowTintColor = UIColor(red: 0.01, green: 0.41, blue: 0.22, alpha: 1.0)
         static let sparrowBackgroundColor = UIColor.hex("#212121", alpha: 1.0)
+    }
+    
+    struct StoryboardId {
+        static let gifVC = "SparrowGifViewController"
     }
 }

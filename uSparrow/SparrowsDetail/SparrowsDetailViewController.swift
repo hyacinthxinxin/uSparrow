@@ -45,6 +45,7 @@ class SparrowsDetailViewController: UIViewController {
         super.viewDidAppear(animated)
 
     }
+    
     /*
      // MARK: - Navigation
      

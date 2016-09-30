@@ -9,28 +9,19 @@
 import UIKit
 
 class SparrowGifViewController: UIViewController {
-    var startingIndex = 0
-
+    var gifUrl: URL?
+    
+    @IBOutlet weak var gifImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if let url = gifUrl {
+            gifImageView.loadGif(url: url)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func dismiss(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
-    */
-
+    
 }

@@ -13,10 +13,7 @@ import AVKit
 
 class SparrowsViewController: UICollectionViewController, UINavigationControllerDelegate {
     var documentsUrl: URL?
-    var sparrowFoldModels: [SparrowFoldModel]!
-    var sparrowImageModels: [SparrowImageModel]!
-    var sparrowGifImageModels: [SparrowGifImageModel]!
-    var sparrowVideoModels: [SparrowVideoModel]!
+    var sparrows: [Sparrow]!
     
     deinit {
         print(#function)
@@ -37,53 +34,23 @@ class SparrowsViewController: UICollectionViewController, UINavigationController
     }
     
     fileprivate func loadCollectionViewData(with documentsUrl: URL) {
-        sparrowFoldModels = [SparrowFoldModel(name:"相册")]
-        sparrowImageModels = [SparrowImageModel]()
-        sparrowGifImageModels = [SparrowGifImageModel]()
-        sparrowVideoModels = [SparrowVideoModel]()
-        
+        sparrows = [Sparrow]()
         let fileManager = FileManager.default
         do {
             let directoryContents = try fileManager.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
-            for url in directoryContents {
-                let sparrow = Sparrow(documentsUrl: url)
-                
+            sparrows = directoryContents.map {
+                let sparrow = Sparrow(documentsUrl: $0)
                 var isDir : ObjCBool = false
-                if fileManager.fileExists(atPath: url.path, isDirectory:&isDir) {
+                if fileManager.fileExists(atPath: $0.path, isDirectory:&isDir) {
                     if isDir.boolValue {
                         sparrow.type = SparrowType.uFold
-                        
-                        let f = SparrowFoldModel()
-                        f.documentsUrl = url
-                        f.name = url.lastPathComponent
-                        sparrowFoldModels.append(f)
                     } else {
-                        sparrow.type = Sparrow.getSparrowType(with: url.pathExtension)
-
-                        switch url.pathExtension {
-                        case "jpg", "jpeg", "png", "PNG":
-                            let i = SparrowImageModel()
-                            i.documentsUrl = url
-                            sparrowImageModels.append(i)
-                        case "gif", "GIF":
-                            let g = SparrowGifImageModel()
-                            g.documentsUrl = url
-                            sparrowGifImageModels.append(g)
-                        case "mp4":
-                            let v = SparrowVideoModel()
-                            v.documentsUrl = url
-                            sparrowVideoModels.append(v)
-                        case "txt", "TXT":
-                            print(url)
-                        default:
-                            break
-                        }
+                        sparrow.type = Sparrow.getSparrowType(with: $0.pathExtension)
                     }
-                } else {
-                    print("file does not exist")
+                    sparrow.setTumbnailPhoto()
                 }
+                return sparrow
             }
-            
             /*
              let jpgFiles = directoryContents.filter{ $0.pathExtension == "jpg" }
              print("jpg urls:",jpgFiles)
@@ -137,7 +104,19 @@ class SparrowsViewController: UICollectionViewController, UINavigationController
             print("not available")
         }
     }
+    
     // MARK: - Navigation
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == Constants.SegueIdentifier.ShowSparrowFold {
+            if let indexPath = collectionView?.indexPathsForSelectedItems?[0] {
+                if indexPath.section > 1 {
+                    return false
+                }
+            }
+        }
+        return true
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.SegueIdentifier.ShowUpload {
@@ -147,23 +126,20 @@ class SparrowsViewController: UICollectionViewController, UINavigationController
                 }
             }
         } else if segue.identifier == Constants.SegueIdentifier.ShowSparrowFold {
-            if let sparrows = segue.destination as? SparrowsViewController {
+            if let sparrowsVC = segue.destination as? SparrowsViewController {
                 if let indexPath = collectionView?.indexPathsForSelectedItems?[0]{
-                    sparrows.documentsUrl = sparrowFoldModels[indexPath.row].documentsUrl
-                }
-            }
-        }  else if segue.identifier == Constants.SegueIdentifier.ShowGif {
-            if let gifDetail = segue.destination as? SparrowGifDetailViewController {
-                if let indexPath = collectionView?.indexPathsForSelectedItems?[0], let url = sparrowGifImageModels[indexPath.row].documentsUrl {
-                    gifDetail.gifImage = UIImage.gif(url: url)
+                    sparrowsVC.documentsUrl = sparrows.filter{ $0.type == SparrowType.uFold }[indexPath.row].documentsUrl
                 }
             }
         } else if segue.identifier == Constants.SegueIdentifier.ShowPhotos {
             if let detail = segue.destination as? SparrowsDetailViewController, let indexPath = sender as? IndexPath {
-                detail.sparrowThumbnails = self.sparrowImageModels.map {
-                    $0.sparrowImage!
-                }
+                detail.sparrowThumbnails = sparrows.filter{ $0.type == SparrowType.uPhoto }.map{ $0.thumbnailPhoto! }
                 detail.startingIndex = indexPath.row
+            }
+        } else if segue.identifier == Constants.SegueIdentifier.ShowGif {
+            if let gifPageVC = segue.destination as? SparrowGifPageViewController, let indexPath = sender as? IndexPath {
+                gifPageVC.startingIndex = indexPath.row
+                gifPageVC.gifUrls = sparrows.filter{ $0.type == SparrowType.uGif }.map{ $0.documentsUrl! }
             }
         }
     }
@@ -177,52 +153,54 @@ extension SparrowsViewController {
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 7
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return sparrowFoldModels.count
+            return sparrows.filter{ $0.type == SparrowType.uSystem }.count
         case 1:
-            return sparrowImageModels.count
+            return sparrows.filter{ $0.type == SparrowType.uFold }.count
         case 2:
-            return sparrowGifImageModels.count
+            return sparrows.filter{ $0.type == SparrowType.uPhoto }.count
         case 3:
-            return sparrowVideoModels.count
+            return sparrows.filter{ $0.type == SparrowType.uGif }.count
+        case 4:
+            return sparrows.filter{ $0.type == SparrowType.uVideo }.count
+        case 5:
+            return sparrows.filter{ $0.type == SparrowType.uText }.count
+        case 6:
+            return sparrows.filter{ $0.type == SparrowType.uOthers }.count
         default:
             return 0
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 0:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuserIdentifier.uSparrowFoldCell, for: indexPath) as? SparrowFoldCell {
-                cell.sparrowFoldModel = sparrowFoldModels[indexPath.row]
-                return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuserIdentifier.uSparrowCell, for: indexPath) as? SparrowCell {
+            switch indexPath.section {
+            case 0:
+                cell.sparrow = sparrows.filter{ $0.type == SparrowType.uSystem }[indexPath.row]
+            case 1:
+                cell.sparrow = sparrows.filter{ $0.type == SparrowType.uFold }[indexPath.row]
+            case 2:
+                cell.sparrow = sparrows.filter{ $0.type == SparrowType.uPhoto }[indexPath.row]
+            case 3:
+                cell.sparrow = sparrows.filter{ $0.type == SparrowType.uGif }[indexPath.row]
+            case 4:
+                cell.sparrow = sparrows.filter{ $0.type == SparrowType.uVideo }[indexPath.row]
+            case 5:
+                cell.sparrow = sparrows.filter{ $0.type == SparrowType.uText }[indexPath.row]
+            case 6:
+                cell.sparrow = sparrows.filter{ $0.type == SparrowType.uOthers }[indexPath.row]
+            default:
+                break;
             }
-        case 1:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuserIdentifier.uSparrowCell, for: indexPath) as? SparrowCell {
-                cell.sparrowImageModel = sparrowImageModels[indexPath.row]
-                return cell
-            }
-        case 2:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuserIdentifier.uSparrowGifCell, for: indexPath) as? SparrowGifCell {
-                cell.sparrowGifImageModel = sparrowGifImageModels[indexPath.row]
-                return cell
-            }
-        case 3:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuserIdentifier.uSparrowVideoCell, for: indexPath) as? SparrowVideoCell {
-                cell.sparrowVideoModel = sparrowVideoModels[indexPath.row]
-                return cell
-            }
-        default:
-            break;
+            return cell
         }
         return UICollectionViewCell()
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
@@ -230,16 +208,23 @@ extension SparrowsViewController {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.ReuserIdentifier.uSparrowsHeaderView, for: indexPath) as! SparrowsHeaderView
             switch indexPath.section {
             case 0:
-                headerView.sparrowsHeaderLabel.text = "文件夹(" + String(sparrowFoldModels.count) + ")"
+                headerView.sparrowsHeaderLabel.text = "默认文件夹(" + String(sparrows.filter{ $0.type == SparrowType.uSystem }.count) + ")"
             case 1:
-                headerView.sparrowsHeaderLabel.text = "图片(" + String(sparrowImageModels.count) + ")"
+                headerView.sparrowsHeaderLabel.text = "自定义文件夹(" + String(sparrows.filter{ $0.type == SparrowType.uFold }.count) + ")"
                 headerView.backgroundColor = UIColor.blue
-                
             case 2:
-                headerView.sparrowsHeaderLabel.text = "GIF(" + String(sparrowGifImageModels.count) + ")"
+                headerView.sparrowsHeaderLabel.text = "图片(" + String(sparrows.filter{ $0.type == SparrowType.uPhoto }.count) + ")"
                 headerView.backgroundColor = UIColor.red
             case 3:
-                headerView.sparrowsHeaderLabel.text = "视频(" + String(sparrowVideoModels.count) + ")"
+                headerView.sparrowsHeaderLabel.text = "GIF(" + String(sparrows.filter{ $0.type == SparrowType.uGif }.count) + ")"
+            case 4:
+                headerView.sparrowsHeaderLabel.text = "视频(" + String(sparrows.filter{ $0.type == SparrowType.uVideo }.count) + ")"
+            case 5:
+                headerView.sparrowsHeaderLabel.text = "文本(" + String(sparrows.filter{ $0.type == SparrowType.uText }.count) + ")"
+                headerView.backgroundColor = UIColor.blue
+            case 6:
+                headerView.sparrowsHeaderLabel.text = "其他(" + String(sparrows.filter{ $0.type == SparrowType.uOthers }.count) + ")"
+                headerView.backgroundColor = UIColor.red
             default:
                 break
             }
@@ -252,13 +237,16 @@ extension SparrowsViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            print("choose the fold")
+            print("choose the system fold")
         case 1:
-            performSegue(withIdentifier: Constants.SegueIdentifier.ShowPhotos, sender: indexPath)
+            print("choose the custom fold")
         case 2:
-            performSegue(withIdentifier: Constants.SegueIdentifier.ShowGif, sender: indexPath)
+            performSegue(withIdentifier: Constants.SegueIdentifier.ShowPhotos, sender: indexPath)
         case 3:
-            if let url = sparrowVideoModels[indexPath.row].documentsUrl {
+            performSegue(withIdentifier: Constants.SegueIdentifier.ShowGif, sender: indexPath)
+        case 4:
+            let videos = sparrows.filter{ $0.type == SparrowType.uVideo }
+            if let url = videos[indexPath.row].documentsUrl {
                 let player = AVPlayer(url: url)
                 let playerController = AVPlayerViewController()
                 playerController.player = player
@@ -266,6 +254,10 @@ extension SparrowsViewController {
                     player.play()
                 }
             }
+        case 5:
+            print("choose text")
+        case 6:
+            print("choose others")
         default:
             break
         }
@@ -329,10 +321,12 @@ extension SparrowsViewController: UICollectionViewDelegateFlowLayout {
         return sectionInsets.left
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
-        return CGSize.zero
-    }
+    /*
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+     
+     return CGSize.zero
+     }
+     */
 }
 
 // MARK: UploadViewControllerDelegate

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qjo-DN-SVd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,37 +63,8 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowFoldCell" id="IbL-bv-yLs" customClass="SparrowFoldCell" customModule="uSparrow" customModuleProvider="target">
-                                <rect key="frame" x="88" y="50" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finder" translatesAutoresizingMaskIntoConstraints="NO" id="eH1-eD-h6D"/>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onh-Lj-FPR">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="eH1-eD-h6D" firstAttribute="top" secondItem="IbL-bv-yLs" secondAttribute="top" id="2hN-QV-he3"/>
-                                    <constraint firstAttribute="bottom" secondItem="eH1-eD-h6D" secondAttribute="bottom" id="Xqc-bT-g0H"/>
-                                    <constraint firstAttribute="leading" secondItem="eH1-eD-h6D" secondAttribute="leading" id="aYr-9p-zD8"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="onh-Lj-FPR" secondAttribute="bottom" id="eGM-lU-icl"/>
-                                    <constraint firstItem="onh-Lj-FPR" firstAttribute="centerX" secondItem="IbL-bv-yLs" secondAttribute="centerX" id="oRb-dd-nVZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="eH1-eD-h6D" secondAttribute="trailing" id="zEE-pq-cPj"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="foldImageView" destination="eH1-eD-h6D" id="Ad1-p0-jps"/>
-                                    <outlet property="foldNameLabel" destination="onh-Lj-FPR" id="25C-TC-Yo0"/>
-                                    <segue destination="8WT-Kc-v7T" kind="show" identifier="ShowSparrowFold" id="3am-fW-Ekq"/>
-                                </connections>
-                            </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowCell" id="6Qc-M1-Tgb" customClass="SparrowCell" customModule="uSparrow" customModuleProvider="target">
-                                <rect key="frame" x="88" y="260" width="200" height="200"/>
+                                <rect key="frame" x="88" y="50" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -106,14 +78,26 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videocam" translatesAutoresizingMaskIntoConstraints="NO" id="ndS-Qx-c0S"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videocam" translatesAutoresizingMaskIntoConstraints="NO" id="ndS-Qx-c0S">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="4Ud-bL-UFV"/>
+                                                        <constraint firstAttribute="height" constant="24" id="miw-ku-bZF"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaY-qx-iKk">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.23504387842465754" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstItem="aaY-qx-iKk" firstAttribute="centerY" secondItem="jsg-7G-hcY" secondAttribute="centerY" id="BRU-XT-DgG"/>
                                                 <constraint firstItem="ndS-Qx-c0S" firstAttribute="centerY" secondItem="jsg-7G-hcY" secondAttribute="centerY" id="KXd-Us-T9h"/>
-                                                <constraint firstItem="ndS-Qx-c0S" firstAttribute="leading" secondItem="jsg-7G-hcY" secondAttribute="leading" id="QJh-Kq-PCd"/>
+                                                <constraint firstItem="ndS-Qx-c0S" firstAttribute="leading" secondItem="jsg-7G-hcY" secondAttribute="leading" constant="4" id="QJh-Kq-PCd"/>
+                                                <constraint firstItem="aaY-qx-iKk" firstAttribute="centerX" secondItem="jsg-7G-hcY" secondAttribute="centerX" id="TyC-NC-GGl"/>
                                                 <constraint firstItem="Bnj-0M-bwp" firstAttribute="centerY" secondItem="jsg-7G-hcY" secondAttribute="centerY" id="VIs-ly-g2N"/>
-                                                <constraint firstAttribute="trailing" secondItem="Bnj-0M-bwp" secondAttribute="trailing" id="zLp-a5-UXg"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bnj-0M-bwp" secondAttribute="trailing" constant="4" id="zLp-a5-UXg"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -133,64 +117,8 @@
                                     <outlet property="infoImageView" destination="ndS-Qx-c0S" id="fa7-iS-JJg"/>
                                     <outlet property="infoLabel" destination="Bnj-0M-bwp" id="iwl-xt-34E"/>
                                     <outlet property="sparrowPhoto" destination="RUe-I7-Vb6" id="OS8-Mv-s1r"/>
-                                </connections>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowVideoCell" id="O5t-mX-L7L" customClass="SparrowVideoCell" customModule="uSparrow" customModuleProvider="target">
-                                <rect key="frame" x="88" y="470" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13l-xN-mAl"/>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="36" image="videocam" translatesAutoresizingMaskIntoConstraints="NO" id="RqA-CD-nSd"/>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k5-Gu-Qkd">
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="RqA-CD-nSd" firstAttribute="centerY" secondItem="O5t-mX-L7L" secondAttribute="centerY" id="0W7-Lu-X3w"/>
-                                    <constraint firstItem="RqA-CD-nSd" firstAttribute="centerX" secondItem="O5t-mX-L7L" secondAttribute="centerX" id="Jd3-hi-cbU"/>
-                                    <constraint firstAttribute="leading" secondItem="13l-xN-mAl" secondAttribute="leading" id="YRc-xV-SWx"/>
-                                    <constraint firstItem="13l-xN-mAl" firstAttribute="top" secondItem="O5t-mX-L7L" secondAttribute="top" id="eKK-wQ-5rz"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="6k5-Gu-Qkd" secondAttribute="bottom" id="hJQ-hi-FbZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="13l-xN-mAl" secondAttribute="bottom" id="iZv-hj-MUU"/>
-                                    <constraint firstAttribute="trailing" secondItem="13l-xN-mAl" secondAttribute="trailing" id="ild-5k-TJh"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="6k5-Gu-Qkd" secondAttribute="trailing" id="par-Z2-IrY"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="sparrowVideoImageView" destination="13l-xN-mAl" id="JmR-rP-tCb"/>
-                                    <outlet property="timeLabel" destination="6k5-Gu-Qkd" id="4dA-N5-xpB"/>
-                                </connections>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowGifCell" id="gcw-5l-reo" customClass="SparrowGifCell" customModule="uSparrow" customModuleProvider="target">
-                                <rect key="frame" x="88" y="680" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UZU-Vk-JuM"/>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIF" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnN-s8-Cfp">
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="GnN-s8-Cfp" secondAttribute="trailing" id="135-uw-ryO"/>
-                                    <constraint firstAttribute="trailing" secondItem="UZU-Vk-JuM" secondAttribute="trailing" id="A5j-fw-yID"/>
-                                    <constraint firstAttribute="bottom" secondItem="UZU-Vk-JuM" secondAttribute="bottom" id="ZJ4-OM-yaS"/>
-                                    <constraint firstItem="UZU-Vk-JuM" firstAttribute="top" secondItem="gcw-5l-reo" secondAttribute="top" id="fkc-TL-UWa"/>
-                                    <constraint firstAttribute="leading" secondItem="UZU-Vk-JuM" secondAttribute="leading" id="j3g-wg-fYZ"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="GnN-s8-Cfp" secondAttribute="bottom" id="lhZ-46-kXH"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="sparrowGifThumbnailImageView" destination="UZU-Vk-JuM" id="PN9-BC-ydg"/>
+                                    <outlet property="titleLabel" destination="aaY-qx-iKk" id="0pU-Qv-hva"/>
+                                    <segue destination="8WT-Kc-v7T" kind="show" identifier="ShowSparrowFold" id="8Eq-Tx-OPi"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -238,12 +166,20 @@
                     <connections>
                         <segue destination="Bav-KJ-4UV" kind="presentation" identifier="ShowUpload" id="Wcn-QG-Uh6"/>
                         <segue destination="N32-nX-Nu1" kind="show" identifier="ShowPhotos" id="UDQ-dT-zxL"/>
-                        <segue destination="zzd-mZ-jSK" kind="show" identifier="ShowGif" id="dbD-On-76C"/>
+                        <segue destination="tSc-Di-yuG" kind="presentation" identifier="ShowGif" id="DXk-jf-pbh"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5K-bc-2hU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="-52"/>
+        </scene>
+        <!--Sparrow Gif Page View Controller-->
+        <scene sceneID="VAD-va-tiY">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tSc-Di-yuG" customClass="SparrowGifPageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5yJ-Cb-kHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2953" y="-1101"/>
         </scene>
         <!--Sparrows Detail View Controller-->
         <scene sceneID="v1I-kn-jiP">
@@ -328,10 +264,10 @@
             </objects>
             <point key="canvasLocation" x="2959" y="-370"/>
         </scene>
-        <!--Sparrow Gif Detail View Controller-->
+        <!--Sparrow Gif View Controller-->
         <scene sceneID="cr3-7W-cwj">
             <objects>
-                <viewController id="zzd-mZ-jSK" customClass="SparrowGifDetailViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SparrowGifViewController" id="zzd-mZ-jSK" customClass="SparrowGifViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XhR-9b-lJf"/>
                         <viewControllerLayoutGuide type="bottom" id="aRY-QS-4mT"/>
@@ -340,22 +276,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="lGc-IG-LOH"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGc-IG-LOH">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lGc-IG-LOH" secondAttribute="height" id="mKF-hq-zbc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG2-0h-4ZV">
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="zzd-mZ-jSK" eventType="touchUpInside" id="H0A-lm-AZp"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="1" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lGc-IG-LOH" firstAttribute="centerY" secondItem="czW-4P-G2z" secondAttribute="centerY" id="2ji-1N-Tdj"/>
+                            <constraint firstItem="EG2-0h-4ZV" firstAttribute="top" secondItem="XhR-9b-lJf" secondAttribute="bottom" constant="-9" id="bLZ-Gi-g1S"/>
+                            <constraint firstItem="EG2-0h-4ZV" firstAttribute="leading" secondItem="czW-4P-G2z" secondAttribute="leadingMargin" constant="-1" id="fJQ-wp-o44"/>
                             <constraint firstAttribute="trailing" secondItem="lGc-IG-LOH" secondAttribute="trailing" id="hyD-eu-fun"/>
                             <constraint firstItem="lGc-IG-LOH" firstAttribute="leading" secondItem="czW-4P-G2z" secondAttribute="leading" id="sg8-LR-oZ0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="sparrowGifImageView" destination="lGc-IG-LOH" id="LLs-oz-DDF"/>
+                        <outlet property="gifImageView" destination="lGc-IG-LOH" id="ec4-la-Eyc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8K-89-dZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3754" y="-371"/>
+            <point key="canvasLocation" x="3665" y="-1101"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gRw-Nh-ePF">
@@ -395,7 +343,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="finder" width="64" height="64"/>
+        <image name="close" width="48" height="48"/>
         <image name="videocam" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
