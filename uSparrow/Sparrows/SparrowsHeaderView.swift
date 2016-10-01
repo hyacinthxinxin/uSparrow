@@ -11,4 +11,9 @@ import UIKit
 class SparrowsHeaderView: UICollectionReusableView {
         
     @IBOutlet weak var sparrowsHeaderLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        sparrowsHeaderLabel.text = nil
+    }
 }

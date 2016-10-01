@@ -23,12 +23,15 @@ pod 'SwiftyJSON',
 :git => 'https://github.com/BaiduHiDeviOS/SwiftyJSON.git',
 :branch => 'swift3'
 
+pod 'ImagePicker',
+:git => 'https://github.com/hyperoslo/ImagePicker.git',
+:branch => 'swift-3'
+
 pod 'PureLayout'
 pod 'JDStatusBarNotification'
 #pod "GCDWebServer", "~> 3.0"
 #pod "GCDWebServer/WebUploader", "~> 3.0"
 #pod "GCDWebServer/WebDAV", "~> 3.0"
 
-pod 'CameraManager', '~> 3.0'
 
 end

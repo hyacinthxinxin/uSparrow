@@ -40,8 +40,8 @@ class Sparrow: NSObject {
             return SparrowType.uGif
         case "mp4":
             return SparrowType.uVideo
-        case "txt", "TXT":
-            return SparrowType.uText
+        case "txt", "TXT", "pdf", "PDF":
+            return SparrowType.uDoc
         default:
             return SparrowType.uOthers
         }

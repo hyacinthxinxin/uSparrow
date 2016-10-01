@@ -1,13 +1,13 @@
 PODS:
   - Alamofire (4.0.1)
-  - CameraManager (3.0.0)
+  - ImagePicker (1.4.1)
   - JDStatusBarNotification (1.5.4)
   - PureLayout (3.0.2)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `master`)
-  - CameraManager (~> 3.0)
+  - ImagePicker (from `https://github.com/hyperoslo/ImagePicker.git`, branch `swift-3`)
   - JDStatusBarNotification
   - PureLayout
   - SwiftyJSON (from `https://github.com/BaiduHiDeviOS/SwiftyJSON.git`, branch `swift3`)
@@ -16,6 +16,9 @@ EXTERNAL SOURCES:
   Alamofire:
     :branch: master
     :git: https://github.com/Alamofire/Alamofire.git
+  ImagePicker:
+    :branch: swift-3
+    :git: https://github.com/hyperoslo/ImagePicker.git
   SwiftyJSON:
     :branch: swift3
     :git: https://github.com/BaiduHiDeviOS/SwiftyJSON.git
@@ -24,17 +27,20 @@ CHECKOUT OPTIONS:
   Alamofire:
     :commit: 81913262043b41bbb446b889849acbc9dcb297b8
     :git: https://github.com/Alamofire/Alamofire.git
+  ImagePicker:
+    :commit: a7d1fc73046ab3e99f1f4846faad718d57c8fcfc
+    :git: https://github.com/hyperoslo/ImagePicker.git
   SwiftyJSON:
     :commit: de5dc3b1b421805769590d331178551bbb0e5733
     :git: https://github.com/BaiduHiDeviOS/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  CameraManager: 8b92bc0ab51b598d9a4c01998bc9f1efb9b681bf
+  ImagePicker: c2b43f5201f34efb3459ac6af39992fdd802c2d4
   JDStatusBarNotification: d47dded0594a50a39c84a2cc5aa356fcf6750d0e
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SwiftyJSON: 6118fb49d7519c4d31a0c1f3d5af936e9047b556
 
-PODFILE CHECKSUM: 78d8fabce291161ed6d8ab8e31cb4075b04ae01b
+PODFILE CHECKSUM: 1d311b91735f2b990811c82b66a70d7b0aae9c06
 
 COCOAPODS: 1.0.1

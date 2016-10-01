@@ -75,11 +75,11 @@ class SparrowCell: UICollectionViewCell {
                         print("Error generating thumbnail: \(error)")
                     }
                 }
-            case .uText:
+            case .uDoc:
                 self.sparrowPhoto.image = UIImage(named: "finder")
                 
                 infoContainerView.isHidden = false
-                titleLabel.text = "TXT"
+                titleLabel.text = url.lastPathComponent
                 infoImageView.image = nil
                 infoLabel.text = nil
                 
@@ -87,7 +87,7 @@ class SparrowCell: UICollectionViewCell {
                 self.sparrowPhoto.image = UIImage(named: "finder")
                 
                 infoContainerView.isHidden = false
-                titleLabel.text = "其他"
+                titleLabel.text = url.lastPathComponent
                 infoImageView.image = nil
                 infoLabel.text = nil
             }

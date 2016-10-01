@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window?.tintColor = Constants.Color.sparrowTintColor
+        customizeAppearance()
         return true
     }
 
@@ -40,7 +40,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    // MARK: - Custom Appearance
+    
+    func customizeAppearance() {
+        /*
+         let barAppearance = UIBarButtonItem.appearance()
+         barAppearance.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics: .Default)
+         
+         UINavigationBar.appearance().backgroundColor = UIColor.greenColor()
+         UIBarButtonItem.appearance().tintColor = UIColor.magentaColor()
+         //Since iOS 7.0 UITextAttributeTextColor was replaced by NSForegroundColorAttributeName
+         UINavigationBar.appearance().titleTextAttributes = [UITextAttributeTextColor: UIColor.blueColor()]
+         UITabBar.appearance().backgroundColor = UIColor.yellowColor();
 
+         */
+        window?.tintColor = Constants.Color.sparrowTintColor
+        UINavigationBar.appearance().tintColor = Constants.Color.sparrowTintColor
+        UINavigationBar.appearance().barTintColor = Constants.Color.sparrowBackgroundColor
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    }
 
 }
 

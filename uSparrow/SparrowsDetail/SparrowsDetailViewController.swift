@@ -9,53 +9,50 @@
 import UIKit
 
 class SparrowsDetailViewController: UIViewController {
-    var startingIndex = 0 {
+    @IBOutlet weak var thumbnailCollectionView: UICollectionView!
+    @IBOutlet weak var sparrowPhotoCropView: SparrowPhotoCropView!
+    
+    var largePhotoIndexPath: IndexPath? {
         didSet {
-            title = "("+String(startingIndex)+"/"+String(sparrowThumbnails.count)+")"
+            if let largePhotoIndexPath = self.largePhotoIndexPath {
+                startingIndex = largePhotoIndexPath.row
+            }
+            guard isViewLoaded else {
+                return
+            }
+            if let largePhotoIndexPath = self.largePhotoIndexPath {
+                updateThumbnailCollectionView(indexPath: largePhotoIndexPath, animated: true)
+            }
         }
     }
     
-    @IBOutlet weak var thumbnailCollectionView: UICollectionView!
+    let widthPerItem: CGFloat = 30
+    let widthSelectedItem: CGFloat = 86
     var sparrowThumbnails: [UIImage]!
-    @IBOutlet weak var sparrowPhotoCropView: SparrowPhotoCropView!
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-//        sparrowPhotoCropView.layer.shadowColor   = UIColor.black.cgColor
-//        sparrowPhotoCropView.layer.shadowRadius  = 30.0
-//        sparrowPhotoCropView.layer.shadowOpacity = 0.9
-//        sparrowPhotoCropView.layer.shadowOffset  = CGSize.zero
+    fileprivate var startingIndex = 0 {
+        didSet {
+            let titleString = String(startingIndex + 1)
+            title = "("+titleString+"/"+String(sparrowThumbnails.count)+")"
+            if isViewLoaded {
+                sparrowPhotoCropView.image = sparrowThumbnails[startingIndex]
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        thumbnailCollectionView.performBatchUpdates(nil) { [weak weakSelf = self] _ in
-            let startingIndexPath = IndexPath(row: (weakSelf?.startingIndex)!, section: 0)
-            weakSelf?.sparrowPhotoCropView.image = weakSelf?.sparrowThumbnails[(weakSelf?.startingIndex)!]
-            weakSelf?.thumbnailCollectionView.selectItem(at: startingIndexPath, animated: false, scrollPosition: .centeredHorizontally)
+        thumbnailCollectionView.backgroundColor = Constants.Color.sparrowBackgroundColor
+        if let largePhotoIndexPath = self.largePhotoIndexPath {
+            sparrowPhotoCropView.image = sparrowThumbnails[largePhotoIndexPath.row]
+            updateThumbnailCollectionView(indexPath: largePhotoIndexPath, animated: false)
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
+    fileprivate func updateThumbnailCollectionView(indexPath: IndexPath, animated: Bool) {
+        thumbnailCollectionView.performBatchUpdates(nil) { completed in
+            self.thumbnailCollectionView.selectItem(at: indexPath, animated: animated, scrollPosition: .centeredHorizontally)
+        }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 // MARK: UICollectionViewDataSource
@@ -76,27 +73,46 @@ extension SparrowsDetailViewController: UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.ReuserIdentifier.uSparrowImageDetailHeaderView, for: indexPath) as! SparrowImageDetailReusableView
+            return headerView
+        case UICollectionElementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.ReuserIdentifier.uSparrowImageDetailFooterView, for: indexPath) as! SparrowImageDetailReusableView
+            return footerView
+        default:
+            assert(false, "Unexpected element kind")
+        }
+    }
 }
 
 // MARK: UICollectionViewDelegate
 
 extension SparrowsDetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        sparrowPhotoCropView.image = sparrowThumbnails[indexPath.row]
+        largePhotoIndexPath = indexPath
     }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 
-fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+fileprivate let leftInset: CGFloat = 2.0
+fileprivate let sectionInsets = UIEdgeInsets(top: 5.0, left: leftInset, bottom: 5.0, right: leftInset)
 fileprivate let itemsPerRow: CGFloat = 1
 
 extension SparrowsDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = collectionView.frame.height - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        let availableHeight = collectionView.frame.height - paddingSpace
+        let heightPerItem = availableHeight / itemsPerRow
+        if indexPath == largePhotoIndexPath {
+            return CGSize(width: widthSelectedItem, height: heightPerItem)
+        }
+        return CGSize(width: widthPerItem, height: heightPerItem)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -110,4 +126,48 @@ extension SparrowsDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width/2, height: collectionView.frame.height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width/2, height: collectionView.frame.height)
+    }
+    
+}
+
+extension SparrowsDetailViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if let largePhotoIndexPath = self.largePhotoIndexPath {
+            thumbnailCollectionView.deselectItem(at: largePhotoIndexPath, animated: false)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let x = (scrollView.contentOffset.x - leftInset/2)/( widthPerItem + leftInset)
+        let y = max(0, min(Int(round(x)) - 1, sparrowThumbnails.count - 1))
+        if let largePhotoIndexPath = self.largePhotoIndexPath {
+            startingIndex = largePhotoIndexPath.row
+        }
+        guard startingIndex != y else {
+            return
+        }
+        startingIndex = y
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        print(#function)
+        if !decelerate {
+            largePhotoIndexPath = IndexPath(row: startingIndex, section: 0)
+        } else {
+            
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print(#function)
+        largePhotoIndexPath = IndexPath(row: startingIndex, section: 0)
+    }
+    
 }

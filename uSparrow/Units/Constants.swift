@@ -11,19 +11,33 @@ import UIKit
 
 enum SparrowType {
     case uSystem
-    case uPhoto
     case uFold
-    case uVideo
+    case uPhoto
     case uGif
-    case uText
+    case uVideo
+    case uDoc
     case uOthers
 }
 
-enum CompassPoint {
-    case north
-    case south
-    case east
-    case west
+extension SparrowType {
+    var usn: Int {
+        switch self {
+        case .uSystem:
+            return 0
+        case .uPhoto:
+            return 2
+        case .uFold:
+            return 1
+        case .uVideo:
+            return 4
+        case .uGif:
+            return 3
+        case .uDoc:
+            return 5
+        case .uOthers:
+            return 6
+        }
+    }
 }
 
 struct Constants {
@@ -44,6 +58,10 @@ struct Constants {
         static let ShowSparrow = "ShowSparrow"
         static let ShowPhotos = "ShowPhotos" //
         static let ShowGif = "ShowGif"
+        static let ShowWeb = "ShowWeb"
+        static let ShowText = "ShowText"
+        
+        static let EmbedGifPage = "EmbedGifPage"
     }
     
     struct ReuserIdentifier {
@@ -54,12 +72,20 @@ struct Constants {
         
         static let uSparrowsHeaderView = "SparrowsHeaderView"
         static let uSparrowsThumbnailCell = "ThumbnailCell"
+        
+        static let uSparrowImageDetailHeaderView = "SparrowImageDetailHeaderView"
+        static let uSparrowImageDetailFooterView = "SparrowImageDetailFooterView"
+        
     }
     
     struct Path {
         static let Documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         static let Library = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first!
         static let Tmp = NSTemporaryDirectory()
+    }
+    
+    struct DocumentName {
+        static let SparrowLibrarySystem = "SparrowLibrarySystem"
     }
     
     struct Color {

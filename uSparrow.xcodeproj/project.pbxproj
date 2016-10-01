@@ -13,6 +13,12 @@
 		BA473D5D1D9D91AC0076276D /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D5C1D9D91AC0076276D /* UIImage+GIF.swift */; };
 		BA473D661D9E4CF30076276D /* SparrowGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */; };
 		BA473D681D9E4DA20076276D /* SparrowGifPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D671D9E4DA20076276D /* SparrowGifPageViewController.swift */; };
+		BA473D6C1D9EC3250076276D /* SparrowGifContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D6B1D9EC3250076276D /* SparrowGifContainerViewController.swift */; };
+		BA473D701D9EE02F0076276D /* SparrowWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D6F1D9EE02E0076276D /* SparrowWebViewController.swift */; };
+		BA473D731D9F7D8A0076276D /* SparrowTextDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D721D9F7D8A0076276D /* SparrowTextDetailViewController.swift */; };
+		BA473D751D9FA5570076276D /* SparrowFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D741D9FA5570076276D /* SparrowFileManager.swift */; };
+		BA473D781D9FDCA80076276D /* SparrowAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D771D9FDCA80076276D /* SparrowAVCaptureViewController.swift */; };
+		BA473D7C1DA014100076276D /* SparrowImageDetailReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D7B1DA014100076276D /* SparrowImageDetailReusableView.swift */; };
 		BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */; };
 		BA71FE7A1D9BE6A400CD0E5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE781D9BE6A400CD0E5A /* Main.storyboard */; };
 		BA71FE7C1D9BE6A400CD0E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */; };
@@ -55,6 +61,12 @@
 		BA473D5C1D9D91AC0076276D /* UIImage+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+GIF.swift"; path = "Extensions/UIImage+GIF.swift"; sourceTree = "<group>"; };
 		BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifViewController.swift; path = SparrowGifDetail/SparrowGifViewController.swift; sourceTree = "<group>"; };
 		BA473D671D9E4DA20076276D /* SparrowGifPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifPageViewController.swift; path = SparrowGifDetail/SparrowGifPageViewController.swift; sourceTree = "<group>"; };
+		BA473D6B1D9EC3250076276D /* SparrowGifContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifContainerViewController.swift; path = SparrowsDetail/SparrowGifContainerViewController.swift; sourceTree = "<group>"; };
+		BA473D6F1D9EE02E0076276D /* SparrowWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowWebViewController.swift; path = SparrowWeb/SparrowWebViewController.swift; sourceTree = "<group>"; };
+		BA473D721D9F7D8A0076276D /* SparrowTextDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowTextDetailViewController.swift; path = SparrowTextDetail/SparrowTextDetailViewController.swift; sourceTree = "<group>"; };
+		BA473D741D9FA5570076276D /* SparrowFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowFileManager.swift; path = Units/SparrowFileManager.swift; sourceTree = "<group>"; };
+		BA473D771D9FDCA80076276D /* SparrowAVCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowAVCaptureViewController.swift; path = SparrowAVCapture/SparrowAVCaptureViewController.swift; sourceTree = "<group>"; };
+		BA473D7B1DA014100076276D /* SparrowImageDetailReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowImageDetailReusableView.swift; path = SparrowsDetail/SparrowImageDetailReusableView.swift; sourceTree = "<group>"; };
 		BA71FE711D9BE6A400CD0E5A /* uSparrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSparrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA71FE791D9BE6A400CD0E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,8 +160,33 @@
 			children = (
 				BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */,
 				BA473D671D9E4DA20076276D /* SparrowGifPageViewController.swift */,
+				BA473D6B1D9EC3250076276D /* SparrowGifContainerViewController.swift */,
 			);
 			name = SparrowGifDetail;
+			sourceTree = "<group>";
+		};
+		BA473D6D1D9EDFFE0076276D /* SparrowWeb */ = {
+			isa = PBXGroup;
+			children = (
+				BA473D6F1D9EE02E0076276D /* SparrowWebViewController.swift */,
+			);
+			name = SparrowWeb;
+			sourceTree = "<group>";
+		};
+		BA473D711D9F7D6A0076276D /* SparrowTextDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BA473D721D9F7D8A0076276D /* SparrowTextDetailViewController.swift */,
+			);
+			name = SparrowTextDetail;
+			sourceTree = "<group>";
+		};
+		BA473D761D9FDC5C0076276D /* SparrowAVCapture */ = {
+			isa = PBXGroup;
+			children = (
+				BA473D771D9FDCA80076276D /* SparrowAVCaptureViewController.swift */,
+			);
+			name = SparrowAVCapture;
 			sourceTree = "<group>";
 		};
 		BA71FE681D9BE6A400CD0E5A = {
@@ -173,14 +210,17 @@
 		BA71FE731D9BE6A400CD0E5A /* uSparrow */ = {
 			isa = PBXGroup;
 			children = (
-				BA89E3021D9D5CD100ECCF6A /* Extensions */,
 				BA71FE901D9BF49400CD0E5A /* GCDWebServer */,
+				BA89E3021D9D5CD100ECCF6A /* Extensions */,
 				BA71FECE1D9C07BD00CD0E5A /* Units */,
 				BA71FEDB1D9C0E8B00CD0E5A /* WebServer */,
 				BA89E2EF1D9CEDCA00ECCF6A /* SparrowModels */,
 				BA71FED61D9C08C600CD0E5A /* Sparrows */,
+				BA473D761D9FDC5C0076276D /* SparrowAVCapture */,
 				BA89E2F91D9D560600ECCF6A /* SparrowImageDetail */,
 				BA473D601D9D9A780076276D /* SparrowGifDetail */,
+				BA473D711D9F7D6A0076276D /* SparrowTextDetail */,
+				BA473D6D1D9EDFFE0076276D /* SparrowWeb */,
 				BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */,
 				BA71FE781D9BE6A400CD0E5A /* Main.storyboard */,
 				BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */,
@@ -275,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				BA71FED11D9C086200CD0E5A /* Constants.swift */,
+				BA473D741D9FA5570076276D /* SparrowFileManager.swift */,
 			);
 			name = Units;
 			sourceTree = "<group>";
@@ -311,6 +352,7 @@
 				BA89E2FE1D9D58D400ECCF6A /* SparrowsDetailViewController.swift */,
 				BA89E3001D9D594A00ECCF6A /* ThumbnailCell.swift */,
 				BA473D561D9D63BE0076276D /* SparrowPhotoCropView.swift */,
+				BA473D7B1DA014100076276D /* SparrowImageDetailReusableView.swift */,
 			);
 			name = SparrowImageDetail;
 			sourceTree = "<group>";
@@ -455,6 +497,7 @@
 				BA71FEA41D9BF4E000CD0E5A /* GCDWebServerFunctions.m in Sources */,
 				BA71FEDF1D9C0FC100CD0E5A /* UploadViewController.swift in Sources */,
 				BA89E3041D9D5CE800ECCF6A /* UIColor+Hex.swift in Sources */,
+				BA473D701D9EE02F0076276D /* SparrowWebViewController.swift in Sources */,
 				BA71FEAF1D9BF4E900CD0E5A /* GCDWebServerDataRequest.m in Sources */,
 				BA89E2F11D9CEDE800ECCF6A /* SparrowModel.swift in Sources */,
 				BA71FEBE1D9BF4F000CD0E5A /* GCDWebServerStreamedResponse.m in Sources */,
@@ -467,6 +510,7 @@
 				BA71FEB01D9BF4E900CD0E5A /* GCDWebServerFileRequest.m in Sources */,
 				BA473D661D9E4CF30076276D /* SparrowGifViewController.swift in Sources */,
 				BA89E2FF1D9D58D400ECCF6A /* SparrowsDetailViewController.swift in Sources */,
+				BA473D7C1DA014100076276D /* SparrowImageDetailReusableView.swift in Sources */,
 				BA71FEDA1D9C0CF900CD0E5A /* SparrowCell.swift in Sources */,
 				BA71FEE81D9C40CD00CD0E5A /* GCDWebDAVServer.m in Sources */,
 				BA71FEA61D9BF4E000CD0E5A /* GCDWebServerResponse.m in Sources */,
@@ -474,12 +518,16 @@
 				BA71FEA51D9BF4E000CD0E5A /* GCDWebServerRequest.m in Sources */,
 				BA71FEBC1D9BF4F000CD0E5A /* GCDWebServerErrorResponse.m in Sources */,
 				BA473D5D1D9D91AC0076276D /* UIImage+GIF.swift in Sources */,
+				BA473D731D9F7D8A0076276D /* SparrowTextDetailViewController.swift in Sources */,
 				BA71FEBB1D9BF4F000CD0E5A /* GCDWebServerDataResponse.m in Sources */,
+				BA473D751D9FA5570076276D /* SparrowFileManager.swift in Sources */,
 				BA71FEA21D9BF4E000CD0E5A /* GCDWebServer.m in Sources */,
+				BA473D6C1D9EC3250076276D /* SparrowGifContainerViewController.swift in Sources */,
 				BA473D571D9D63BE0076276D /* SparrowPhotoCropView.swift in Sources */,
 				BA71FEB11D9BF4E900CD0E5A /* GCDWebServerMultiPartFormRequest.m in Sources */,
 				BA473D5B1D9D7C480076276D /* CMTime+DurationString.swift in Sources */,
 				BA71FED21D9C086200CD0E5A /* Constants.swift in Sources */,
+				BA473D781D9FDCA80076276D /* SparrowAVCaptureViewController.swift in Sources */,
 				BA89E2EC1D9C49D600ECCF6A /* GCDWebUploader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
