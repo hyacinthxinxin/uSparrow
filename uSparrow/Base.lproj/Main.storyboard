@@ -5,6 +5,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,7 +53,7 @@
         <scene sceneID="Zhe-U8-hCd">
             <objects>
                 <collectionViewController id="8WT-Kc-v7T" customClass="SparrowsViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="deG-TN-an4">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="deG-TN-an4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,13 +150,21 @@
                     <navigationItem key="navigationItem" id="dha-iT-DjN">
                         <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="返回" id="WT3-cN-dtN"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1gn-JH-zif">
-                            <connections>
-                                <action selector="add:" destination="8WT-Kc-v7T" id="5ax-m0-uL1"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="1gn-JH-zif">
+                                <connections>
+                                    <action selector="add:" destination="8WT-Kc-v7T" id="5ax-m0-uL1"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="RSP-VE-2hl">
+                                <connections>
+                                    <action selector="setting:" destination="8WT-Kc-v7T" id="LW4-mg-PNc"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="setting" destination="RSP-VE-2hl" id="XEf-iN-ZOs"/>
                         <segue destination="Bav-KJ-4UV" kind="presentation" identifier="ShowUpload" id="Wcn-QG-Uh6"/>
                         <segue destination="N32-nX-Nu1" kind="show" identifier="ShowPhotos" id="UDQ-dT-zxL"/>
                         <segue destination="Xmy-NI-Fsu" kind="presentation" identifier="ShowGif" id="46e-Y7-k8w"/>
@@ -240,7 +249,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tSc-Di-yuG" customClass="SparrowGifPageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yJ-Cb-kHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3673" y="-1069"/>
+            <point key="canvasLocation" x="4612" y="-1069.1154422788607"/>
         </scene>
         <!--Sparrow Gif Container View Controller-->
         <scene sceneID="dLP-SV-bqN">
@@ -289,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pIM-Hw-2ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884" y="-1069"/>
+            <point key="canvasLocation" x="3823.1999999999998" y="-1069.1154422788607"/>
         </scene>
         <!--Sparrows Detail View Controller-->
         <scene sceneID="v1I-kn-jiP">
@@ -380,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yq6-1b-2Qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884" y="-372"/>
+            <point key="canvasLocation" x="3823.1999999999998" y="-372.86356821589209"/>
         </scene>
         <!--Sparrow Gif View Controller-->
         <scene sceneID="cr3-7W-cwj">
@@ -414,18 +423,44 @@
             </objects>
             <point key="canvasLocation" x="3673" y="-1729"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Sparrow Auth View Controller-->
+        <scene sceneID="iNz-1s-X9C">
+            <objects>
+                <viewController id="EBK-3j-hCY" customClass="SparrowAuthViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xhd-6I-MUd"/>
+                        <viewControllerLayoutGuide type="bottom" id="gKA-ae-sa9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7dl-SG-cWq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9lT-Io-0rL">
+                        <barButtonItem key="leftBarButtonItem" title="揭开" id="pHE-0U-J3k">
+                            <connections>
+                                <action selector="enterPassword:" destination="EBK-3j-hCY" id="LOl-Pm-kLM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKJ-B6-bRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2084" y="-726.38680659670172"/>
+        </scene>
+        <!--Sparro Navigation Controller-->
         <scene sceneID="gRw-Nh-ePF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjo-DN-SVd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjo-DN-SVd" customClass="SparroNavigationController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lhC-Fg-zI2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lhC-Fg-zI2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="8WT-Kc-v7T" kind="relationship" relationship="rootViewController" id="Xvb-q6-Udf"/>
+                        <segue destination="goQ-gR-LTG" kind="presentation" identifier="ShowAuth" animates="NO" id="yuF-KL-qk8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09W-RT-hyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -437,7 +472,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bav-KJ-4UV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CJh-ZC-EWx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CJh-ZC-EWx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -449,6 +484,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvi-pb-Vo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044" y="877"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g9d-Yt-S7Z">
+            <objects>
+                <navigationController storyboardIdentifier="SparrowAuthNavigation" automaticallyAdjustsScrollViewInsets="NO" id="goQ-gR-LTG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e56-E9-sm3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EBK-3j-hCY" kind="relationship" relationship="rootViewController" id="HRK-Mo-yC5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7c-M7-uwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1144.8" y="-726.38680659670172"/>
         </scene>
     </scenes>
     <resources>

@@ -53,6 +53,8 @@ struct Constants {
     }
     
     struct SegueIdentifier {
+        static let ShowAuth = "ShowAuth"
+        
         static let ShowUpload = "ShowUpload"
         static let ShowSparrowFold = "ShowSparrowFold"
         static let ShowSparrow = "ShowSparrow"
@@ -95,5 +97,6 @@ struct Constants {
     
     struct StoryboardId {
         static let gifVC = "SparrowGifViewController"
+        static let AuthNav = "SparrowAuthNavigation"
     }
 }

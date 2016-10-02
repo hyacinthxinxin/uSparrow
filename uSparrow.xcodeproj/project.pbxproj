@@ -19,6 +19,8 @@
 		BA473D751D9FA5570076276D /* SparrowFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D741D9FA5570076276D /* SparrowFileManager.swift */; };
 		BA473D781D9FDCA80076276D /* SparrowAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D771D9FDCA80076276D /* SparrowAVCaptureViewController.swift */; };
 		BA473D7C1DA014100076276D /* SparrowImageDetailReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D7B1DA014100076276D /* SparrowImageDetailReusableView.swift */; };
+		BA473D7F1DA199600076276D /* SparrowAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D7E1DA199600076276D /* SparrowAuthViewController.swift */; };
+		BA473D821DA19F5C0076276D /* SparroNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D811DA19F5C0076276D /* SparroNavigationController.swift */; };
 		BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */; };
 		BA71FE7A1D9BE6A400CD0E5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE781D9BE6A400CD0E5A /* Main.storyboard */; };
 		BA71FE7C1D9BE6A400CD0E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA71FE7B1D9BE6A400CD0E5A /* Assets.xcassets */; };
@@ -67,6 +69,8 @@
 		BA473D741D9FA5570076276D /* SparrowFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowFileManager.swift; path = Units/SparrowFileManager.swift; sourceTree = "<group>"; };
 		BA473D771D9FDCA80076276D /* SparrowAVCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowAVCaptureViewController.swift; path = SparrowAVCapture/SparrowAVCaptureViewController.swift; sourceTree = "<group>"; };
 		BA473D7B1DA014100076276D /* SparrowImageDetailReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowImageDetailReusableView.swift; path = SparrowsDetail/SparrowImageDetailReusableView.swift; sourceTree = "<group>"; };
+		BA473D7E1DA199600076276D /* SparrowAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowAuthViewController.swift; path = SparrowAuth/SparrowAuthViewController.swift; sourceTree = "<group>"; };
+		BA473D811DA19F5C0076276D /* SparroNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparroNavigationController.swift; path = SparrowNavigation/SparroNavigationController.swift; sourceTree = "<group>"; };
 		BA71FE711D9BE6A400CD0E5A /* uSparrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSparrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA71FE741D9BE6A400CD0E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA71FE791D9BE6A400CD0E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -189,6 +193,22 @@
 			name = SparrowAVCapture;
 			sourceTree = "<group>";
 		};
+		BA473D7D1DA199360076276D /* SparrowAuth */ = {
+			isa = PBXGroup;
+			children = (
+				BA473D7E1DA199600076276D /* SparrowAuthViewController.swift */,
+			);
+			name = SparrowAuth;
+			sourceTree = "<group>";
+		};
+		BA473D801DA19F3E0076276D /* SparrowNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				BA473D811DA19F5C0076276D /* SparroNavigationController.swift */,
+			);
+			name = SparrowNavigation;
+			sourceTree = "<group>";
+		};
 		BA71FE681D9BE6A400CD0E5A = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +230,8 @@
 		BA71FE731D9BE6A400CD0E5A /* uSparrow */ = {
 			isa = PBXGroup;
 			children = (
+				BA473D801DA19F3E0076276D /* SparrowNavigation */,
+				BA473D7D1DA199360076276D /* SparrowAuth */,
 				BA71FE901D9BF49400CD0E5A /* GCDWebServer */,
 				BA89E3021D9D5CD100ECCF6A /* Extensions */,
 				BA71FECE1D9C07BD00CD0E5A /* Units */,
@@ -503,6 +525,7 @@
 				BA71FEBE1D9BF4F000CD0E5A /* GCDWebServerStreamedResponse.m in Sources */,
 				BA71FEBD1D9BF4F000CD0E5A /* GCDWebServerFileResponse.m in Sources */,
 				BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */,
+				BA473D7F1DA199600076276D /* SparrowAuthViewController.swift in Sources */,
 				BA89E3011D9D594A00ECCF6A /* ThumbnailCell.swift in Sources */,
 				BA71FEB21D9BF4E900CD0E5A /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				BA71FED81D9C08D600CD0E5A /* SparrowsViewController.swift in Sources */,
@@ -528,6 +551,7 @@
 				BA473D5B1D9D7C480076276D /* CMTime+DurationString.swift in Sources */,
 				BA71FED21D9C086200CD0E5A /* Constants.swift in Sources */,
 				BA473D781D9FDCA80076276D /* SparrowAVCaptureViewController.swift in Sources */,
+				BA473D821DA19F5C0076276D /* SparroNavigationController.swift in Sources */,
 				BA89E2EC1D9C49D600ECCF6A /* GCDWebUploader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

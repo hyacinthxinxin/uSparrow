@@ -26,6 +26,10 @@ class SparrowsViewController: UICollectionViewController {
         reloadCollectionData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     fileprivate func reloadCollectionData() {
         if let url = documentsUrl {
             title = url.lastPathComponent
@@ -35,6 +39,12 @@ class SparrowsViewController: UICollectionViewController {
             let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             sparrows = SparrowFileManager.shared.loadDocumentsData(with: url)
         }
+    }
+    
+    @IBOutlet weak var setting: UIBarButtonItem!
+    @IBAction func setting(_ sender: AnyObject) {
+        let v = SparrowAuthViewController()
+        present(v, animated: false, completion: nil)
     }
     
     @IBAction func add(_ sender: AnyObject) {

@@ -9,10 +9,11 @@
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    var firstLoad = true
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         customizeAppearance()
@@ -20,46 +21,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        showAuth()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        guard firstLoad else {
+            return
+        }
+        showAuth()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
     }
     
-    // MARK: - Custom Appearance
-    
-    func customizeAppearance() {
-        /*
-         let barAppearance = UIBarButtonItem.appearance()
-         barAppearance.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics: .Default)
-         
-         UINavigationBar.appearance().backgroundColor = UIColor.greenColor()
-         UIBarButtonItem.appearance().tintColor = UIColor.magentaColor()
-         //Since iOS 7.0 UITextAttributeTextColor was replaced by NSForegroundColorAttributeName
-         UINavigationBar.appearance().titleTextAttributes = [UITextAttributeTextColor: UIColor.blueColor()]
-         UITabBar.appearance().backgroundColor = UIColor.yellowColor();
-
-         */
+    fileprivate func customizeAppearance() {
         window?.tintColor = Constants.Color.sparrowTintColor
         UINavigationBar.appearance().tintColor = Constants.Color.sparrowTintColor
         UINavigationBar.appearance().barTintColor = Constants.Color.sparrowBackgroundColor
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
-
+    
+    fileprivate func showAuth() {
+        if let sparroNavigationController = window?.rootViewController as? SparroNavigationController {
+            firstLoad = false
+            sparroNavigationController.performSegue(withIdentifier: Constants.SegueIdentifier.ShowAuth, sender: nil)
+        }
+    }
 }
 
