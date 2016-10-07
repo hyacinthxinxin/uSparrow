@@ -113,7 +113,7 @@ class SparrowPhotoCropView: UIScrollView {
     required init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)!
-        self.backgroundColor = Constants.Color.sparrowBackgroundColor
+        self.backgroundColor = Constants.SparrowTheme.backgroundColor
         self.frame.size      = CGSize.zero
         self.clipsToBounds   = true
         self.imageView.alpha = 0.0

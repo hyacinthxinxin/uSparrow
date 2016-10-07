@@ -43,12 +43,19 @@ class SparrowCell: UICollectionViewCell {
                 infoImageView.image = nil
                 infoLabel.text = nil
             case .uPhoto:
-                sparrowPhoto.image = sparrow.thumbnailPhoto
+                DispatchQueue.global().async {
+                    if let data = NSData(contentsOf: url), let image = UIImage(data: data as Data) {
+                        DispatchQueue.main.async {
+                            self.sparrowPhoto.image = image
+                            
+                            self.infoContainerView.isHidden = true
+                            self.titleLabel.text = nil
+                            self.infoImageView.image = nil
+                            self.infoLabel.text = nil
+                        }
+                    }
+                }
 
-                infoContainerView.isHidden = true
-                titleLabel.text = nil
-                infoImageView.image = nil
-                infoLabel.text = nil
             case .uGif:
                 self.sparrowPhoto.image = UIImage.gifThumbnail(url)
                 
@@ -101,7 +108,7 @@ class SparrowCell: UICollectionViewCell {
     
     override var isSelected : Bool {
         didSet {
-            self.layer.borderColor = isSelected ? Constants.Color.sparrowTintColor.cgColor : UIColor.clear.cgColor
+            self.layer.borderColor = isSelected ? Constants.SparrowTheme.selectedColor.cgColor : UIColor.clear.cgColor
             self.layer.borderWidth = isSelected ? 2 : 0
         }
     }

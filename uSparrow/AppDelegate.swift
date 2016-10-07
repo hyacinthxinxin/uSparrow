@@ -44,16 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     fileprivate func customizeAppearance() {
-        window?.tintColor = Constants.Color.sparrowTintColor
-        UINavigationBar.appearance().tintColor = Constants.Color.sparrowTintColor
-        UINavigationBar.appearance().barTintColor = Constants.Color.sparrowBackgroundColor
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        window?.tintColor = Constants.SparrowTheme.tintColor
+        UINavigationBar.appearance().barTintColor = Constants.SparrowTheme.backgroundColor
+        UINavigationBar.appearance().tintColor = Constants.SparrowTheme.tintColor
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: Constants.SparrowTheme.textColor]
     }
     
     fileprivate func showAuth() {
-        if let sparroNavigationController = window?.rootViewController as? SparroNavigationController {
+        if let sparrowNavigationController = window?.rootViewController as? UINavigationController {
             firstLoad = false
-            sparroNavigationController.performSegue(withIdentifier: Constants.SegueIdentifier.ShowAuth, sender: nil)
+            sparrowNavigationController.performSegue(withIdentifier: Constants.SegueIdentifier.ShowAuth, sender: nil)
         }
     }
 }

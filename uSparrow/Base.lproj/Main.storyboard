@@ -26,16 +26,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" translatesAutoresizingMaskIntoConstraints="NO" id="15D-iH-xDs"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="15D-iH-xDs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1fk-XT-Dmd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mWv-U9-Nzb" secondAttribute="trailing" id="1nC-5s-OX1"/>
                             <constraint firstItem="mWv-U9-Nzb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cUY-lI-6DK"/>
+                            <constraint firstItem="15D-iH-xDs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="dHQ-Im-5wa"/>
                             <constraint firstItem="mWv-U9-Nzb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kOc-8R-dx6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zzH-Ct-aGO">
-                        <barButtonItem key="leftBarButtonItem" image="close" id="dZY-tB-CWs">
+                        <barButtonItem key="leftBarButtonItem" image="cancel" id="dZY-tB-CWs">
                             <connections>
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="IEz-dP-1VJ"/>
                             </connections>
@@ -47,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="877"/>
+            <point key="canvasLocation" x="420" y="1308"/>
         </scene>
         <!--Sparrows View Controller-->
         <scene sceneID="Zhe-U8-hCd">
@@ -151,20 +154,19 @@
                         <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="返回" id="WT3-cN-dtN"/>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="1gn-JH-zif">
+                            <barButtonItem image="add" id="1gn-JH-zif">
                                 <connections>
                                     <action selector="add:" destination="8WT-Kc-v7T" id="5ax-m0-uL1"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" id="RSP-VE-2hl">
+                            <barButtonItem image="settings" id="RSP-VE-2hl">
                                 <connections>
-                                    <action selector="setting:" destination="8WT-Kc-v7T" id="LW4-mg-PNc"/>
+                                    <segue destination="zp9-RI-FeJ" kind="show" id="yQQ-sj-NOe"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="setting" destination="RSP-VE-2hl" id="XEf-iN-ZOs"/>
                         <segue destination="Bav-KJ-4UV" kind="presentation" identifier="ShowUpload" id="Wcn-QG-Uh6"/>
                         <segue destination="N32-nX-Nu1" kind="show" identifier="ShowPhotos" id="UDQ-dT-zxL"/>
                         <segue destination="Xmy-NI-Fsu" kind="presentation" identifier="ShowGif" id="46e-Y7-k8w"/>
@@ -174,7 +176,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5K-bc-2hU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1959" y="-52"/>
+            <point key="canvasLocation" x="420" y="27"/>
         </scene>
         <!--Sparrow Web View Controller-->
         <scene sceneID="d2Q-9P-49s">
@@ -206,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFw-FX-8tM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2889" y="344"/>
+            <point key="canvasLocation" x="1825" y="1555"/>
         </scene>
         <!--Sparrow Text Detail View Controller-->
         <scene sceneID="COC-ik-6Ia">
@@ -241,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mby-8G-OF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4050" y="365"/>
+            <point key="canvasLocation" x="1825" y="801"/>
         </scene>
         <!--Sparrow Gif Page View Controller-->
         <scene sceneID="VAD-va-tiY">
@@ -249,7 +251,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tSc-Di-yuG" customClass="SparrowGifPageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yJ-Cb-kHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4612" y="-1069.1154422788607"/>
+            <point key="canvasLocation" x="2809" y="-44"/>
         </scene>
         <!--Sparrow Gif Container View Controller-->
         <scene sceneID="dLP-SV-bqN">
@@ -269,7 +271,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem id="4UF-5W-tpe">
-                                        <barButtonItem key="leftBarButtonItem" image="close" id="kEX-NO-NSd">
+                                        <barButtonItem key="leftBarButtonItem" image="cancel" id="kEX-NO-NSd">
                                             <connections>
                                                 <action selector="dismiss:" destination="Xmy-NI-Fsu" id="xrW-FQ-ZIZ"/>
                                             </connections>
@@ -298,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pIM-Hw-2ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3823.1999999999998" y="-1069.1154422788607"/>
+            <point key="canvasLocation" x="1825" y="-14"/>
         </scene>
         <!--Sparrows Detail View Controller-->
         <scene sceneID="v1I-kn-jiP">
@@ -389,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yq6-1b-2Qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3823.1999999999998" y="-372.86356821589209"/>
+            <point key="canvasLocation" x="1826" y="-726"/>
         </scene>
         <!--Sparrow Gif View Controller-->
         <scene sceneID="cr3-7W-cwj">
@@ -421,9 +423,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8K-89-dZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3673" y="-1729"/>
+            <point key="canvasLocation" x="3671" y="-45"/>
         </scene>
-        <!--Sparrow Auth View Controller-->
+        <!--登录-->
         <scene sceneID="iNz-1s-X9C">
             <objects>
                 <viewController id="EBK-3j-hCY" customClass="SparrowAuthViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
@@ -434,24 +436,116 @@
                     <view key="view" contentMode="scaleToFill" id="7dl-SG-cWq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qpf-wz-VvQ" customClass="SparrowGesturePasswordView" customModule="uSparrow" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qpf-wz-VvQ" secondAttribute="height" id="OLN-Bn-3Cw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCm-59-GBB">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbZ-lI-UxD">
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="uSparrow." image="uSparrow">
+                                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="McU-ce-5w4">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="McU-ce-5w4" firstAttribute="centerX" secondItem="mCm-59-GBB" secondAttribute="centerX" id="8FK-Re-FRQ"/>
+                                    <constraint firstItem="jbZ-lI-UxD" firstAttribute="centerY" secondItem="mCm-59-GBB" secondAttribute="centerY" id="GIz-uP-ZrQ"/>
+                                    <constraint firstItem="jbZ-lI-UxD" firstAttribute="centerX" secondItem="mCm-59-GBB" secondAttribute="centerX" id="p18-VX-0CN"/>
+                                    <constraint firstAttribute="bottom" secondItem="McU-ce-5w4" secondAttribute="bottom" constant="8" id="rvb-2Q-4jT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Qpf-wz-VvQ" secondAttribute="trailing" id="2uu-Sm-tLY"/>
+                            <constraint firstAttribute="trailing" secondItem="mCm-59-GBB" secondAttribute="trailing" id="Ao8-rj-Onu"/>
+                            <constraint firstItem="Qpf-wz-VvQ" firstAttribute="top" secondItem="mCm-59-GBB" secondAttribute="bottom" id="HH3-Yx-3KC"/>
+                            <constraint firstItem="mCm-59-GBB" firstAttribute="leading" secondItem="7dl-SG-cWq" secondAttribute="leading" id="Tvp-gC-RJK"/>
+                            <constraint firstItem="gKA-ae-sa9" firstAttribute="top" secondItem="Qpf-wz-VvQ" secondAttribute="bottom" id="aik-qX-nc4"/>
+                            <constraint firstItem="mCm-59-GBB" firstAttribute="top" secondItem="xhd-6I-MUd" secondAttribute="bottom" id="eFn-8T-2DE"/>
+                            <constraint firstItem="Qpf-wz-VvQ" firstAttribute="leading" secondItem="7dl-SG-cWq" secondAttribute="leading" id="w8N-i5-xBg"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9lT-Io-0rL">
-                        <barButtonItem key="leftBarButtonItem" title="揭开" id="pHE-0U-J3k">
+                    <navigationItem key="navigationItem" title="登录" id="9lT-Io-0rL">
+                        <barButtonItem key="rightBarButtonItem" title="忘记密码" id="eqb-hS-gSs">
                             <connections>
-                                <action selector="enterPassword:" destination="EBK-3j-hCY" id="LOl-Pm-kLM"/>
+                                <action selector="forgetPassword:" destination="EBK-3j-hCY" id="nkG-po-VOE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="forgetPasswordItem" destination="eqb-hS-gSs" id="oQ4-3k-L1L"/>
+                        <outlet property="gesturePasswordView" destination="Qpf-wz-VvQ" id="bYe-il-5m5"/>
+                        <outlet property="statusLabel" destination="McU-ce-5w4" id="u3H-Ni-hCW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKJ-B6-bRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2084" y="-726.38680659670172"/>
+            <point key="canvasLocation" x="97" y="-726"/>
         </scene>
-        <!--Sparro Navigation Controller-->
+        <!--设置-->
+        <scene sceneID="rep-Vu-Kik">
+            <objects>
+                <tableViewController title="设置" id="zp9-RI-FeJ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dub-bs-T2t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="k7k-0S-cIH">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zww-sL-lWF">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zww-sL-lWF" id="izk-YD-CLa">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OkW-gr-qfB">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OkW-gr-qfB" id="3Sv-ap-hCe">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Trc-kd-1IF">
+                                        <rect key="frame" x="0.0" y="152" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Trc-kd-1IF" id="neL-Rm-fHb">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="zp9-RI-FeJ" id="3EO-Uv-HCx"/>
+                            <outlet property="delegate" destination="zp9-RI-FeJ" id="T28-yk-QUd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJf-FB-zpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713" y="-2300"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="gRw-Nh-ePF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjo-DN-SVd" customClass="SparroNavigationController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjo-DN-SVd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lhC-Fg-zI2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -465,7 +559,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09W-RT-hyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="-51.724137931034484"/>
+            <point key="canvasLocation" x="-964" y="28"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zTR-KM-v9h">
@@ -483,7 +577,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvi-pb-Vo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="877"/>
+            <point key="canvasLocation" x="-498" y="1308"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g9d-Yt-S7Z">
@@ -501,12 +595,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n7c-M7-uwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1144.8" y="-726.38680659670172"/>
+            <point key="canvasLocation" x="-964" y="-726"/>
         </scene>
     </scenes>
     <resources>
-        <image name="close" width="48" height="48"/>
+        <image name="add" width="16" height="16"/>
+        <image name="cancel" width="16" height="16"/>
+        <image name="settings" width="16" height="16"/>
+        <image name="uSparrow" width="128" height="128"/>
         <image name="videocam" width="36" height="36"/>
+        <image name="wifi" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Xvb-q6-Udf"/>

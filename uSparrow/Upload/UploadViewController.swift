@@ -31,9 +31,9 @@ class UploadViewController: UIViewController {
             webServer.delegate = self
             webServer.allowHiddenItems = true
             if webServer.start(withPort: 8888, bonjourName: nil) {
-                infoLabel.text = "GCDWebServer running locally on url:port \n" + webServer.serverURL.absoluteString
+                infoLabel.text = "保持无线连接，确保您的设备与电脑在同一个无线网络下，在网页浏览器上打开下面的网址：\n" + webServer.serverURL.absoluteString + "\n您将可以在电脑与设备之间传输文件"
             } else {
-                infoLabel.text = NSLocalizedString("GCDWebServer not running!", comment: "")
+                infoLabel.text = NSLocalizedString("not running!", comment: "")
             }
         }
     }

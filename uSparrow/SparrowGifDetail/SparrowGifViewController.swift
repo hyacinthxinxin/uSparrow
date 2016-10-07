@@ -15,7 +15,7 @@ class SparrowGifViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Constants.Color.sparrowBackgroundColor
+        view.backgroundColor = Constants.SparrowTheme.backgroundColor
         if let url = gifUrl {
             gifImageView.loadGif(url: url)
         }

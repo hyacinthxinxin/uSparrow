@@ -41,7 +41,7 @@ class SparrowsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        thumbnailCollectionView.backgroundColor = Constants.Color.sparrowBackgroundColor
+        thumbnailCollectionView.backgroundColor = Constants.SparrowTheme.backgroundColor
         if let largePhotoIndexPath = self.largePhotoIndexPath {
             sparrowPhotoCropView.image = sparrowThumbnails[largePhotoIndexPath.row]
             updateThumbnailCollectionView(indexPath: largePhotoIndexPath, animated: false)

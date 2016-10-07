@@ -24,8 +24,10 @@ class Sparrow: NSObject {
     func setTumbnailPhoto() {
         switch type as SparrowType {
         case .uPhoto:
-            if let url = documentsUrl,  let data = NSData(contentsOf: url), let image = UIImage(data: data as Data) {
-                thumbnailPhoto = image
+            DispatchQueue.global().async {
+                if let url = self.documentsUrl,  let data = NSData(contentsOf: url), let image = UIImage(data: data as Data) {
+                    self.thumbnailPhoto = image
+                }
             }
         default:
             break
@@ -34,16 +36,16 @@ class Sparrow: NSObject {
     
     static func getSparrowType(with pathExtension:  String) ->  SparrowType {
         switch pathExtension {
-        case "jpg", "jpeg", "png", "PNG":
-            return SparrowType.uPhoto
+        case "jpg", "JPG", "jpeg", "JPEG", "png", "PNG":
+            return .uPhoto
         case "gif", "GIF":
-            return SparrowType.uGif
-        case "mp4":
-            return SparrowType.uVideo
+            return .uGif
+        case "mp4", "MP4":
+            return .uVideo
         case "txt", "TXT", "pdf", "PDF":
-            return SparrowType.uDoc
+            return .uDoc
         default:
-            return SparrowType.uOthers
+            return .uOthers
         }
     }
 }

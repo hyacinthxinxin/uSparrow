@@ -89,10 +89,16 @@ struct Constants {
     struct DocumentName {
         static let SparrowLibrarySystem = "SparrowLibrarySystem"
     }
+
     
-    struct Color {
-        static let sparrowTintColor = UIColor(red: 0.01, green: 0.41, blue: 0.22, alpha: 1.0)
-        static let sparrowBackgroundColor = UIColor.hex("#212121", alpha: 1.0)
+    struct SparrowTheme {
+        static let backgroundColor = UIColor.hex("#11151A", alpha: 1.0)
+        static let barTintColor = UIColor.hex("#303338", alpha: 1.0)
+        static let tintColor = UIColor.hex("#639E77", alpha: 1.0)
+        static let textColor = UIColor.hex("#FFFCF7", alpha: 1.0)
+//        static let highlightColor = UIColor.hex("#B2DBBF", alpha: 1.0)
+//        static let normalColor = UIColor.hex("#EBEBEB", alpha: 1.0)
+        static let selectedColor = UIColor.hex("#D42A1E", alpha: 1.0)
     }
     
     struct StoryboardId {

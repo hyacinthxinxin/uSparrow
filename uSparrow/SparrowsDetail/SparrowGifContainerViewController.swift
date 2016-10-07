@@ -17,8 +17,9 @@ class SparrowGifContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Constants.Color.sparrowBackgroundColor
-        bar.barTintColor = Constants.Color.sparrowBackgroundColor
+        view.backgroundColor = Constants.SparrowTheme.backgroundColor
+        bar.barTintColor = Constants.SparrowTheme.barTintColor
+        bar.tintColor = Constants.SparrowTheme.tintColor
     }
     
     @IBAction func dismiss(_ sender: AnyObject) {

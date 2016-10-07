@@ -23,9 +23,9 @@ class SparrowGifPageViewController: UIPageViewController {
     
     private func stylePageControl() {
         let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [type(of: self)])
-        pageControl.currentPageIndicatorTintColor = Constants.Color.sparrowTintColor
-        pageControl.pageIndicatorTintColor = UIColor.white
-        pageControl.backgroundColor = Constants.Color.sparrowBackgroundColor
+        pageControl.currentPageIndicatorTintColor = Constants.SparrowTheme.selectedColor
+        pageControl.pageIndicatorTintColor = Constants.SparrowTheme.textColor
+        pageControl.backgroundColor = Constants.SparrowTheme.backgroundColor
     }
     
     override func viewDidLoad() {

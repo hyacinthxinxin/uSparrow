@@ -8,9 +8,14 @@
 
 import Foundation
 import UIKit
+import ReachabilitySwift
 
 class SparrowFileManager: NSObject {
+    var wifiIsOn = false
+    
     static let shared = SparrowFileManager()
+    let reachability = Reachability()
+
     fileprivate var sparrowSystemDirectories = [String]()
     let rootDocumentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     
@@ -19,6 +24,13 @@ class SparrowFileManager: NSObject {
         let sparrowSystemLibraryPathUrl = rootDocumentsUrl.appendingPathComponent(Constants.DocumentName.SparrowLibrarySystem, isDirectory: true)
         sparrowSystemDirectories = [sparrowSystemLibraryPathUrl.lastPathComponent]
         createSparrowSystemDirectory(with: sparrowSystemLibraryPathUrl)
+        if let reachability = self.reachability {
+            do {
+                try reachability.startNotifier()
+            } catch let err {
+                print(err.localizedDescription)
+            }
+        }
     }
     
     fileprivate func createSparrowSystemDirectory(with url: URL) {

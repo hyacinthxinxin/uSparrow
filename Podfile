@@ -27,6 +27,8 @@ pod 'ImagePicker',
 :git => 'https://github.com/hyperoslo/ImagePicker.git',
 :branch => 'swift-3'
 
+pod 'ReachabilitySwift', '~> 3'
+
 pod 'PureLayout'
 pod 'JDStatusBarNotification'
 #pod "GCDWebServer", "~> 3.0"

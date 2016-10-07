@@ -3,6 +3,7 @@ PODS:
   - ImagePicker (1.4.1)
   - JDStatusBarNotification (1.5.4)
   - PureLayout (3.0.2)
+  - ReachabilitySwift (3)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
@@ -10,6 +11,7 @@ DEPENDENCIES:
   - ImagePicker (from `https://github.com/hyperoslo/ImagePicker.git`, branch `swift-3`)
   - JDStatusBarNotification
   - PureLayout
+  - ReachabilitySwift (~> 3)
   - SwiftyJSON (from `https://github.com/BaiduHiDeviOS/SwiftyJSON.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
@@ -39,8 +41,9 @@ SPEC CHECKSUMS:
   ImagePicker: c2b43f5201f34efb3459ac6af39992fdd802c2d4
   JDStatusBarNotification: d47dded0594a50a39c84a2cc5aa356fcf6750d0e
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SwiftyJSON: 6118fb49d7519c4d31a0c1f3d5af936e9047b556
 
-PODFILE CHECKSUM: 1d311b91735f2b990811c82b66a70d7b0aae9c06
+PODFILE CHECKSUM: 16c422c8b4181ee772ece56b09894a36e016a3b9
 
 COCOAPODS: 1.0.1

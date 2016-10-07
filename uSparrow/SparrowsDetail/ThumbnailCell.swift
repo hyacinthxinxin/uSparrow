@@ -25,7 +25,7 @@ class ThumbnailCell: UICollectionViewCell {
     
     override var isSelected : Bool {
         didSet {
-            self.layer.borderColor = isSelected ? Constants.Color.sparrowTintColor.cgColor : UIColor.clear.cgColor
+            self.layer.borderColor = isSelected ? Constants.SparrowTheme.selectedColor.cgColor : UIColor.clear.cgColor
             self.layer.borderWidth = isSelected ? 2 : 0
         }
     }

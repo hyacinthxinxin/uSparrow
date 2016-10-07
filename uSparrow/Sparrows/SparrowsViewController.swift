@@ -11,6 +11,8 @@ import MobileCoreServices
 import AVFoundation
 import AVKit
 import ImagePicker
+import ReachabilitySwift
+import JDStatusBarNotification
 
 class SparrowsViewController: UICollectionViewController {
     var documentsUrl: URL?
@@ -22,7 +24,7 @@ class SparrowsViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = Constants.Color.sparrowBackgroundColor
+        collectionView?.backgroundColor = Constants.SparrowTheme.backgroundColor
         reloadCollectionData()
     }
     
@@ -56,7 +58,13 @@ class SparrowsViewController: UICollectionViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "连接局域网", style: .default, handler: { (action: UIAlertAction!) in
-            self.performSegue(withIdentifier: Constants.SegueIdentifier.ShowUpload, sender: nil)
+            if let reachability = SparrowFileManager.shared.reachability {
+                guard reachability.isReachableViaWiFi else {
+                    JDStatusBarNotification.show(withStatus: "请确保您的手机已经连接了无线网络", dismissAfter: 2.0, styleName: JDStatusBarStyleError);
+                    return
+                }
+                self.performSegue(withIdentifier: Constants.SegueIdentifier.ShowUpload, sender: nil)
+            }
         }))
         
         alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -86,14 +94,8 @@ class SparrowsViewController: UICollectionViewController {
                 }
             }
         } else if segue.identifier == Constants.SegueIdentifier.ShowSparrowFold {
-            if let sparrowsVC = segue.destination as? SparrowsViewController {
-                if let indexPath = collectionView?.indexPathsForSelectedItems?[0]{
-                    if indexPath.section == 0 {
-                        sparrowsVC.documentsUrl = sparrows.filter{ $0.type == SparrowType.uSystem }[indexPath.row].documentsUrl
-                    } else if indexPath.section == 1{
-                        sparrowsVC.documentsUrl = sparrows.filter{ $0.type == SparrowType.uFold }[indexPath.row].documentsUrl
-                    }
-                }
+            if let sparrowsVC = segue.destination as? SparrowsViewController, let indexPath = collectionView?.indexPathsForSelectedItems?[0] {
+                sparrowsVC.documentsUrl = sparrows.filter{ $0.type.usn == indexPath.section }[indexPath.row].documentsUrl
             }
         } else if segue.identifier == Constants.SegueIdentifier.ShowPhotos {
             if let detail = segue.destination as? SparrowsDetailViewController, let indexPath = sender as? IndexPath {
@@ -122,6 +124,8 @@ class SparrowsViewController: UICollectionViewController {
 
 // MARK: UICollectionViewDataSource && UICollectionViewDelegate
 
+fileprivate let headerHead = ["默认文件夹", "自定义文件夹", "图片", "GIF", "视频", "文本", "其他"]
+
 extension SparrowsViewController {
     
     // MARK: UICollectionViewDataSource
@@ -146,24 +150,7 @@ extension SparrowsViewController {
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.ReuserIdentifier.uSparrowsHeaderView, for: indexPath) as! SparrowsHeaderView
-            switch indexPath.section {
-            case 0:
-                headerView.sparrowsHeaderLabel.text = "默认文件夹(" + String(sparrows.filter{ $0.type == SparrowType.uSystem }.count) + ")"
-            case 1:
-                headerView.sparrowsHeaderLabel.text = "自定义文件夹(" + String(sparrows.filter{ $0.type == SparrowType.uFold }.count) + ")"
-            case 2:
-                headerView.sparrowsHeaderLabel.text = "图片(" + String(sparrows.filter{ $0.type == SparrowType.uPhoto }.count) + ")"
-            case 3:
-                headerView.sparrowsHeaderLabel.text = "GIF(" + String(sparrows.filter{ $0.type == SparrowType.uGif }.count) + ")"
-            case 4:
-                headerView.sparrowsHeaderLabel.text = "视频(" + String(sparrows.filter{ $0.type == SparrowType.uVideo }.count) + ")"
-            case 5:
-                headerView.sparrowsHeaderLabel.text = "文本(" + String(sparrows.filter{ $0.type == SparrowType.uDoc }.count) + ")"
-            case 6:
-                headerView.sparrowsHeaderLabel.text = "其他(" + String(sparrows.filter{ $0.type == SparrowType.uOthers }.count) + ")"
-            default:
-                break
-            }
+            headerView.sparrowsHeaderLabel.text = headerHead[indexPath.section] + "(" + String(sparrows.filter{ $0.type.usn == indexPath.section }.count) + ")"
             return headerView
         default:
             assert(false, "Unexpected element kind")
@@ -200,7 +187,6 @@ extension SparrowsViewController {
                             print(text)
                             DispatchQueue.main.async {
                                 self.performSegue(withIdentifier: Constants.SegueIdentifier.ShowText, sender: text)
-                                print("segue")
                             }
                         } catch let err {
                             print(err.localizedDescription)
@@ -227,44 +213,9 @@ extension SparrowsViewController {
                 }))
                 present(alert, animated: true, completion: nil)
             }
-            
         default:
             break
         }
-    }
-    
-    func emmmmmm() {
-        
-        // MARK: UICollectionViewDelegate
-        
-        /*
-         // Uncomment this method to specify if the specified item should be highlighted during tracking
-         override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-         return true
-         }
-         */
-        
-        /*
-         // Uncomment this method to specify if the specified item should be selected
-         override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-         return true
-         }
-         */
-        
-        /*
-         // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-         override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-         return false
-         }
-         
-         override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-         return false
-         }
-         
-         override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-         
-         }
-         */
     }
     
 }
