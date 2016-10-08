@@ -17,11 +17,11 @@ class SparrowGifPageViewController: UIPageViewController {
         print(#function)
     }
 
-    private func newGifViewController(url: URL) -> SparrowGifViewController {
+    fileprivate func newGifViewController(url: URL) -> SparrowGifViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardId.gifVC) as! SparrowGifViewController
     }
     
-    private func stylePageControl() {
+    fileprivate func stylePageControl() {
         let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [type(of: self)])
         pageControl.currentPageIndicatorTintColor = Constants.SparrowTheme.selectedColor
         pageControl.pageIndicatorTintColor = Constants.SparrowTheme.textColor
@@ -36,7 +36,6 @@ class SparrowGifPageViewController: UIPageViewController {
             gifViewController.gifUrl = $0
             return gifViewController
         }
-        
         dataSource = self
         setViewControllers([gifViewControllers[startingIndex]], direction: .forward, animated: true, completion: nil)
     }

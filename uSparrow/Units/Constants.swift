@@ -64,6 +64,7 @@ struct Constants {
         static let ShowText = "ShowText"
         
         static let EmbedGifPage = "EmbedGifPage"
+        static let EmbedPhotoPage = "EmbedPhotoPage"
     }
     
     struct ReuserIdentifier {
@@ -103,6 +104,7 @@ struct Constants {
     
     struct StoryboardId {
         static let gifVC = "SparrowGifViewController"
+        static let photoVC = "SparrowPhotoViewController"
         static let AuthNav = "SparrowAuthNavigation"
     }
 }

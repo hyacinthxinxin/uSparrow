@@ -98,15 +98,15 @@ class SparrowsViewController: UICollectionViewController {
                 sparrowsVC.documentsUrl = sparrows.filter{ $0.type.usn == indexPath.section }[indexPath.row].documentsUrl
             }
         } else if segue.identifier == Constants.SegueIdentifier.ShowPhotos {
-            if let detail = segue.destination as? SparrowsDetailViewController, let indexPath = sender as? IndexPath {
+            if let detail = segue.destination as? SparrowPhotoContainerViewController, let indexPath = sender as? IndexPath {
                 detail.sparrowThumbnails = sparrows.filter{ $0.type == SparrowType.uPhoto }.map{ $0.thumbnailPhoto! }
                 detail.largePhotoIndexPath = IndexPath(row: indexPath.row, section: 0)
+                detail.photoUrls = sparrows.filter{ $0.type == SparrowType.uPhoto }.map{ $0.documentsUrl! }
             }
         } else if segue.identifier == Constants.SegueIdentifier.ShowGif {
             if let gifPageVC = segue.destination as? SparrowGifContainerViewController, let indexPath = sender as? IndexPath {
                 gifPageVC.startingIndex = indexPath.row
-                gifPageVC.gifUrls = sparrows.filter{ $0.type == SparrowType.uGif }.map{ $0.documentsUrl!
-                }
+                gifPageVC.gifUrls = sparrows.filter{ $0.type == SparrowType.uGif }.map{ $0.documentsUrl! }
             }
         }  else if segue.identifier == Constants.SegueIdentifier.ShowText {
             if let textVC = segue.destination as? SparrowTextDetailViewController, /*let url = sender as? URL*/ let text = sender as? String {

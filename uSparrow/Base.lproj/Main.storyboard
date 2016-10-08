@@ -302,10 +302,10 @@
             </objects>
             <point key="canvasLocation" x="1825" y="-14"/>
         </scene>
-        <!--Sparrows Detail View Controller-->
+        <!--Sparrow Photo Container View Controller-->
         <scene sceneID="v1I-kn-jiP">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="N32-nX-Nu1" customClass="SparrowsDetailViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="N32-nX-Nu1" customClass="SparrowPhotoContainerViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uDh-rF-oW0"/>
                         <viewControllerLayoutGuide type="bottom" id="7lN-KL-dhs"/>
@@ -314,18 +314,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aZ-7n-Xyz">
-                                <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qth-fX-cGk" customClass="SparrowPhotoCropView" customModule="uSparrow" customModuleProvider="target"/>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Qth-fX-cGk" firstAttribute="top" secondItem="3aZ-7n-Xyz" secondAttribute="top" id="0bD-Y0-jHB"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qth-fX-cGk" secondAttribute="trailing" id="6hs-19-2w8"/>
-                                    <constraint firstItem="Qth-fX-cGk" firstAttribute="leading" secondItem="3aZ-7n-Xyz" secondAttribute="leading" id="OsN-lK-nwC"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qth-fX-cGk" secondAttribute="bottom" id="gL6-ar-cRn"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zpv-9v-hcP">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -372,26 +360,92 @@
                                     <outlet property="delegate" destination="N32-nX-Nu1" id="eGc-VN-2lk"/>
                                 </connections>
                             </collectionView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVO-LH-cLm">
+                                <connections>
+                                    <segue destination="ChG-Ce-Ka3" kind="embed" identifier="EmbedPhotoPage" id="VuB-WZ-I7T"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Zpv-9v-hcP" secondAttribute="trailing" constant="-16" id="6q0-YG-OJT"/>
-                            <constraint firstItem="3aZ-7n-Xyz" firstAttribute="top" secondItem="uDh-rF-oW0" secondAttribute="bottom" id="L8W-Pv-JDv"/>
+                            <constraint firstItem="tVO-LH-cLm" firstAttribute="leading" secondItem="gCx-PQ-7aT" secondAttribute="leading" id="BV8-sr-KcE"/>
+                            <constraint firstItem="tVO-LH-cLm" firstAttribute="top" secondItem="uDh-rF-oW0" secondAttribute="bottom" id="JiN-iM-UyV"/>
+                            <constraint firstItem="Zpv-9v-hcP" firstAttribute="top" secondItem="tVO-LH-cLm" secondAttribute="bottom" id="OCA-bf-erm"/>
+                            <constraint firstAttribute="trailing" secondItem="tVO-LH-cLm" secondAttribute="trailing" id="PHJ-bE-vbv"/>
                             <constraint firstItem="7lN-KL-dhs" firstAttribute="top" secondItem="Zpv-9v-hcP" secondAttribute="bottom" id="SPc-oY-Ggf"/>
-                            <constraint firstItem="3aZ-7n-Xyz" firstAttribute="leading" secondItem="gCx-PQ-7aT" secondAttribute="leading" id="Ze8-L7-ime"/>
-                            <constraint firstAttribute="trailing" secondItem="3aZ-7n-Xyz" secondAttribute="trailing" id="qar-Or-irc"/>
-                            <constraint firstItem="Zpv-9v-hcP" firstAttribute="top" secondItem="3aZ-7n-Xyz" secondAttribute="bottom" id="wKQ-PN-yf6"/>
                             <constraint firstItem="Zpv-9v-hcP" firstAttribute="leading" secondItem="gCx-PQ-7aT" secondAttribute="leadingMargin" constant="-16" id="zf2-PR-JE8"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="sparrowPhotoCropView" destination="Qth-fX-cGk" id="VIy-Rd-Py0"/>
                         <outlet property="thumbnailCollectionView" destination="Zpv-9v-hcP" id="JrL-f6-rZa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yq6-1b-2Qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1826" y="-726"/>
+            <point key="canvasLocation" x="1824.8" y="-726.38680659670172"/>
+        </scene>
+        <!--Sparrow Photo Page View Controller-->
+        <scene sceneID="C4C-r6-R6y">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="12" navigationOrientation="horizontal" spineLocation="none" id="ChG-Ce-Ka3" customClass="SparrowPhotoPageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Esf-2Z-Azd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2534" y="-712"/>
+        </scene>
+        <!--Sparrow Photo View Controller-->
+        <scene sceneID="k1V-k7-iDM">
+            <objects>
+                <viewController storyboardIdentifier="SparrowPhotoViewController" id="ENK-Ei-oxc" customClass="SparrowPhotoViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KAy-kS-md7"/>
+                        <viewControllerLayoutGuide type="bottom" id="HuA-F2-q6l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5o4-Mv-apH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-8k-nhv">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxb-PK-EKy">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="leM-77-E5k"/>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="leM-77-E5k" secondAttribute="bottom" id="Tbp-YT-0GW"/>
+                                            <constraint firstAttribute="trailing" secondItem="leM-77-E5k" secondAttribute="trailing" id="il4-uV-xMQ"/>
+                                            <constraint firstItem="leM-77-E5k" firstAttribute="top" secondItem="Nxb-PK-EKy" secondAttribute="top" id="rlB-G8-Zm4"/>
+                                            <constraint firstItem="leM-77-E5k" firstAttribute="leading" secondItem="Nxb-PK-EKy" secondAttribute="leading" id="vJL-yw-XYd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Nxb-PK-EKy" secondAttribute="trailing" id="34e-LW-UMq"/>
+                                    <constraint firstAttribute="width" secondItem="Nxb-PK-EKy" secondAttribute="width" id="4FT-M4-Vfr"/>
+                                    <constraint firstItem="Nxb-PK-EKy" firstAttribute="top" secondItem="EWj-8k-nhv" secondAttribute="top" id="EHt-Lg-cfo"/>
+                                    <constraint firstAttribute="height" secondItem="Nxb-PK-EKy" secondAttribute="height" id="GS5-p3-TJW"/>
+                                    <constraint firstItem="Nxb-PK-EKy" firstAttribute="leading" secondItem="EWj-8k-nhv" secondAttribute="leading" id="XRw-pb-aOO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nxb-PK-EKy" secondAttribute="bottom" id="nB7-ek-kjd"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EWj-8k-nhv" firstAttribute="leading" secondItem="5o4-Mv-apH" secondAttribute="leading" id="40G-WA-b8c"/>
+                            <constraint firstItem="EWj-8k-nhv" firstAttribute="top" secondItem="5o4-Mv-apH" secondAttribute="top" id="eL3-tF-NNY"/>
+                            <constraint firstItem="HuA-F2-q6l" firstAttribute="top" secondItem="EWj-8k-nhv" secondAttribute="bottom" id="n4h-Tg-1nI"/>
+                            <constraint firstAttribute="trailing" secondItem="EWj-8k-nhv" secondAttribute="trailing" id="vt9-Mo-APc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="leM-77-E5k" id="qmr-td-tDy"/>
+                        <outlet property="scrollView" destination="EWj-8k-nhv" id="TeJ-bB-H1F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpp-w0-xSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3460" y="-713.79310344827593"/>
         </scene>
         <!--Sparrow Gif View Controller-->
         <scene sceneID="cr3-7W-cwj">

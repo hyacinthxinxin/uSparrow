@@ -53,6 +53,9 @@
 		BAC25E041DA7956C00E03018 /* SparrowGesturePasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC25E031DA7956C00E03018 /* SparrowGesturePasswordButton.swift */; };
 		BAC25E061DA796F100E03018 /* SparrowGestureTentacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC25E051DA796F100E03018 /* SparrowGestureTentacleView.swift */; };
 		BAC25E081DA7989F00E03018 /* SparrowGesturePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC25E071DA7989F00E03018 /* SparrowGesturePasswordView.swift */; };
+		BAC25E0A1DA8AC0000E03018 /* SparrowPhotoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC25E091DA8AC0000E03018 /* SparrowPhotoPageViewController.swift */; };
+		BAC25E0C1DA8AC2700E03018 /* SparrowPhotoContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC25E0B1DA8AC2700E03018 /* SparrowPhotoContainerViewController.swift */; };
+		BAC25E0E1DA8AD0800E03018 /* SparrowPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC25E0D1DA8AD0800E03018 /* SparrowPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +128,9 @@
 		BAC25E031DA7956C00E03018 /* SparrowGesturePasswordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGesturePasswordButton.swift; path = SparrowGesturePassword/SparrowGesturePasswordButton.swift; sourceTree = "<group>"; };
 		BAC25E051DA796F100E03018 /* SparrowGestureTentacleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGestureTentacleView.swift; path = SparrowGesturePassword/SparrowGestureTentacleView.swift; sourceTree = "<group>"; };
 		BAC25E071DA7989F00E03018 /* SparrowGesturePasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGesturePasswordView.swift; path = SparrowGesturePassword/SparrowGesturePasswordView.swift; sourceTree = "<group>"; };
+		BAC25E091DA8AC0000E03018 /* SparrowPhotoPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowPhotoPageViewController.swift; path = SparrowsDetail/SparrowPhotoPageViewController.swift; sourceTree = "<group>"; };
+		BAC25E0B1DA8AC2700E03018 /* SparrowPhotoContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowPhotoContainerViewController.swift; path = SparrowsDetail/SparrowPhotoContainerViewController.swift; sourceTree = "<group>"; };
+		BAC25E0D1DA8AD0800E03018 /* SparrowPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowPhotoViewController.swift; path = SparrowsDetail/SparrowPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,9 +170,9 @@
 		BA473D601D9D9A780076276D /* SparrowGifDetail */ = {
 			isa = PBXGroup;
 			children = (
-				BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */,
-				BA473D671D9E4DA20076276D /* SparrowGifPageViewController.swift */,
 				BA473D6B1D9EC3250076276D /* SparrowGifContainerViewController.swift */,
+				BA473D671D9E4DA20076276D /* SparrowGifPageViewController.swift */,
+				BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */,
 			);
 			name = SparrowGifDetail;
 			sourceTree = "<group>";
@@ -224,7 +230,7 @@
 				BA71FEDB1D9C0E8B00CD0E5A /* WebServer */,
 				BA89E2EF1D9CEDCA00ECCF6A /* SparrowModels */,
 				BA71FED61D9C08C600CD0E5A /* Sparrows */,
-				BA89E2F91D9D560600ECCF6A /* SparrowImageDetail */,
+				BA89E2F91D9D560600ECCF6A /* SparrowPhotoDetail */,
 				BA473D601D9D9A780076276D /* SparrowGifDetail */,
 				BA473D711D9F7D6A0076276D /* SparrowTextDetail */,
 				BA473D6D1D9EDFFE0076276D /* SparrowWeb */,
@@ -353,15 +359,18 @@
 			name = SparrowModels;
 			sourceTree = "<group>";
 		};
-		BA89E2F91D9D560600ECCF6A /* SparrowImageDetail */ = {
+		BA89E2F91D9D560600ECCF6A /* SparrowPhotoDetail */ = {
 			isa = PBXGroup;
 			children = (
 				BA89E2FE1D9D58D400ECCF6A /* SparrowsDetailViewController.swift */,
 				BA89E3001D9D594A00ECCF6A /* ThumbnailCell.swift */,
 				BA473D561D9D63BE0076276D /* SparrowPhotoCropView.swift */,
 				BA473D7B1DA014100076276D /* SparrowImageDetailReusableView.swift */,
+				BAC25E0B1DA8AC2700E03018 /* SparrowPhotoContainerViewController.swift */,
+				BAC25E091DA8AC0000E03018 /* SparrowPhotoPageViewController.swift */,
+				BAC25E0D1DA8AD0800E03018 /* SparrowPhotoViewController.swift */,
 			);
-			name = SparrowImageDetail;
+			name = SparrowPhotoDetail;
 			sourceTree = "<group>";
 		};
 		BA89E3021D9D5CD100ECCF6A /* Extensions */ = {
@@ -519,16 +528,19 @@
 				BA89E2F11D9CEDE800ECCF6A /* SparrowModel.swift in Sources */,
 				BA71FEBE1D9BF4F000CD0E5A /* GCDWebServerStreamedResponse.m in Sources */,
 				BA71FEBD1D9BF4F000CD0E5A /* GCDWebServerFileResponse.m in Sources */,
+				BAC25E0C1DA8AC2700E03018 /* SparrowPhotoContainerViewController.swift in Sources */,
 				BA71FE751D9BE6A400CD0E5A /* AppDelegate.swift in Sources */,
 				BAC25E081DA7989F00E03018 /* SparrowGesturePasswordView.swift in Sources */,
 				BA473D7F1DA199600076276D /* SparrowAuthViewController.swift in Sources */,
 				BA89E3011D9D594A00ECCF6A /* ThumbnailCell.swift in Sources */,
 				BA71FEB21D9BF4E900CD0E5A /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				BA71FED81D9C08D600CD0E5A /* SparrowsViewController.swift in Sources */,
+				BAC25E0E1DA8AD0800E03018 /* SparrowPhotoViewController.swift in Sources */,
 				BA71FEA31D9BF4E000CD0E5A /* GCDWebServerConnection.m in Sources */,
 				BA71FEB01D9BF4E900CD0E5A /* GCDWebServerFileRequest.m in Sources */,
 				BA473D661D9E4CF30076276D /* SparrowGifViewController.swift in Sources */,
 				BA89E2FF1D9D58D400ECCF6A /* SparrowsDetailViewController.swift in Sources */,
+				BAC25E0A1DA8AC0000E03018 /* SparrowPhotoPageViewController.swift in Sources */,
 				BA473D7C1DA014100076276D /* SparrowImageDetailReusableView.swift in Sources */,
 				BA71FEDA1D9C0CF900CD0E5A /* SparrowCell.swift in Sources */,
 				BA71FEE81D9C40CD00CD0E5A /* GCDWebDAVServer.m in Sources */,
