@@ -18,17 +18,17 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWv-U9-Nzb">
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" translatesAutoresizingMaskIntoConstraints="NO" id="15D-iH-xDs"/>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.066666666666666666" green="0.082352941176470587" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="15D-iH-xDs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1fk-XT-Dmd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mWv-U9-Nzb" secondAttribute="trailing" id="1nC-5s-OX1"/>
@@ -50,14 +50,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="1308"/>
+            <point key="canvasLocation" x="1015" y="882"/>
         </scene>
         <!--Sparrows View Controller-->
         <scene sceneID="Zhe-U8-hCd">
             <objects>
                 <collectionViewController id="8WT-Kc-v7T" customClass="SparrowsViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="deG-TN-an4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="deG-TN-an4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nbg-1l-j3Y">
@@ -68,7 +68,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowCell" id="6Qc-M1-Tgb" customClass="SparrowCell" customModule="uSparrow" customModuleProvider="target">
-                                <rect key="frame" x="88" y="50" width="200" height="200"/>
+                                <rect key="frame" x="0.0" y="50" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -128,7 +128,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowsHeaderView" id="09v-rD-74v" customClass="SparrowsHeaderView" customModule="uSparrow" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4I-k7-O2u">
@@ -168,15 +168,14 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Bav-KJ-4UV" kind="presentation" identifier="ShowUpload" id="Wcn-QG-Uh6"/>
-                        <segue destination="N32-nX-Nu1" kind="show" identifier="ShowPhotos" id="UDQ-dT-zxL"/>
-                        <segue destination="Xmy-NI-Fsu" kind="presentation" identifier="ShowGif" id="46e-Y7-k8w"/>
                         <segue destination="HGS-CR-M5Y" kind="show" identifier="ShowWeb" id="Zb2-Zi-7f7"/>
                         <segue destination="oCE-LW-4Ck" kind="show" identifier="ShowText" id="S06-OQ-9K2"/>
+                        <segue destination="tUE-Z3-2ts" kind="show" identifier="ShowPhotoAlbum" id="vfp-LK-F0E"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5K-bc-2hU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="27"/>
+            <point key="canvasLocation" x="97" y="27"/>
         </scene>
         <!--Sparrow Web View Controller-->
         <scene sceneID="d2Q-9P-49s">
@@ -187,7 +186,7 @@
                         <viewControllerLayoutGuide type="bottom" id="GnI-O1-rjv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uab-dj-B7J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOz-ie-RGz">
@@ -208,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFw-FX-8tM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="1555"/>
+            <point key="canvasLocation" x="1713" y="27"/>
         </scene>
         <!--Sparrow Text Detail View Controller-->
         <scene sceneID="COC-ik-6Ia">
@@ -219,7 +218,7 @@
                         <viewControllerLayoutGuide type="bottom" id="x1R-OS-ZON"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5mt-S3-oBC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-f3-HVx">
@@ -243,179 +242,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mby-8G-OF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="801"/>
+            <point key="canvasLocation" x="1713" y="-726"/>
         </scene>
-        <!--Sparrow Gif Page View Controller-->
-        <scene sceneID="VAD-va-tiY">
+        <!--Sparrow Photo Album Page View Controller-->
+        <scene sceneID="S1T-xL-xGD">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tSc-Di-yuG" customClass="SparrowGifPageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5yJ-Cb-kHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="tUE-Z3-2ts" customClass="SparrowPhotoAlbumPageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qi4-JG-AOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809" y="-44"/>
+            <point key="canvasLocation" x="1713" y="-1487"/>
         </scene>
-        <!--Sparrow Gif Container View Controller-->
-        <scene sceneID="dLP-SV-bqN">
-            <objects>
-                <viewController id="Xmy-NI-Fsu" customClass="SparrowGifContainerViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="of8-As-HZR"/>
-                        <viewControllerLayoutGuide type="bottom" id="p4Z-i4-Ag7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="37W-PL-21H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHR-bM-ilh">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="zjy-nZ-sBb"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem id="4UF-5W-tpe">
-                                        <barButtonItem key="leftBarButtonItem" image="cancel" id="kEX-NO-NSd">
-                                            <connections>
-                                                <action selector="dismiss:" destination="Xmy-NI-Fsu" id="xrW-FQ-ZIZ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F9h-9x-xeb">
-                                <frame key="frameInset" height="603"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="tSc-Di-yuG" kind="embed" identifier="EmbedGifPage" id="9Mb-uf-aTD"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cHR-bM-ilh" firstAttribute="leading" secondItem="37W-PL-21H" secondAttribute="leading" id="9N6-3M-BfU"/>
-                            <constraint firstItem="cHR-bM-ilh" firstAttribute="top" secondItem="of8-As-HZR" secondAttribute="bottom" constant="-20" id="Ips-nx-m0Z"/>
-                            <constraint firstAttribute="trailing" secondItem="cHR-bM-ilh" secondAttribute="trailing" id="c46-rn-QRN"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="bar" destination="cHR-bM-ilh" id="Drk-QH-3rA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pIM-Hw-2ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1825" y="-14"/>
-        </scene>
-        <!--Sparrow Photo Container View Controller-->
-        <scene sceneID="v1I-kn-jiP">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="N32-nX-Nu1" customClass="SparrowPhotoContainerViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uDh-rF-oW0"/>
-                        <viewControllerLayoutGuide type="bottom" id="7lN-KL-dhs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gCx-PQ-7aT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zpv-9v-hcP">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="qia-aO-cCM"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eju-yM-WNC">
-                                    <size key="itemSize" width="100" height="100"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
-                                    <size key="footerReferenceSize" width="50" height="50"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThumbnailCell" id="Va8-Ik-awZ" customClass="ThumbnailCell" customModule="uSparrow" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="14" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u36-qt-CxL"/>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="u36-qt-CxL" secondAttribute="trailing" id="B2j-CB-u4s"/>
-                                            <constraint firstAttribute="bottom" secondItem="u36-qt-CxL" secondAttribute="bottom" id="SjS-1a-e0v"/>
-                                            <constraint firstItem="u36-qt-CxL" firstAttribute="top" secondItem="Va8-Ik-awZ" secondAttribute="top" id="c7O-CQ-s5f"/>
-                                            <constraint firstItem="u36-qt-CxL" firstAttribute="leading" secondItem="Va8-Ik-awZ" secondAttribute="leading" id="xxQ-2m-fcU"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="thumbnailImageView" destination="u36-qt-CxL" id="Tz0-CZ-6Qk"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowImageDetailHeaderView" id="7sJ-bA-DAC" customClass="SparrowImageDetailReusableView" customModule="uSparrow" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowImageDetailFooterView" id="DSv-n3-jyZ" customClass="SparrowImageDetailReusableView" customModule="uSparrow" customModuleProvider="target">
-                                    <rect key="frame" x="150" y="0.0" width="50" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
-                                <connections>
-                                    <outlet property="dataSource" destination="N32-nX-Nu1" id="MtN-GC-G4g"/>
-                                    <outlet property="delegate" destination="N32-nX-Nu1" id="eGc-VN-2lk"/>
-                                </connections>
-                            </collectionView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVO-LH-cLm">
-                                <connections>
-                                    <segue destination="ChG-Ce-Ka3" kind="embed" identifier="EmbedPhotoPage" id="VuB-WZ-I7T"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Zpv-9v-hcP" secondAttribute="trailing" constant="-16" id="6q0-YG-OJT"/>
-                            <constraint firstItem="tVO-LH-cLm" firstAttribute="leading" secondItem="gCx-PQ-7aT" secondAttribute="leading" id="BV8-sr-KcE"/>
-                            <constraint firstItem="tVO-LH-cLm" firstAttribute="top" secondItem="uDh-rF-oW0" secondAttribute="bottom" id="JiN-iM-UyV"/>
-                            <constraint firstItem="Zpv-9v-hcP" firstAttribute="top" secondItem="tVO-LH-cLm" secondAttribute="bottom" id="OCA-bf-erm"/>
-                            <constraint firstAttribute="trailing" secondItem="tVO-LH-cLm" secondAttribute="trailing" id="PHJ-bE-vbv"/>
-                            <constraint firstItem="7lN-KL-dhs" firstAttribute="top" secondItem="Zpv-9v-hcP" secondAttribute="bottom" id="SPc-oY-Ggf"/>
-                            <constraint firstItem="Zpv-9v-hcP" firstAttribute="leading" secondItem="gCx-PQ-7aT" secondAttribute="leadingMargin" constant="-16" id="zf2-PR-JE8"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="thumbnailCollectionView" destination="Zpv-9v-hcP" id="JrL-f6-rZa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yq6-1b-2Qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1824.8" y="-726.38680659670172"/>
-        </scene>
-        <!--Sparrow Photo Page View Controller-->
-        <scene sceneID="C4C-r6-R6y">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="12" navigationOrientation="horizontal" spineLocation="none" id="ChG-Ce-Ka3" customClass="SparrowPhotoPageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Esf-2Z-Azd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2534" y="-712"/>
-        </scene>
-        <!--Sparrow Photo View Controller-->
+        <!--Sparrow Image View Controller-->
         <scene sceneID="k1V-k7-iDM">
             <objects>
-                <viewController storyboardIdentifier="SparrowPhotoViewController" id="ENK-Ei-oxc" customClass="SparrowPhotoViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SparrowPhotoViewController" id="ENK-Ei-oxc" customClass="SparrowImageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KAy-kS-md7"/>
                         <viewControllerLayoutGuide type="bottom" id="HuA-F2-q6l"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5o4-Mv-apH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-8k-nhv">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxb-PK-EKy">
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="leM-77-E5k"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="375" translatesAutoresizingMaskIntoConstraints="NO" id="leM-77-E5k"/>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="leM-77-E5k" secondAttribute="bottom" id="Tbp-YT-0GW"/>
+                                            <constraint firstItem="leM-77-E5k" firstAttribute="centerY" secondItem="Nxb-PK-EKy" secondAttribute="centerY" id="Q7g-YP-5FF"/>
                                             <constraint firstAttribute="trailing" secondItem="leM-77-E5k" secondAttribute="trailing" id="il4-uV-xMQ"/>
-                                            <constraint firstItem="leM-77-E5k" firstAttribute="top" secondItem="Nxb-PK-EKy" secondAttribute="top" id="rlB-G8-Zm4"/>
                                             <constraint firstItem="leM-77-E5k" firstAttribute="leading" secondItem="Nxb-PK-EKy" secondAttribute="leading" id="vJL-yw-XYd"/>
                                         </constraints>
                                     </view>
@@ -439,13 +296,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="leM-77-E5k" id="qmr-td-tDy"/>
-                        <outlet property="scrollView" destination="EWj-8k-nhv" id="TeJ-bB-H1F"/>
+                        <outlet property="imageView" destination="leM-77-E5k" id="0sH-cJ-gG3"/>
+                        <outlet property="scrollView" destination="EWj-8k-nhv" id="HPW-sb-7cu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpp-w0-xSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3460" y="-713.79310344827593"/>
+            <point key="canvasLocation" x="2502" y="-1487"/>
         </scene>
         <!--Sparrow Gif View Controller-->
         <scene sceneID="cr3-7W-cwj">
@@ -456,7 +313,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aRY-QS-4mT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="czW-4P-G2z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGc-IG-LOH">
@@ -477,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8K-89-dZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3671" y="-45"/>
+            <point key="canvasLocation" x="3286" y="-1487"/>
         </scene>
         <!--登录-->
         <scene sceneID="iNz-1s-X9C">
@@ -488,7 +345,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gKA-ae-sa9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7dl-SG-cWq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qpf-wz-VvQ" customClass="SparrowGesturePasswordView" customModule="uSparrow" customModuleProvider="target">
@@ -502,7 +359,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbZ-lI-UxD">
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" title="uSparrow." image="uSparrow">
-                                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="McU-ce-5w4">
@@ -511,7 +368,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.08235294118" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="McU-ce-5w4" firstAttribute="centerX" secondItem="mCm-59-GBB" secondAttribute="centerX" id="8FK-Re-FRQ"/>
                                     <constraint firstItem="jbZ-lI-UxD" firstAttribute="centerY" secondItem="mCm-59-GBB" secondAttribute="centerY" id="GIz-uP-ZrQ"/>
@@ -553,33 +410,33 @@
             <objects>
                 <tableViewController title="设置" id="zp9-RI-FeJ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dub-bs-T2t">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="k7k-0S-cIH">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zww-sL-lWF">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="64" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zww-sL-lWF" id="izk-YD-CLa">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OkW-gr-qfB">
-                                        <rect key="frame" x="0.0" y="108" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="108" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OkW-gr-qfB" id="3Sv-ap-hCe">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Trc-kd-1IF">
-                                        <rect key="frame" x="0.0" y="152" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="152" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Trc-kd-1IF" id="neL-Rm-fHb">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -601,9 +458,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjo-DN-SVd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lhC-Fg-zI2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lhC-Fg-zI2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.38823529410000002" green="0.61960784310000006" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.18823529410000001" green="0.20000000000000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -620,9 +479,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bav-KJ-4UV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CJh-ZC-EWx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CJh-ZC-EWx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.38823529411764707" green="0.61960784313725492" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.18823529411764706" green="0.20000000000000001" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -631,16 +495,21 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvi-pb-Vo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498" y="1308"/>
+            <point key="canvasLocation" x="97" y="882"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g9d-Yt-S7Z">
             <objects>
                 <navigationController storyboardIdentifier="SparrowAuthNavigation" automaticallyAdjustsScrollViewInsets="NO" id="goQ-gR-LTG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e56-E9-sm3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e56-E9-sm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.38823529410000002" green="0.61960784310000006" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.18823529410000001" green="0.20000000000000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

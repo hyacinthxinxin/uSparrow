@@ -8,16 +8,12 @@
 
 import UIKit
 
-class SparrowGifViewController: UIViewController {
-    var gifUrl: URL?
-    
+class SparrowGifViewController: SparrowPhotoBaseViewController {
     @IBOutlet weak var gifImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Constants.SparrowTheme.backgroundColor
-        if let url = gifUrl {
-            gifImageView.loadGif(url: url)
-        }
+        gifImageView.loadGif(url: photoUrl)
     }
 }

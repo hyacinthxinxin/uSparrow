@@ -97,18 +97,18 @@ class SparrowsViewController: UICollectionViewController {
             if let sparrowsVC = segue.destination as? SparrowsViewController, let indexPath = collectionView?.indexPathsForSelectedItems?[0] {
                 sparrowsVC.documentsUrl = sparrows.filter{ $0.type.usn == indexPath.section }[indexPath.row].documentsUrl
             }
-        } else if segue.identifier == Constants.SegueIdentifier.ShowPhotos {
-            if let detail = segue.destination as? SparrowPhotoContainerViewController, let indexPath = sender as? IndexPath {
-                detail.sparrowThumbnails = sparrows.filter{ $0.type == SparrowType.uPhoto }.map{ $0.thumbnailPhoto! }
-                detail.largePhotoIndexPath = IndexPath(row: indexPath.row, section: 0)
-                detail.photoUrls = sparrows.filter{ $0.type == SparrowType.uPhoto }.map{ $0.documentsUrl! }
+        } else if segue.identifier == Constants.SegueIdentifier.ShowPhotoAlbum {
+            if let photoAlbum = segue.destination as? SparrowPhotoAlbumPageViewController, let indexPath = sender as? IndexPath {
+                if indexPath.section == 2 {
+                    photoAlbum.type = .img
+                    photoAlbum.photoUrls = sparrows.filter{ $0.type == SparrowType.uPhoto }.map{ $0.documentsUrl! }
+                } else if indexPath.section == 3 {
+                    photoAlbum.type = .gif
+                    photoAlbum.photoUrls = sparrows.filter{ $0.type == SparrowType.uGif }.map{ $0.documentsUrl! }
+                }
+                photoAlbum.currentIndex = indexPath.row
             }
-        } else if segue.identifier == Constants.SegueIdentifier.ShowGif {
-            if let gifPageVC = segue.destination as? SparrowGifContainerViewController, let indexPath = sender as? IndexPath {
-                gifPageVC.startingIndex = indexPath.row
-                gifPageVC.gifUrls = sparrows.filter{ $0.type == SparrowType.uGif }.map{ $0.documentsUrl! }
-            }
-        }  else if segue.identifier == Constants.SegueIdentifier.ShowText {
+        } else if segue.identifier == Constants.SegueIdentifier.ShowText {
             if let textVC = segue.destination as? SparrowTextDetailViewController, /*let url = sender as? URL*/ let text = sender as? String {
                 textVC.text = text
             }
@@ -164,9 +164,9 @@ extension SparrowsViewController {
         case 1:
             print("choose the custom fold, should perform segue from cell")
         case 2:
-            performSegue(withIdentifier: Constants.SegueIdentifier.ShowPhotos, sender: indexPath)
+            performSegue(withIdentifier: Constants.SegueIdentifier.ShowPhotoAlbum, sender: indexPath)
         case 3:
-            performSegue(withIdentifier: Constants.SegueIdentifier.ShowGif, sender: indexPath)
+            performSegue(withIdentifier: Constants.SegueIdentifier.ShowPhotoAlbum, sender: indexPath)
         case 4:
             let videos = sparrows.filter{ $0.type == SparrowType.uVideo }
             if let url = videos[indexPath.row].documentsUrl {
