@@ -268,10 +268,8 @@ extension SparrowsViewController: UploadViewControllerDelegate {
             guard isNeedUpdate else {
                 return
             }
-            self.collectionView?.performBatchUpdates({
-                self.reloadCollectionData()
-                }, completion: { (isSuccess: Bool) in
-            })
+            self.reloadCollectionData()
+            self.collectionView?.reloadData()
         }
     }
 }

@@ -691,7 +691,6 @@
 				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = 9YE7FFAQ8S;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				INFOPLIST_FILE = uSparrow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fanxin.tingspectrum.uSparrow;
