@@ -17,6 +17,11 @@ import JDStatusBarNotification
 class SparrowsViewController: UICollectionViewController {
     var documentsUrl: URL?
     var sparrows: [Sparrow]!
+    lazy var imagePickerController: ImagePickerController = {
+        let picker = ImagePickerController()
+        picker.delegate = self
+        return picker
+    }()
     
     deinit {
         print(#function)
@@ -51,10 +56,8 @@ class SparrowsViewController: UICollectionViewController {
     
     @IBAction func add(_ sender: AnyObject) {
         let alert = UIAlertController(title: "", message: "添加新的文件", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "相机/相册", style: .default, handler: { (action: UIAlertAction!) in
-            let imagePickerController = ImagePickerController()
-            imagePickerController.delegate = self
-            self.present(imagePickerController, animated: true)
+        alert.addAction(UIAlertAction(title: "相机/相册", style: .default, handler: { [weak weakSelf = self] (action: UIAlertAction!) in
+            weakSelf?.present(self.imagePickerController, animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: "连接局域网", style: .default, handler: { (action: UIAlertAction!) in
@@ -155,14 +158,15 @@ extension SparrowsViewController {
         default:
             assert(false, "Unexpected element kind")
         }
+        return UICollectionReusableView()
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
-        case 0:
-            print("choose the system fold, should perform segue from cell")
-        case 1:
-            print("choose the custom fold, should perform segue from cell")
+//        case 0:
+//            print("choose the system fold, should perform segue from cell")
+//        case 1:
+//            print("choose the custom fold, should perform segue from cell")
         case 2:
             performSegue(withIdentifier: Constants.SegueIdentifier.ShowPhotoAlbum, sender: indexPath)
         case 3:
@@ -274,7 +278,6 @@ extension SparrowsViewController: UploadViewControllerDelegate {
 
 extension SparrowsViewController: ImagePickerDelegate {
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        print(images)
         dismiss(animated: true)
     }
     

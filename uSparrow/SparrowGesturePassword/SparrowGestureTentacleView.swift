@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SparrowGestureTentacleViewDelegate {
+protocol SparrowGestureTentacleViewDelegate: class {
     func tentacleView(gestureTouchBegin tentacleView: SparrowGestureTentacleView)
     func tentacleView(_ tentacleView: SparrowGestureTentacleView, verification result:String) -> Bool
     func tentacleView(_ tentacleView: SparrowGestureTentacleView, resetPassword result:String) -> Bool
@@ -23,7 +23,7 @@ class SparrowGestureTentacleView: UIView {
     var lineStartPoint:CGPoint?
     var lineEndPoint:CGPoint?
     
-    var delegate:SparrowGestureTentacleViewDelegate?
+    weak var delegate:SparrowGestureTentacleViewDelegate?
     
     var style:Int?
     
@@ -189,30 +189,25 @@ class SparrowGestureTentacleView: UIView {
                 //i = i-1;
                 continue
             }
-            
             if (success) {
-                context.setStrokeColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 0.7);//线条颜色
+//                context.setStrokeColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 0.7);//线条颜色
+                context.setStrokeColor(Constants.SparrowTheme.tintColor.cgColor)
             }
             else {
-                context.setStrokeColor(red: 208/255, green: 36/255, blue: 36/255, alpha: 0.7);//红色
+//                context.setStrokeColor(red: 208/255, green: 36/255, blue: 36/255, alpha: 0.7);//红色
+                context.setStrokeColor(Constants.SparrowTheme.selectedColor.cgColor)
             }
             
             context.setLineWidth(5)
-            
             context.move(to: CGPoint(x: CGFloat(touchesArray[i]["x"]!), y: CGFloat(touchesArray[i]["y"]!)))
-            
             if(i<touchesArray.count-1){
-                
                 context.addLine(to: CGPoint(x: CGFloat(touchesArray[i+1]["x"]!), y: CGFloat(touchesArray[i+1]["y"]!)))
-            }
-            else{
-                
+            } else {
                 if(success && drawed != true){
                     context.addLine(to: CGPoint(x: lineEndPoint!.x, y: lineEndPoint!.y));
                 }
             }
             context.strokePath()
-            
         }
     }
 

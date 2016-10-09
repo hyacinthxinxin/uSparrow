@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		200F7A19DED95DC433F64174 /* Pods_uSparrow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C76F9797BC81B0462D728 /* Pods_uSparrow.framework */; };
+		BA1B2E011DAA11810030FCDA /* SparrowForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B2E001DAA11810030FCDA /* SparrowForgetViewController.swift */; };
 		BA473D5B1D9D7C480076276D /* CMTime+DurationString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D5A1D9D7C480076276D /* CMTime+DurationString.swift */; };
 		BA473D5D1D9D91AC0076276D /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D5C1D9D91AC0076276D /* UIImage+GIF.swift */; };
 		BA473D661D9E4CF30076276D /* SparrowGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */; };
@@ -57,6 +58,7 @@
 		3BE7006FF242F8F4CE0DECC9 /* Pods-uSparrow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSparrow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uSparrow/Pods-uSparrow.debug.xcconfig"; sourceTree = "<group>"; };
 		5A0E804F3E95B6031274F7F6 /* Pods-uSparrow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSparrow.release.xcconfig"; path = "Pods/Target Support Files/Pods-uSparrow/Pods-uSparrow.release.xcconfig"; sourceTree = "<group>"; };
 		844C76F9797BC81B0462D728 /* Pods_uSparrow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uSparrow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1B2E001DAA11810030FCDA /* SparrowForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowForgetViewController.swift; path = SparrowAuth/SparrowForgetViewController.swift; sourceTree = "<group>"; };
 		BA473D5A1D9D7C480076276D /* CMTime+DurationString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMTime+DurationString.swift"; path = "Extensions/CMTime+DurationString.swift"; sourceTree = "<group>"; };
 		BA473D5C1D9D91AC0076276D /* UIImage+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+GIF.swift"; path = "Extensions/UIImage+GIF.swift"; sourceTree = "<group>"; };
 		BA473D651D9E4CF30076276D /* SparrowGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparrowGifViewController.swift; path = SparrowGifDetail/SparrowGifViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				BAC25E021DA7953B00E03018 /* SparrowGesturePassword */,
 				BA473D7E1DA199600076276D /* SparrowAuthViewController.swift */,
+				BA1B2E001DAA11810030FCDA /* SparrowForgetViewController.swift */,
 			);
 			name = SparrowAuth;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				BA71FEA61D9BF4E000CD0E5A /* GCDWebServerResponse.m in Sources */,
 				BAC25E061DA796F100E03018 /* SparrowGestureTentacleView.swift in Sources */,
 				BA71FEA51D9BF4E000CD0E5A /* GCDWebServerRequest.m in Sources */,
+				BA1B2E011DAA11810030FCDA /* SparrowForgetViewController.swift in Sources */,
 				BAC25E041DA7956C00E03018 /* SparrowGesturePasswordButton.swift in Sources */,
 				BA71FEBC1D9BF4F000CD0E5A /* GCDWebServerErrorResponse.m in Sources */,
 				BA473D5D1D9D91AC0076276D /* UIImage+GIF.swift in Sources */,
@@ -672,6 +676,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "uSparrow/uSparrow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -682,6 +687,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = 9YE7FFAQ8S;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
@@ -690,10 +696,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fanxin.tingspectrum.uSparrow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2ee5752c-97d4-4318-8853-c1ee4c20c4ce";
-				PROVISIONING_PROFILE_SPECIFIER = uSparrowDev;
+				PROVISIONING_PROFILE = "d75399fc-5712-4d2e-9bdb-f65ebeeaf745";
+				PROVISIONING_PROFILE_SPECIFIER = uSparrowProd;
 				SWIFT_OBJC_BRIDGING_HEADER = "uSparrow/uSparrow-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

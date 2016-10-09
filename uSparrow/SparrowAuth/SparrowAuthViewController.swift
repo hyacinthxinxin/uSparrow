@@ -29,8 +29,12 @@ class SparrowAuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gesturePasswordView.gestureTentacleView.delegate = self
-
-        if let uSparrowSecret = UserDefaults.standard.object(forKey: "USparrowSecret") as? String {
+        setupGesturePasswordView()
+    }
+    
+    func setupGesturePasswordView() {
+        if let uSparrowSecret = UserDefaults.standard.object(forKey: Constants.UserDefaultKey.uSparrowSecret) as? String {
+            forgetPasswordItem.isEnabled = true
             gesturePasswordView.gestureTentacleView.style = 1
             statusLabel.text = "请输入手势密码"
             self.uSparrowSecret = uSparrowSecret
@@ -38,20 +42,27 @@ class SparrowAuthViewController: UIViewController {
             statusLabel.text = "请设置手势密码"
             gesturePasswordView.gestureTentacleView.style = 2
             forgetPasswordItem.isEnabled = false
+            self.uSparrowSecret = nil
         }
     }
     
     @IBOutlet weak var forgetPasswordItem: UIBarButtonItem!
     @IBAction func forgetPassword (_ sender: AnyObject) {
-        
+        performSegue(withIdentifier: Constants.SegueIdentifier.ShowForget, sender: self)
     }
     
-    @IBAction func enterPassword(_ sender: AnyObject) {
-        authSuccess()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.SegueIdentifier.ShowForget {
+            if let forget = segue.destination as? SparrowForgetViewController {
+                forget.delegate = self
+            }
+        }
     }
     
-    func authSuccess() {
-        dismiss(animated: false, completion: nil)
+    fileprivate func authSuccess() {
+        delay(seconds: 0.4, completion: { [weak weakSelf = self] in
+            weakSelf?.dismiss(animated: false, completion: nil)
+        })
     }
 }
 
@@ -65,13 +76,14 @@ extension SparrowAuthViewController: SparrowGestureTentacleViewDelegate {
             if uSparrowSecret == result {
                 //验证成功
                 statusLabel.text = "手势密码验证成功"
-                delay(seconds: 0.4, completion: {
-                    self.authSuccess()
-                })
+                self.authSuccess()
                 return true
             } else {
                 //验证失败
                 statusLabel.text = "手势密码验证失败"
+                delay(seconds: 0.4, completion: {
+                    tentacleView.enterArgin()
+                })
                 return false
             }
         }
@@ -84,17 +96,16 @@ extension SparrowAuthViewController: SparrowGestureTentacleViewDelegate {
                 //两次密码一致
                 //保存密码到default
                 statusLabel.text = "手势密码设置成功"
-                UserDefaults.standard.set(uSparrowSecret, forKey: "USparrowSecret")
+                UserDefaults.standard.set(uSparrowSecret, forKey: Constants.UserDefaultKey.uSparrowSecret)
                 guard UserDefaults.standard.synchronize() else {
                     return false
                 }
-                delay(seconds: 0.4, completion: {
-                    self.authSuccess()
-                })
+                self.authSuccess()
                 return true
             } else {
                 //两次密码不一致
                 statusLabel.text = "两次手势密码不一致"
+                tentacleView.enterArgin()
                 return false
             }
         } else {
@@ -104,6 +115,16 @@ extension SparrowAuthViewController: SparrowGestureTentacleViewDelegate {
             tentacleView.enterArgin()
             return true
         }
+    }
+    
+}
+
+extension SparrowAuthViewController: SparrowForgetViewControllerDelegate {
+    func forgetViewController(_ forgetViewController: SparrowForgetViewController, resetPassword success: Bool) {
+        guard success else {
+            return
+        }
+        setupGesturePasswordView()
     }
     
 }

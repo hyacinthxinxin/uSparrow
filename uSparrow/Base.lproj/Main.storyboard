@@ -5,7 +5,6 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWv-U9-Nzb">
@@ -50,14 +49,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="882"/>
+            <point key="canvasLocation" x="2280" y="898"/>
         </scene>
         <!--Sparrows View Controller-->
         <scene sceneID="Zhe-U8-hCd">
             <objects>
                 <collectionViewController id="8WT-Kc-v7T" customClass="SparrowsViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="deG-TN-an4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="deG-TN-an4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nbg-1l-j3Y">
@@ -68,7 +67,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowCell" id="6Qc-M1-Tgb" customClass="SparrowCell" customModule="uSparrow" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="200" height="200"/>
+                                <rect key="frame" x="88" y="50" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -128,7 +127,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SparrowsHeaderView" id="09v-rD-74v" customClass="SparrowsHeaderView" customModule="uSparrow" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4I-k7-O2u">
@@ -153,18 +152,11 @@
                     <navigationItem key="navigationItem" id="dha-iT-DjN">
                         <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="返回" id="WT3-cN-dtN"/>
-                        <rightBarButtonItems>
-                            <barButtonItem image="add" id="1gn-JH-zif">
-                                <connections>
-                                    <action selector="add:" destination="8WT-Kc-v7T" id="5ax-m0-uL1"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="settings" id="RSP-VE-2hl">
-                                <connections>
-                                    <segue destination="zp9-RI-FeJ" kind="show" id="yQQ-sj-NOe"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="add" id="1gn-JH-zif">
+                            <connections>
+                                <action selector="add:" destination="8WT-Kc-v7T" id="5ax-m0-uL1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Bav-KJ-4UV" kind="presentation" identifier="ShowUpload" id="Wcn-QG-Uh6"/>
@@ -186,7 +178,7 @@
                         <viewControllerLayoutGuide type="bottom" id="GnI-O1-rjv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uab-dj-B7J">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOz-ie-RGz">
@@ -195,9 +187,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="kOz-ie-RGz" secondAttribute="trailing" id="Dhf-Ud-OhC"/>
+                            <constraint firstAttribute="trailing" secondItem="kOz-ie-RGz" secondAttribute="trailing" id="Dhf-Ud-OhC"/>
                             <constraint firstItem="GnI-O1-rjv" firstAttribute="top" secondItem="kOz-ie-RGz" secondAttribute="bottom" id="GMo-MY-j7u"/>
-                            <constraint firstItem="kOz-ie-RGz" firstAttribute="leading" secondItem="uab-dj-B7J" secondAttribute="leadingMargin" id="TjH-xm-MVV"/>
+                            <constraint firstItem="kOz-ie-RGz" firstAttribute="leading" secondItem="uab-dj-B7J" secondAttribute="leading" id="TjH-xm-MVV"/>
                             <constraint firstItem="kOz-ie-RGz" firstAttribute="top" secondItem="U9k-jc-gvC" secondAttribute="bottom" id="gNy-VT-abL"/>
                         </constraints>
                     </view>
@@ -207,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFw-FX-8tM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="27"/>
+            <point key="canvasLocation" x="1361" y="29"/>
         </scene>
         <!--Sparrow Text Detail View Controller-->
         <scene sceneID="COC-ik-6Ia">
@@ -218,7 +210,7 @@
                         <viewControllerLayoutGuide type="bottom" id="x1R-OS-ZON"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5mt-S3-oBC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-f3-HVx">
@@ -242,26 +234,224 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mby-8G-OF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="-726"/>
+            <point key="canvasLocation" x="1361" y="-725"/>
+        </scene>
+        <!--Sparrow Forget View Controller-->
+        <scene sceneID="WSd-Sz-Fyd">
+            <objects>
+                <viewController id="bBK-Q7-Hq6" customClass="SparrowForgetViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YdO-1f-bWv"/>
+                        <viewControllerLayoutGuide type="bottom" id="uMg-sa-4jl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5nA-Fb-f53">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6fo-jl-dEu">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWt-IF-hkF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="7LG-Rs-a56"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="重置密码">
+                                    <color key="titleColor" red="0.83137254900000002" green="0.1647058824" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPassword:" destination="bBK-Q7-Hq6" eventType="touchUpInside" id="kyz-gG-OcH"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sc7-HG-0P3">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="JLF-hH-xma"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="如果您忘如果您忘记了手势密码，请联系微信号">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="cyrilvan">
+                                        <attributes>
+                                            <color key="NSColor" red="0.83137000000000005" green="0.16471" blue="0.11765" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="获取重获取置密码。">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.066666666669999999" green="0.08235294118" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sc7-HG-0P3" secondAttribute="trailing" id="2KT-1V-lPN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Sc7-HG-0P3" secondAttribute="leading" id="Fs1-eW-8LM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aWt-IF-hkF" secondAttribute="trailing" id="J5y-5i-FuW"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6fo-jl-dEu" secondAttribute="leading" id="ahB-eL-n6G"/>
+                            <constraint firstItem="6fo-jl-dEu" firstAttribute="top" secondItem="aWt-IF-hkF" secondAttribute="top" id="nMV-Tg-iVi"/>
+                            <constraint firstItem="6fo-jl-dEu" firstAttribute="height" secondItem="aWt-IF-hkF" secondAttribute="height" id="uDW-de-1ev"/>
+                            <constraint firstItem="aWt-IF-hkF" firstAttribute="top" secondItem="YdO-1f-bWv" secondAttribute="bottom" constant="8" symbolic="YES" id="uvG-Wt-XYC"/>
+                            <constraint firstItem="aWt-IF-hkF" firstAttribute="leading" secondItem="6fo-jl-dEu" secondAttribute="trailing" constant="8" symbolic="YES" id="xSD-lD-Qap"/>
+                            <constraint firstItem="Sc7-HG-0P3" firstAttribute="top" secondItem="6fo-jl-dEu" secondAttribute="bottom" constant="8" id="yvt-T3-Kwp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="superPasswordTextField" destination="6fo-jl-dEu" id="SdX-mg-Rp6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLu-1X-Rji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="1698"/>
         </scene>
         <!--Sparrow Photo Album Page View Controller-->
         <scene sceneID="S1T-xL-xGD">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="tUE-Z3-2ts" customClass="SparrowPhotoAlbumPageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tUE-Z3-2ts" customClass="SparrowPhotoAlbumPageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qi4-JG-AOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="-1487"/>
+            <point key="canvasLocation" x="1361" y="-1486"/>
         </scene>
         <!--Sparrow Image View Controller-->
         <scene sceneID="k1V-k7-iDM">
             <objects>
-                <viewController storyboardIdentifier="SparrowPhotoViewController" id="ENK-Ei-oxc" customClass="SparrowImageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SparrowPhotoViewController" automaticallyAdjustsScrollViewInsets="NO" id="ENK-Ei-oxc" customClass="SparrowImageViewController" customModule="uSparrow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KAy-kS-md7"/>
                         <viewControllerLayoutGuide type="bottom" id="HuA-F2-q6l"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5o4-Mv-apH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-8k-nhv">
@@ -290,7 +480,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EWj-8k-nhv" firstAttribute="leading" secondItem="5o4-Mv-apH" secondAttribute="leading" id="40G-WA-b8c"/>
-                            <constraint firstItem="EWj-8k-nhv" firstAttribute="top" secondItem="5o4-Mv-apH" secondAttribute="top" id="eL3-tF-NNY"/>
+                            <constraint firstItem="EWj-8k-nhv" firstAttribute="top" secondItem="KAy-kS-md7" secondAttribute="bottom" id="VaN-MJ-28N"/>
                             <constraint firstItem="HuA-F2-q6l" firstAttribute="top" secondItem="EWj-8k-nhv" secondAttribute="bottom" id="n4h-Tg-1nI"/>
                             <constraint firstAttribute="trailing" secondItem="EWj-8k-nhv" secondAttribute="trailing" id="vt9-Mo-APc"/>
                         </constraints>
@@ -302,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpp-w0-xSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2502" y="-1487"/>
+            <point key="canvasLocation" x="2151" y="-1486"/>
         </scene>
         <!--Sparrow Gif View Controller-->
         <scene sceneID="cr3-7W-cwj">
@@ -313,7 +503,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aRY-QS-4mT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="czW-4P-G2z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGc-IG-LOH">
@@ -334,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8K-89-dZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3286" y="-1487"/>
+            <point key="canvasLocation" x="2935" y="-1486"/>
         </scene>
         <!--登录-->
         <scene sceneID="iNz-1s-X9C">
@@ -345,7 +535,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gKA-ae-sa9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7dl-SG-cWq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qpf-wz-VvQ" customClass="SparrowGesturePasswordView" customModule="uSparrow" customModuleProvider="target">
@@ -389,6 +579,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="9lT-Io-0rL">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="N8j-UD-uew"/>
                         <barButtonItem key="rightBarButtonItem" title="忘记密码" id="eqb-hS-gSs">
                             <connections>
                                 <action selector="forgetPassword:" destination="EBK-3j-hCY" id="nkG-po-VOE"/>
@@ -399,66 +590,19 @@
                         <outlet property="forgetPasswordItem" destination="eqb-hS-gSs" id="oQ4-3k-L1L"/>
                         <outlet property="gesturePasswordView" destination="Qpf-wz-VvQ" id="bYe-il-5m5"/>
                         <outlet property="statusLabel" destination="McU-ce-5w4" id="u3H-Ni-hCW"/>
+                        <segue destination="bBK-Q7-Hq6" kind="show" identifier="ShowForget" id="XTg-QP-7UF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKJ-B6-bRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="-726"/>
-        </scene>
-        <!--设置-->
-        <scene sceneID="rep-Vu-Kik">
-            <objects>
-                <tableViewController title="设置" id="zp9-RI-FeJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dub-bs-T2t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="k7k-0S-cIH">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zww-sL-lWF">
-                                        <rect key="frame" x="0.0" y="64" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zww-sL-lWF" id="izk-YD-CLa">
-                                            <frame key="frameInset" width="414" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OkW-gr-qfB">
-                                        <rect key="frame" x="0.0" y="108" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OkW-gr-qfB" id="3Sv-ap-hCe">
-                                            <frame key="frameInset" width="414" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Trc-kd-1IF">
-                                        <rect key="frame" x="0.0" y="152" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Trc-kd-1IF" id="neL-Rm-fHb">
-                                            <frame key="frameInset" width="414" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="zp9-RI-FeJ" id="3EO-Uv-HCx"/>
-                            <outlet property="delegate" destination="zp9-RI-FeJ" id="T28-yk-QUd"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pJf-FB-zpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1713" y="-2300"/>
+            <point key="canvasLocation" x="96" y="1698"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gRw-Nh-ePF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjo-DN-SVd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lhC-Fg-zI2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lhC-Fg-zI2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.38823529410000002" green="0.61960784310000006" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -479,7 +623,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bav-KJ-4UV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CJh-ZC-EWx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CJh-ZC-EWx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.38823529411764707" green="0.61960784313725492" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -495,14 +639,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvi-pb-Vo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="882"/>
+            <point key="canvasLocation" x="1361" y="898"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g9d-Yt-S7Z">
             <objects>
-                <navigationController storyboardIdentifier="SparrowAuthNavigation" automaticallyAdjustsScrollViewInsets="NO" id="goQ-gR-LTG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="goQ-gR-LTG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e56-E9-sm3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e56-E9-sm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.38823529410000002" green="0.61960784310000006" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -518,13 +662,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n7c-M7-uwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-964" y="-726"/>
+            <point key="canvasLocation" x="-965" y="1698"/>
         </scene>
     </scenes>
     <resources>
         <image name="add" width="16" height="16"/>
         <image name="cancel" width="16" height="16"/>
-        <image name="settings" width="16" height="16"/>
         <image name="uSparrow" width="128" height="128"/>
         <image name="videocam" width="36" height="36"/>
         <image name="wifi" width="128" height="128"/>

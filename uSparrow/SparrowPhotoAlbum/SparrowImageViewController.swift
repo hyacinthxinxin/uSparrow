@@ -21,7 +21,7 @@ class SparrowImageViewController: SparrowPhotoBaseViewController {
     
     fileprivate func setupScrollView() {
         scrollView.maximumZoomScale = 2.0
-        scrollView.minimumZoomScale = 0.8
+        scrollView.minimumZoomScale = 1.0
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator   = false
         scrollView.bouncesZoom = true

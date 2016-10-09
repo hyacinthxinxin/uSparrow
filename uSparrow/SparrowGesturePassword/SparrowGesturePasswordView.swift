@@ -8,16 +8,9 @@
 
 import UIKit
 
-
-protocol GesturePasswordDelegate {
-    func forget()
-    func change()
-}
-
 class SparrowGesturePasswordView: UIView {
     
     var tentacleView:SparrowGestureTentacleView?
-    var gesturePasswordDelegate:GesturePasswordDelegate?
     var buttonArray:[SparrowGesturePasswordButton]=[]
     var gestureTentacleView: SparrowGestureTentacleView!
 
@@ -57,6 +50,7 @@ class SparrowGesturePasswordView: UIView {
         }
         gestureTentacleView.frame = bounds
     }
+    
     
     
     override func draw(_ rect: CGRect) {

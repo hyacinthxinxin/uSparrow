@@ -25,18 +25,19 @@ class SparrowCell: UICollectionViewCell {
     }
     
     private func configCell(sparrow: Sparrow) {
+        
         if let url = sparrow.documentsUrl {
             let type: SparrowType = sparrow.type
             switch type {
             case .uSystem:
-                self.sparrowPhoto.image = UIImage(named: "finder")
+                self.sparrowPhoto.image = UIImage(named: "folders-2")
                 
                 infoContainerView.isHidden = false
-                titleLabel.text = "系统文件"
+                titleLabel.text = "相册文件"
                 infoImageView.image = nil
                 infoLabel.text = nil
             case .uFold:
-                self.sparrowPhoto.image = UIImage(named: "finder")
+                self.sparrowPhoto.image = UIImage(named: "folders-33")
                 
                 infoContainerView.isHidden = false
                 titleLabel.text = url.lastPathComponent
@@ -83,7 +84,10 @@ class SparrowCell: UICollectionViewCell {
                     }
                 }
             case .uDoc:
-                self.sparrowPhoto.image = UIImage(named: "finder")
+                if url.pathExtension == "txt" {
+                    
+                }
+                self.sparrowPhoto.image = UIImage(named: "txt")
                 
                 infoContainerView.isHidden = false
                 titleLabel.text = url.lastPathComponent
@@ -91,7 +95,7 @@ class SparrowCell: UICollectionViewCell {
                 infoLabel.text = nil
                 
             case .uOthers:
-                self.sparrowPhoto.image = UIImage(named: "finder")
+                self.sparrowPhoto.image = UIImage(named: "search")
                 
                 infoContainerView.isHidden = false
                 titleLabel.text = url.lastPathComponent

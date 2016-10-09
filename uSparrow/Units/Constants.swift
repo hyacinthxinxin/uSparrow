@@ -41,16 +41,6 @@ extension SparrowType {
 }
 
 struct Constants {
-    struct DefaultsKey {
-        static let doveSessionKey = "session"
-        static let doveTokenKey = "token"
-        static let rongCloudTokenKey = "rongCloudTokenKey"
-    }
-    
-    struct NetworkAddress {
-        static let DevelopAddress: String = "http://192.168.100.9:9000/"
-        static let ProductAddress: String = "http://www.tingspectrum.com:9000/"
-    }
     
     struct SegueIdentifier {
         static let ShowAuth = "ShowAuth"
@@ -58,13 +48,9 @@ struct Constants {
         static let ShowUpload = "ShowUpload"
         static let ShowSparrowFold = "ShowSparrowFold"
         static let ShowSparrow = "ShowSparrow"
-        static let ShowPhotos = "ShowPhotos" //
-        static let ShowGif = "ShowGif"
         static let ShowWeb = "ShowWeb"
         static let ShowText = "ShowText"
-        
-        static let EmbedGifPage = "EmbedGifPage"
-        static let EmbedPhotoPage = "EmbedPhotoPage"
+        static let ShowForget = "ShowForget"
     }
     
     struct ReuserIdentifier {
@@ -72,7 +58,6 @@ struct Constants {
         static let uSparrowCell = "SparrowCell"
         static let uSparrowGifCell = "SparrowGifCell"
         static let uSparrowVideoCell = "SparrowVideoCell"
-        
         static let uSparrowsHeaderView = "SparrowsHeaderView"
         static let uSparrowsThumbnailCell = "ThumbnailCell"
         
@@ -97,14 +82,15 @@ struct Constants {
         static let barTintColor = UIColor.hex("#303338", alpha: 1.0)
         static let tintColor = UIColor.hex("#639E77", alpha: 1.0)
         static let textColor = UIColor.hex("#FFFCF7", alpha: 1.0)
-//        static let highlightColor = UIColor.hex("#B2DBBF", alpha: 1.0)
-//        static let normalColor = UIColor.hex("#EBEBEB", alpha: 1.0)
         static let selectedColor = UIColor.hex("#D42A1E", alpha: 1.0)
     }
     
     struct StoryboardId {
         static let gifVC = "SparrowGifViewController"
         static let imgVC = "SparrowPhotoViewController"
-        static let AuthNav = "SparrowAuthNavigation"
+    }
+    
+    struct UserDefaultKey {
+        static let uSparrowSecret = "USparrowSecret"
     }
 }
